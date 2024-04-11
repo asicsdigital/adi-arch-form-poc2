@@ -1,0 +1,13 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "jsx": "preserve",
+    "module": "commonjs",
+    "types": ["jest", "node"]
+  },
+  "exclude": [],
+  "include": ["../src/**/*"]
+}
