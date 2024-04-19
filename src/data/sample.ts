@@ -1,15 +1,20 @@
 export const sample = {
-  title: '',
-  phone_number: {
-    field_display_name: 'Phone number ',
-    field_id: '00N1U00000U6B4o',
-    field_type: 'Phone Number',
+  _version: 5,
+  locale: 'en-us',
+  uid: 'blt1dd774de3adc9fad',
+  _in_progress: true,
+  created_at: '2024-04-09T17:48:11.613Z',
+  created_by: 'blt49b6cc91be2c57ac',
+  date_of_purchase: {
+    field_display_name: 'Date of purchase',
+    field_id: '00N1U00000U6B4h',
+    field_type: 'Date',
     required: false
   },
-  first_name: {
-    field_display_name: 'First Name',
-    field_id: '00N1U00000U6B4j',
-    field_type: 'Single-line Text',
+  description: {
+    field_display_name: 'Description',
+    field_id: 'description',
+    field_type: 'Multiline',
     required: false
   },
   email: {
@@ -18,16 +23,16 @@ export const sample = {
     field_type: 'Email',
     required: false
   },
-  date_of_purchase: {
-    field_display_name: 'Dae of purchase',
-    field_id: '00N1U00000U6B4h',
-    field_type: 'Date Picker',
+  first_name: {
+    field_display_name: 'First Name',
+    field_id: '00N1U00000U6B4j',
+    field_type: 'Text',
     required: false
   },
   miles: {
     display_name: 'how many miles have you used this item?',
     field_id: '00N1U00000U6B4n',
-    field_type: 'Dropdown',
+    field_type: 'Select',
     entry_values: [
       {
         value_display: '0-50 Miles',
@@ -45,6 +50,12 @@ export const sample = {
         value_id: '3'
       }
     ],
+    required: false
+  },
+  phone_number: {
+    field_display_name: 'Phone number ',
+    field_id: '00N1U00000U6B4o',
+    field_type: 'Tel',
     required: false
   },
   product_activity: {
@@ -76,12 +87,6 @@ export const sample = {
     ],
     required: false
   },
-  description: {
-    field_display_name: 'Description',
-    field_id: 'description',
-    field_type: 'Multi-line Text',
-    required: false
-  },
   sponsorship_area: {
     display_name: 'sponsorship area',
     field_id: '00N5500000R9J3v',
@@ -106,12 +111,7 @@ export const sample = {
     required: false
   },
   tags: [],
-  locale: 'en-us',
-  uid: 'blt1dd774de3adc9fad',
-  created_by: 'blt49b6cc91be2c57ac',
-  updated_by: 'blt49b6cc91be2c57ac',
-  created_at: '2024-04-09T17:48:11.613Z',
-  updated_at: '2024-04-09T17:51:21.733Z',
-  _version: 4,
-  _in_progress: true
+  title: '',
+  updated_at: '2024-04-16T18:20:45.293Z',
+  updated_by: 'blt49b6cc91be2c57ac'
 };
