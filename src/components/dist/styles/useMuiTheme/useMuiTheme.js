@@ -9,12 +9,10 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-import { provideTheme } from '../provideTheme/index';
 import { useTheme } from '../useTheme/index';
 import { useStyleOverrides } from '../useStyleOverrides/index';
 export function useMuiTheme() {
     var _a, _b, _c, _d, _e, _f, _g, _h;
-    provideTheme();
     var dsprotoTheme = useTheme();
     var styleOverrides = useStyleOverrides();
     var muiStyleOverrides = {};

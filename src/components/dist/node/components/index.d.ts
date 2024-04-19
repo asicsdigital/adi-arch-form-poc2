@@ -41,6 +41,7 @@ export * from './FilledInput/index';
 export * from './Flex/index';
 export * from './FlexChild/index';
 export * from './Form/index';
+export * from './FormContent/index';
 export * from './FormControl/index';
 export * from './FormControlLabel/index';
 export * from './FormGroup/index';

@@ -1,8 +1,9 @@
 export var InputControls = {
     Checkbox: 'checkbox',
-    Switch: 'switch',
     Radio: 'radio',
     RadioGroup: 'radioGroup',
+    Switch: 'switch',
+    Select: 'select',
     TextField: 'textField'
 };
 /**

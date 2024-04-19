@@ -9,7 +9,7 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-import { pxToRem } from '../../helpers/index';
+import { isString, pxToRem } from '../../helpers/index';
 import { fontWeights } from '../../store/index';
 import { useTokens } from '../useTokens/index';
 var blocksDefault = useTokens();
@@ -21,7 +21,7 @@ var composeVariant = function (token) {
         fontSize: pxToRem(variant.fontSize),
         fontWeight: fontWeights[variant.fontWeight.toLowerCase()],
         letterSpacing: variant.letterSpacing,
-        lineHeight: variant.lineHeight,
+        lineHeight: isString(variant.lineHeight) ? variant.lineHeight : pxToRem(variant.lineHeight),
         textDecoration: variant.textDecoration,
         textTransform: variant.textCase
     };

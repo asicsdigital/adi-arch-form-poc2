@@ -368,13 +368,14 @@ export type RenderedCSS = {
 export type LabelPlacement = 'bottom' | 'end' | 'start' | 'top';
 export declare const InputControls: {
     readonly Checkbox: "checkbox";
-    readonly Switch: "switch";
     readonly Radio: "radio";
     readonly RadioGroup: "radioGroup";
+    readonly Switch: "switch";
+    readonly Select: "select";
     readonly TextField: "textField";
 };
 export type InputControlKeys = (typeof InputControls)[keyof typeof InputControls];
-export type InputControlOptions = CheckboxOptions | RadioOptions | RadioGroupOptions | SwitchOptions | TextFieldOptions;
+export type InputControlOptions = CheckboxOptions | RadioOptions | RadioGroupOptions | SelectOptions | SwitchOptions | TextFieldOptions;
 export interface FormControlBaseOptions {
     checked?: boolean;
     checkedIcon?: React.ReactNode;
@@ -393,13 +394,40 @@ export interface RadioOptions extends FormControlBaseOptions {
     name?: string;
 }
 export interface RadioGroupOptions {
+    defaultValue?: number | string;
     elements: RadioOptions | RadioOptions[];
+    label?: string;
+    labelId?: string;
     name?: string;
+}
+export interface OptionOptions {
+    id?: number | string;
+    label?: string;
+    value?: string;
+}
+export interface SelectOptions {
+    autoWidth?: boolean;
+    defaultOpen?: boolean;
+    displayEmpty?: boolean;
+    fullWidth?: boolean;
+    id?: string;
+    label?: string;
+    labelId?: string;
+    multiple?: boolean;
+    native?: boolean;
+    onChange?: never;
+    onClose?: never;
+    onOpen?: never;
+    open?: boolean;
+    options?: OptionOptions | OptionOptions[];
+    renderValue?: never;
+    value?: number | string;
+    variant?: 'filled' | 'outlined' | 'standard';
 }
 export interface SwitchOptions extends FormControlBaseOptions {
     edge?: 'end' | 'start' | false;
 }
-export type TextFieldTypes = 'email' | 'file' | 'password' | 'search' | 'tel' | 'text' | 'url';
+export type TextFieldTypes = 'date' | 'email' | 'file' | 'password' | 'search' | 'tel' | 'text' | 'url';
 export interface TextFieldOptions {
     autoFocus?: boolean;
     color?: PaletteColorRole;
@@ -407,8 +435,8 @@ export interface TextFieldOptions {
     error?: boolean;
     fullWidth?: boolean;
     helperText?: string;
-    label?: React.ReactNode | string;
-    margin?: 'dense' | 'none' | 'normal';
+    label?: string;
+    margin?: 'dense' | 'none';
     maxRows?: number | string;
     minRows?: number | string;
     multiline?: boolean;

@@ -367,6 +367,18 @@ var __assign = function() {
     return __assign.apply(this, arguments);
 };
 
+function __rest(s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+}
+
 function __spreadArray(to, from, pack) {
     if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
         if (ar || !(i in from)) {
@@ -21808,9 +21820,10 @@ var lodashExports = lodash.exports;
 
 var InputControls = {
     Checkbox: 'checkbox',
-    Switch: 'switch',
     Radio: 'radio',
     RadioGroup: 'radioGroup',
+    Switch: 'switch',
+    Select: 'select',
     TextField: 'textField'
 };
 /**
@@ -23142,7 +23155,7 @@ var composeVariant = function (token) {
         fontSize: pxToRem(variant.fontSize),
         fontWeight: fontWeights[variant.fontWeight.toLowerCase()],
         letterSpacing: variant.letterSpacing,
-        lineHeight: variant.lineHeight,
+        lineHeight: isString(variant.lineHeight) ? variant.lineHeight : pxToRem(variant.lineHeight),
         textDecoration: variant.textDecoration,
         textTransform: variant.textCase
     };
@@ -23205,7 +23218,7 @@ function createTheme$2(userTheme) {
     };
 }
 
-var theme = useTheme$2();
+var theme$1 = useTheme$2();
 var cssBaselineStyles = {
     '@global': {
         html: {
@@ -23219,12 +23232,12 @@ var cssBaselineStyles = {
             boxSizing: 'inherit'
         },
         'strong, b': {
-            fontWeight: theme.typography.fontWeightBold
+            fontWeight: theme$1.typography.fontWeightBold
         },
-        body: __assign(__assign({}, theme.typography.variants.body1), { backgroundColor: theme.palette.background.default, color: theme.palette.text.primary, fontFamily: theme.typography.fontFamily, height: '100%', scrollBehavior: 'smooth', textRendering: 'optimizeSpeed', '@media print': {
-                backgroundColor: theme.palette.common.white
+        body: __assign(__assign({}, theme$1.typography.variants.body1), { backgroundColor: theme$1.palette.background.default, color: theme$1.palette.text.primary, fontFamily: theme$1.typography.fontFamily, height: '100%', scrollBehavior: 'smooth', textRendering: 'optimizeSpeed', '@media print': {
+                backgroundColor: theme$1.palette.common.white
             }, '&::backdrop': {
-                backgroundColor: theme.palette.background.default
+                backgroundColor: theme$1.palette.background.default
             } }),
         'input, button, textarea, select': {
             font: 'inherit'
@@ -23314,7 +23327,6 @@ function useStyleOverrides() {
 
 function useMuiTheme() {
     var _a, _b, _c, _d, _e, _f, _g, _h;
-    provideTheme();
     var dsprotoTheme = useTheme$2();
     var styleOverrides = useStyleOverrides();
     var muiStyleOverrides = {};
@@ -24081,11 +24093,11 @@ function FlexStyles(theme) {
         }
     }, 'Flex');
 }
-var options$2 = {
+var options$3 = {
     index: 2,
     meta: FlexClassKey
 };
-var classes$1 = provideClasses(FlexStyles, options$2);
+var classes$1 = provideClasses(FlexStyles, options$3);
 useTheme$2();
 var FlexStyle = FlexStyles();
 var composeFlexClasses = function (userProps) {
@@ -24102,7 +24114,7 @@ var composeFlexClasses = function (userProps) {
 };
 var selectGap = function (gap) {
     var _a;
-    var gapOptions = __assign(__assign({}, options$2), { meta: "".concat(FlexClassKey, "-flex-").concat(gap) });
+    var gapOptions = __assign(__assign({}, options$3), { meta: "".concat(FlexClassKey, "-flex-").concat(gap) });
     var gapClass = "flex".concat(gap);
     var gapSheet = provideStylesheet((_a = {}, _a[gapClass] = { gap: gap }, _a), gapOptions);
     var gapClasses = __assign({}, gapSheet.classes);
@@ -24147,11 +24159,11 @@ function FlexChildStyles(theme) {
         }
     }, 'FlexChild');
 }
-var options$1 = {
+var options$2 = {
     index: 2,
     meta: FlexChildClassKey
 };
-var classes = provideClasses(FlexChildStyles, options$1);
+var classes = provideClasses(FlexChildStyles, options$2);
 useTheme$2();
 var FlexChildStyle = FlexChildStyles();
 var composeFlexChildClasses = function (userProps) {
@@ -24169,7 +24181,7 @@ var composeFlexChildClasses = function (userProps) {
 var selectFlex = function (flex) {
     var _a;
     var encodedFlex = encodeURIComponent("".concat(flex));
-    var flexOptions = __assign(__assign({}, options$1), { meta: "".concat(FlexChildClassKey, "-flex-").concat(encodedFlex) });
+    var flexOptions = __assign(__assign({}, options$2), { meta: "".concat(FlexChildClassKey, "-flex-").concat(encodedFlex) });
     var flexClass = "flex".concat(encodedFlex);
     var flexSheet = provideStylesheet((_a = {}, _a[flexClass] = { flex: flex }, _a), flexOptions);
     var flexClasses = __assign({}, flexSheet.classes);
@@ -24177,7 +24189,7 @@ var selectFlex = function (flex) {
 };
 var selectFlexBasis = function (flexBasis) {
     var _a;
-    var flexBasisOptions = __assign(__assign({}, options$1), { meta: "".concat(FlexChildClassKey, "-flex-basis-").concat(flexBasis) });
+    var flexBasisOptions = __assign(__assign({}, options$2), { meta: "".concat(FlexChildClassKey, "-flex-basis-").concat(flexBasis) });
     var flexBasisClass = "flexBasis".concat(flexBasis);
     var flexBasisSheet = provideStylesheet((_a = {}, _a[flexBasisClass] = { flexBasis: flexBasis }, _a), flexBasisOptions);
     var flexBasisClasses = __assign({}, flexBasisSheet.classes);
@@ -24185,7 +24197,7 @@ var selectFlexBasis = function (flexBasis) {
 };
 var selectFlexGrow = function (flexGrow) {
     var _a;
-    var flexGrowOptions = __assign(__assign({}, options$1), { meta: "".concat(FlexChildClassKey, "-flex-grow-").concat(flexGrow) });
+    var flexGrowOptions = __assign(__assign({}, options$2), { meta: "".concat(FlexChildClassKey, "-flex-grow-").concat(flexGrow) });
     var flexGrowClass = "flexGrow".concat(flexGrow);
     var flexGrowSheet = provideStylesheet((_a = {}, _a[flexGrowClass] = { flexGrow: flexGrow }, _a), flexGrowOptions);
     var flexGrowClasses = __assign({}, flexGrowSheet.classes);
@@ -24193,7 +24205,7 @@ var selectFlexGrow = function (flexGrow) {
 };
 var selectFlexShrink = function (flexShrink) {
     var _a;
-    var flexShrinkOptions = __assign(__assign({}, options$1), { meta: "".concat(FlexChildClassKey, "-flex-shrink-").concat(flexShrink) });
+    var flexShrinkOptions = __assign(__assign({}, options$2), { meta: "".concat(FlexChildClassKey, "-flex-shrink-").concat(flexShrink) });
     var flexShrinkClass = "flexShrink".concat(flexShrink);
     var flexShrinkSheet = provideStylesheet((_a = {}, _a[flexShrinkClass] = { flexShrink: flexShrink }, _a), flexShrinkOptions);
     var flexShrinkClasses = __assign({}, flexShrinkSheet.classes);
@@ -24201,7 +24213,7 @@ var selectFlexShrink = function (flexShrink) {
 };
 var selectOrder = function (order) {
     var _a;
-    var orderOptions = __assign(__assign({}, options$1), { meta: "".concat(FlexChildClassKey, "-order-").concat(order) });
+    var orderOptions = __assign(__assign({}, options$2), { meta: "".concat(FlexChildClassKey, "-order-").concat(order) });
     var orderClass = "order".concat(order);
     var orderSheet = provideStylesheet((_a = {}, _a[orderClass] = { order: order }, _a), orderOptions);
     var orderClasses = __assign({}, orderSheet.classes);
@@ -24219,11 +24231,11 @@ function FormStyles(theme) {
         root: {}
     }, 'Form');
 }
-var options = {
+var options$1 = {
     index: 2,
     meta: FormClassKey
 };
-provideClasses(FormStyles, options);
+provideClasses(FormStyles, options$1);
 useTheme$2();
 var FormStyle = FormStyles();
 function Form(props) {
@@ -24271,6 +24283,180 @@ function FormControlLabel(props) {
     return jsxRuntimeExports.jsx(material.FormControlLabel, __assign({ sx: FormControlLabelStyle }, composedProps));
 }
 
+function FormLabelStyles(theme) {
+    return applyOverrides({
+    /* Add custom styles here using JSS and add the class names to the Classes type */
+    }, 'FormLabel');
+}
+useTheme$2();
+var FormLabelStyle = FormLabelStyles();
+function FormLabel(props) {
+    var defaultProps = {
+    /* Add custom prop defaults here */
+    };
+    var composedProps = __assign(__assign({}, defaultProps), props);
+    return jsxRuntimeExports.jsx(material.FormLabel, __assign({ sx: FormLabelStyle }, composedProps));
+}
+
+function InputLabelStyles(theme) {
+    return applyOverrides({
+    /* Add custom styles here using JSS and add the class names to the Classes type */
+    }, 'InputLabel');
+}
+useTheme$2();
+var InputLabelStyle = InputLabelStyles();
+function InputLabel(props) {
+    var defaultProps = {
+    /* Add custom prop defaults here */
+    };
+    var composedProps = __assign(__assign({}, defaultProps), props);
+    return jsxRuntimeExports.jsx(material.InputLabel, __assign({ sx: InputLabelStyle }, composedProps));
+}
+
+function MenuItemStyles(theme) {
+    return applyOverrides({
+    /* Add custom styles here using JSS and add the class names to the Classes type */
+    }, 'MenuItem');
+}
+useTheme$2();
+var MenuItemStyle = MenuItemStyles();
+function MenuItem(props) {
+    var defaultProps = {
+    /* Add custom prop defaults here */
+    };
+    var composedProps = __assign(__assign({}, defaultProps), props);
+    return jsxRuntimeExports.jsx(material.MenuItem, __assign({ sx: MenuItemStyle }, composedProps));
+}
+
+function RadioStyles(theme) {
+    return applyOverrides({
+    /* Add custom styles here using JSS and add the class names to the Classes type */
+    }, 'Radio');
+}
+useTheme$2();
+var RadioStyle = RadioStyles();
+function Radio(props) {
+    var defaultProps = {
+    /* Add custom prop defaults here */
+    };
+    var composedProps = __assign(__assign({}, defaultProps), props);
+    return jsxRuntimeExports.jsx(material.Radio, __assign({ sx: RadioStyle }, composedProps));
+}
+
+function RadioGroupStyles(theme) {
+    return applyOverrides({
+    /* Add custom styles here using JSS and add the class names to the Classes type */
+    }, 'RadioGroup');
+}
+useTheme$2();
+var RadioGroupStyle = RadioGroupStyles();
+function RadioGroup(props) {
+    var defaultProps = {
+    /* Add custom prop defaults here */
+    };
+    var composedProps = __assign(__assign({}, defaultProps), props);
+    return jsxRuntimeExports.jsx(material.RadioGroup, __assign({ sx: RadioGroupStyle }, composedProps));
+}
+
+function SelectStyles(theme) {
+    return applyOverrides({
+    /* Add custom styles here using JSS and add the class names to the Classes type */
+    }, 'Select');
+}
+useTheme$2();
+var SelectStyle = SelectStyles();
+function Select(props) {
+    var defaultProps = {
+    /* Add custom prop defaults here */
+    };
+    var composedProps = __assign(__assign({}, defaultProps), props);
+    return jsxRuntimeExports.jsx(material.Select, __assign({ sx: SelectStyle }, composedProps));
+}
+
+function SwitchStyles(theme) {
+    return applyOverrides({
+    /* Add custom styles here using JSS and add the class names to the Classes type */
+    }, 'Switch');
+}
+useTheme$2();
+var SwitchStyle = SwitchStyles();
+function Switch(props) {
+    var defaultProps = {
+    /* Add custom prop defaults here */
+    };
+    var composedProps = __assign(__assign({}, defaultProps), props);
+    return jsxRuntimeExports.jsx(material.Switch, __assign({ sx: SwitchStyle }, composedProps));
+}
+
+function TextFieldStyles(theme) {
+    return applyOverrides({
+    /* Add custom styles here using JSS and add the class names to the Classes type */
+    }, 'TextField');
+}
+useTheme$2();
+var TextFieldStyle = TextFieldStyles();
+function TextField(props) {
+    var defaultProps = {
+    /* Add custom prop defaults here */
+    };
+    var composedProps = __assign(__assign({}, defaultProps), props);
+    return jsxRuntimeExports.jsx(material.TextField, __assign({ sx: TextFieldStyle }, composedProps));
+}
+
+var FormContentClassKey = getClassKey('form-content');
+function FormContentStyles(theme) {
+    return applyOverrides({
+        root: {}
+    }, 'FormContent');
+}
+var options = {
+    index: 2,
+    meta: FormContentClassKey
+};
+provideClasses(FormContentStyles, options);
+var theme = useTheme$2();
+var FormContentStyle = FormContentStyles();
+function composeFormContentInput(formInput) {
+    var controlEl;
+    var control = formInput.control, key = formInput.key, _a = formInput.options, options = _a === void 0 ? {} : _a;
+    var composedOptions = __assign({ label: '' }, options);
+    var label = composedOptions.label, rest = __rest(composedOptions, ["label"]);
+    switch (control) {
+        case InputControls.Checkbox:
+            controlEl = jsxRuntimeExports.jsx(Checkbox, __assign({}, rest), key);
+            break;
+        case InputControls.Radio:
+            controlEl = jsxRuntimeExports.jsx(Radio, __assign({}, rest), key);
+            break;
+        case InputControls.RadioGroup:
+            var name_1 = rest['name'] || key;
+            var elements = arrayify(rest['elements']);
+            controlEl = (jsxRuntimeExports.jsxs(FormControl, { children: [jsxRuntimeExports.jsx(FormLabel, { id: rest['labelId'], children: label }), jsxRuntimeExports.jsx(RadioGroup, { name: name_1, defaultValue: rest['defaultValue'], children: elements.map(function (element, index) { return (jsxRuntimeExports.jsx(FormControlLabel, __assign({ control: jsxRuntimeExports.jsx(Radio, {}) }, element), index)); }) }, key)] }));
+            return controlEl;
+        case InputControls.Select:
+            var options_1 = arrayify(rest['options']);
+            controlEl = (jsxRuntimeExports.jsxs(FormControl, { fullWidth: rest['fullWidth'], children: [jsxRuntimeExports.jsx(InputLabel, { id: rest['inputId'], children: label }, rest['inputId']), jsxRuntimeExports.jsx(Select, __assign({ label: label }, rest, { children: options_1.map(function (option, index) { return (jsxRuntimeExports.jsx(MenuItem, { value: option.label, children: option.label }, option.label)); }) }), key)] }));
+            return controlEl;
+        case InputControls.Switch:
+            controlEl = jsxRuntimeExports.jsx(Switch, __assign({}, rest), key);
+            break;
+        case InputControls.TextField:
+            return jsxRuntimeExports.jsx(TextField, __assign({}, composedOptions), key);
+    }
+    return label ? jsxRuntimeExports.jsx(FormControlLabel, __assign({ control: controlEl, label: label }, rest), key) : controlEl;
+}
+function FormContent(props) {
+    var defaultProps = {
+        children: jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {}),
+        direction: 'column',
+        gap: theme.spacing.unit
+    };
+    var composedProps = __assign(__assign({}, defaultProps), props);
+    var children = composedProps.children, direction = composedProps.direction, gap = composedProps.gap, inputs = composedProps.inputs;
+    var composedInputs = arrayify(inputs);
+    return (jsxRuntimeExports.jsxs(Flex, { alignContent: "flexStart", alignItems: "flexStart", flexDirection: direction, gap: gap, children: [children, composedInputs.map(function (input, index) { return (input ? composeFormContentInput(__assign({ key: "".concat(input.control, "-").concat(index) }, input)) : null); })] }));
+}
+
 function FormGroupStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
@@ -24299,21 +24485,6 @@ function FormHelperText(props) {
     };
     var composedProps = __assign(__assign({}, defaultProps), props);
     return jsxRuntimeExports.jsx(material.FormHelperText, __assign({ sx: FormHelperTextStyle }, composedProps));
-}
-
-function FormLabelStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'FormLabel');
-}
-useTheme$2();
-var FormLabelStyle = FormLabelStyles();
-function FormLabel(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.FormLabel, __assign({ sx: FormLabelStyle }, composedProps));
 }
 
 function GridStyles(theme) {
@@ -24484,21 +24655,6 @@ function InputBase(props) {
     return jsxRuntimeExports.jsx(material.InputBase, __assign({ sx: InputBaseStyle }, composedProps));
 }
 
-function InputLabelStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'InputLabel');
-}
-useTheme$2();
-var InputLabelStyle = InputLabelStyles();
-function InputLabel(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.InputLabel, __assign({ sx: InputLabelStyle }, composedProps));
-}
-
 function LinearProgressStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
@@ -24665,21 +24821,6 @@ function Menu(props) {
     return jsxRuntimeExports.jsx(material.Menu, __assign({ sx: MenuStyle }, composedProps));
 }
 
-function MenuItemStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'MenuItem');
-}
-useTheme$2();
-var MenuItemStyle = MenuItemStyles();
-function MenuItem(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.MenuItem, __assign({ sx: MenuItemStyle }, composedProps));
-}
-
 function MenuListStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
@@ -24837,36 +24978,6 @@ function Popper(props) {
     return jsxRuntimeExports.jsx(material.Popper, __assign({ sx: PopperStyle }, composedProps));
 }
 
-function RadioStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Radio');
-}
-useTheme$2();
-var RadioStyle = RadioStyles();
-function Radio(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Radio, __assign({ sx: RadioStyle }, composedProps));
-}
-
-function RadioGroupStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'RadioGroup');
-}
-useTheme$2();
-var RadioGroupStyle = RadioGroupStyles();
-function RadioGroup(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.RadioGroup, __assign({ sx: RadioGroupStyle }, composedProps));
-}
-
 function RatingStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
@@ -24880,21 +24991,6 @@ function Rating(props) {
     };
     var composedProps = __assign(__assign({}, defaultProps), props);
     return jsxRuntimeExports.jsx(material.Rating, __assign({ sx: RatingStyle }, composedProps));
-}
-
-function SelectStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Select');
-}
-useTheme$2();
-var SelectStyle = SelectStyles();
-function Select(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Select, __assign({ sx: SelectStyle }, composedProps));
 }
 
 function SkeletonStyles(theme) {
@@ -25126,21 +25222,6 @@ function SwipeableDrawer(props) {
     return jsxRuntimeExports.jsx(material.SwipeableDrawer, __assign({ sx: SwipeableDrawerStyle }, composedProps));
 }
 
-function SwitchStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Switch');
-}
-useTheme$2();
-var SwitchStyle = SwitchStyles();
-function Switch(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Switch, __assign({ sx: SwitchStyle }, composedProps));
-}
-
 function TabStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
@@ -25325,21 +25406,6 @@ function TabScrollButton(props) {
     };
     var composedProps = __assign(__assign({}, defaultProps), props);
     return jsxRuntimeExports.jsx(material.TabScrollButton, __assign({ sx: TabScrollButtonStyle }, composedProps));
-}
-
-function TextFieldStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'TextField');
-}
-useTheme$2();
-var TextFieldStyle = TextFieldStyles();
-function TextField(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.TextField, __assign({ sx: TextFieldStyle }, composedProps));
 }
 
 function ToggleButtonStyles(theme) {
@@ -29189,6 +29255,10 @@ exports.FlexStyle = FlexStyle;
 exports.FlexStyles = FlexStyles;
 exports.Form = Form;
 exports.FormClassKey = FormClassKey;
+exports.FormContent = FormContent;
+exports.FormContentClassKey = FormContentClassKey;
+exports.FormContentStyle = FormContentStyle;
+exports.FormContentStyles = FormContentStyles;
 exports.FormControl = FormControl;
 exports.FormControlLabel = FormControlLabel;
 exports.FormControlLabelStyle = FormControlLabelStyle;
@@ -29452,6 +29522,7 @@ exports.capitalize = capitalize$1;
 exports.clamp = clamp$1;
 exports.composeFlexChildClasses = composeFlexChildClasses;
 exports.composeFlexClasses = composeFlexClasses;
+exports.composeFormContentInput = composeFormContentInput;
 exports.composedTypography = composedTypography;
 exports.core = core;
 exports.createBreakpoints = createBreakpoints$1;

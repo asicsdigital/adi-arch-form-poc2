@@ -8,13 +8,13 @@ import { createTheme, ThemeProvider } from '../../components/dist';
 
 const theme = createTheme({
   typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif'
+    fontFamily: '"Roboto", "Helvetica", Helvetica, Arial, sans-serif'
   }
 });
 
 export function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider themeOptions={theme}>
       <CssBaseline />
       {children}
     </ThemeProvider>
