@@ -1,4 +1,6 @@
-export const sample = {
+type Sample = { [key: string]: any };
+
+export const sample: Sample = {
   _version: 5,
   locale: 'en-us',
   uid: 'blt1dd774de3adc9fad',

@@ -7,6 +7,9 @@ import {
   FormInput,
   Toolbar
 } from '../components/dist';
+import { getData } from '../lib';
+
+const data = getData();
 
 const inputs: FormInput[] = [
   {
