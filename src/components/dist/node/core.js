@@ -400,6 +400,31 @@ function getDefaultExportFromCjs (x) {
 	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
 }
 
+function getAugmentedNamespace(n) {
+  if (n.__esModule) return n;
+  var f = n.default;
+	if (typeof f == "function") {
+		var a = function a () {
+			if (this instanceof a) {
+        return Reflect.construct(f, arguments, this.constructor);
+			}
+			return f.apply(this, arguments);
+		};
+		a.prototype = f.prototype;
+  } else a = {};
+  Object.defineProperty(a, '__esModule', {value: true});
+	Object.keys(n).forEach(function (k) {
+		var d = Object.getOwnPropertyDescriptor(n, k);
+		Object.defineProperty(a, k, d.get ? d : {
+			enumerable: true,
+			get: function () {
+				return n[k];
+			}
+		});
+	});
+	return a;
+}
+
 var jsxRuntime = {exports: {}};
 
 var reactJsxRuntime_production_min = {};
@@ -4556,7 +4581,7 @@ if (process.env.NODE_ENV === 'production') {
 
 var jsxRuntimeExports = jsxRuntime.exports;
 
-function clamp$1(value, min, max) {
+function clamp$2(value, min, max) {
     if (min === void 0) { min = 0; }
     if (max === void 0) { max = 1; }
     if (value < min) {
@@ -4604,9 +4629,9 @@ function recomposeColor$1(decomposedColor) {
     return "".concat(type, "(").concat(values.join(', '), ")");
 }
 
-function alpha(color, value) {
+function alpha$1(color, value) {
     var decomposedColor = decomposeColor$1(color);
-    var clampedColor = clamp$1(value);
+    var clampedColor = clamp$2(value);
     if (decomposedColor.type === 'rgb' || decomposedColor.type === 'hsl') {
         decomposedColor.type += 'a';
     }
@@ -21820,6 +21845,7 @@ var lodashExports = lodash.exports;
 
 var InputControls = {
     Checkbox: 'checkbox',
+    CheckboxGroup: 'checkboxGroup',
     Radio: 'radio',
     RadioGroup: 'radioGroup',
     Switch: 'switch',
@@ -22221,7 +22247,7 @@ function capitalize$1(value) {
 function darken$1(composedColor, unclampedCoefficient) {
     if (unclampedCoefficient === void 0) { unclampedCoefficient = 0; }
     var color = decomposeColor$1(composedColor);
-    var coefficient = clamp$1(unclampedCoefficient);
+    var coefficient = clamp$2(unclampedCoefficient);
     if (color.type.indexOf('hsl') !== -1) {
         color.values[2] = parseInt("".concat(color.values[2]), 10) * (1 - coefficient);
     }
@@ -22233,7 +22259,7 @@ function darken$1(composedColor, unclampedCoefficient) {
 
 function fade(color, value) {
     var decomposedColor = decomposeColor$1(color);
-    var clampedValue = clamp$1(value);
+    var clampedValue = clamp$2(value);
     if (decomposedColor.type === 'rgb' || decomposedColor.type === 'hsl') {
         decomposedColor.type = "".concat(decomposedColor.type, "a");
     }
@@ -22324,7 +22350,7 @@ function isUrl(value) {
 function lighten$1(composedColor, baseCoefficient) {
     if (baseCoefficient === void 0) { baseCoefficient = 1; }
     var color = decomposeColor$1(composedColor);
-    var coefficient = clamp$1(baseCoefficient);
+    var coefficient = clamp$2(baseCoefficient);
     if (color.type.indexOf('hsl') !== -1) {
         var val = parseInt("".concat(color.values[2]), 10);
         color.values[2] = val + (100 - val) * coefficient;
@@ -23218,7 +23244,7 @@ function createTheme$2(userTheme) {
     };
 }
 
-var theme$1 = useTheme$2();
+var theme$2 = useTheme$2();
 var cssBaselineStyles = {
     '@global': {
         html: {
@@ -23232,12 +23258,12 @@ var cssBaselineStyles = {
             boxSizing: 'inherit'
         },
         'strong, b': {
-            fontWeight: theme$1.typography.fontWeightBold
+            fontWeight: theme$2.typography.fontWeightBold
         },
-        body: __assign(__assign({}, theme$1.typography.variants.body1), { backgroundColor: theme$1.palette.background.default, color: theme$1.palette.text.primary, fontFamily: theme$1.typography.fontFamily, height: '100%', scrollBehavior: 'smooth', textRendering: 'optimizeSpeed', '@media print': {
-                backgroundColor: theme$1.palette.common.white
+        body: __assign(__assign({}, theme$2.typography.variants.body1), { backgroundColor: theme$2.palette.background.default, color: theme$2.palette.text.primary, fontFamily: theme$2.typography.fontFamily, height: '100%', scrollBehavior: 'smooth', textRendering: 'optimizeSpeed', '@media print': {
+                backgroundColor: theme$2.palette.common.white
             }, '&::backdrop': {
-                backgroundColor: theme$1.palette.background.default
+                backgroundColor: theme$2.palette.background.default
             } }),
         'input, button, textarea, select': {
             font: 'inherit'
@@ -23633,11 +23659,11 @@ function Breadcrumbs(props) {
 
 function ButtonStyles(theme) {
     return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
+        borderRadius: theme.shape.borderRadius * 3
     }, 'Button');
 }
-useTheme$2();
-var ButtonStyle = ButtonStyles();
+var theme$1 = useTheme$2();
+var ButtonStyle = ButtonStyles(theme$1);
 function Button(props) {
     var defaultProps = {
     /* Add custom prop defaults here */
@@ -24403,6 +24429,21 @@ function TextField(props) {
     return jsxRuntimeExports.jsx(material.TextField, __assign({ sx: TextFieldStyle }, composedProps));
 }
 
+function FormGroupStyles(theme) {
+    return applyOverrides({
+    /* Add custom styles here using JSS and add the class names to the Classes type */
+    }, 'FormGroup');
+}
+useTheme$2();
+var FormGroupStyle = FormGroupStyles();
+function FormGroup(props) {
+    var defaultProps = {
+    /* Add custom prop defaults here */
+    };
+    var composedProps = __assign(__assign({}, defaultProps), props);
+    return jsxRuntimeExports.jsx(material.FormGroup, __assign({ sx: FormGroupStyle }, composedProps));
+}
+
 var FormContentClassKey = getClassKey('form-content');
 function FormContentStyles(theme) {
     return applyOverrides({
@@ -24425,13 +24466,17 @@ function composeFormContentInput(formInput) {
         case InputControls.Checkbox:
             controlEl = jsxRuntimeExports.jsx(Checkbox, __assign({}, rest), key);
             break;
+        case InputControls.CheckboxGroup:
+            var checkboxElements = arrayify(rest['elements']);
+            controlEl = (jsxRuntimeExports.jsxs(FormGroup, { children: [jsxRuntimeExports.jsx(FormLabel, { id: rest['labelId'], children: label }), checkboxElements.map(function (element, index) { return (jsxRuntimeExports.jsx(FormControlLabel, __assign({ control: jsxRuntimeExports.jsx(Checkbox, {}) }, element), index)); })] }));
+            return controlEl;
         case InputControls.Radio:
             controlEl = jsxRuntimeExports.jsx(Radio, __assign({}, rest), key);
             break;
         case InputControls.RadioGroup:
             var name_1 = rest['name'] || key;
-            var elements = arrayify(rest['elements']);
-            controlEl = (jsxRuntimeExports.jsxs(FormControl, { children: [jsxRuntimeExports.jsx(FormLabel, { id: rest['labelId'], children: label }), jsxRuntimeExports.jsx(RadioGroup, { name: name_1, defaultValue: rest['defaultValue'], children: elements.map(function (element, index) { return (jsxRuntimeExports.jsx(FormControlLabel, __assign({ control: jsxRuntimeExports.jsx(Radio, {}) }, element), index)); }) }, key)] }));
+            var radioElements = arrayify(rest['elements']);
+            controlEl = (jsxRuntimeExports.jsxs(FormControl, { children: [jsxRuntimeExports.jsx(FormLabel, { id: rest['labelId'], children: label }), jsxRuntimeExports.jsx(RadioGroup, { name: name_1, defaultValue: rest['defaultValue'], children: radioElements.map(function (element, index) { return (jsxRuntimeExports.jsx(FormControlLabel, __assign({ control: jsxRuntimeExports.jsx(Radio, {}) }, element), index)); }) }, key)] }));
             return controlEl;
         case InputControls.Select:
             var options_1 = arrayify(rest['options']);
@@ -24455,21 +24500,6 @@ function FormContent(props) {
     var children = composedProps.children, direction = composedProps.direction, gap = composedProps.gap, inputs = composedProps.inputs;
     var composedInputs = arrayify(inputs);
     return (jsxRuntimeExports.jsxs(Flex, { alignContent: "flexStart", alignItems: "flexStart", flexDirection: direction, gap: gap, children: [children, composedInputs.map(function (input, index) { return (input ? composeFormContentInput(__assign({ key: "".concat(input.control, "-").concat(index) }, input)) : null); })] }));
-}
-
-function FormGroupStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'FormGroup');
-}
-useTheme$2();
-var FormGroupStyle = FormGroupStyles();
-function FormGroup(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.FormGroup, __assign({ sx: FormGroupStyle }, composedProps));
 }
 
 function FormHelperTextStyles(theme) {
@@ -25504,10 +25534,10 @@ function Zoom(props) {
 
 /**
  * WARNING: Don't import this directly.
- * Use `MuiError` from `@mui-internal/babel-macros/MuiError.macro` instead.
+ * Use `MuiError` from `@mui/internal-babel-macros/MuiError.macro` instead.
  * @param {number} code
  */
-function formatMuiErrorMessage(code) {
+function formatMuiErrorMessage$1(code) {
   // Apply babel-plugin-transform-template-literals in loose mode
   // loose mode is safe if we're concatenating primitives
   // see https://babeljs.io/docs/en/babel-plugin-transform-template-literals#loose
@@ -25521,6 +25551,11 @@ function formatMuiErrorMessage(code) {
   return 'Minified MUI error #' + code + '; visit ' + url + ' for the full message.';
   /* eslint-enable prefer-template */
 }
+
+var formatMuiErrorMessage = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: formatMuiErrorMessage$1
+});
 
 var THEME_ID = '$$material';
 
@@ -26778,79 +26813,7 @@ function deepmerge(target, source, options = {
   return output;
 }
 
-// This module is based on https://github.com/airbnb/prop-types-exact repository.
-// However, in order to reduce the number of dependencies and to remove some extra safe checks
-// the module was forked.
-
-const specialProperty = 'exact-prop: \u200b';
-function exactProp(propTypes) {
-  if (process.env.NODE_ENV === 'production') {
-    return propTypes;
-  }
-  return _extends({}, propTypes, {
-    [specialProperty]: props => {
-      const unsupportedProps = Object.keys(props).filter(prop => !propTypes.hasOwnProperty(prop));
-      if (unsupportedProps.length > 0) {
-        return new Error(`The following props are not supported: ${unsupportedProps.map(prop => `\`${prop}\``).join(', ')}. Please remove them.`);
-      }
-      return null;
-    }
-  });
-}
-
-// It should to be noted that this function isn't equivalent to `text-transform: capitalize`.
-//
-// A strict capitalization should uppercase the first letter of each word in the sentence.
-// We only handle the first word.
-function capitalize(string) {
-  if (typeof string !== 'string') {
-    throw new Error(process.env.NODE_ENV !== "production" ? `MUI: \`capitalize(string)\` expects a string argument.` : formatMuiErrorMessage(7));
-  }
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
-const defaultGenerator = componentName => componentName;
-const createClassNameGenerator = () => {
-  let generate = defaultGenerator;
-  return {
-    configure(generator) {
-      generate = generator;
-    },
-    generate(componentName) {
-      return generate(componentName);
-    },
-    reset() {
-      generate = defaultGenerator;
-    }
-  };
-};
-const ClassNameGenerator = createClassNameGenerator();
-var ClassNameGenerator$1 = ClassNameGenerator;
-
-const globalStateClasses = {
-  active: 'active',
-  checked: 'checked',
-  completed: 'completed',
-  disabled: 'disabled',
-  error: 'error',
-  expanded: 'expanded',
-  focused: 'focused',
-  focusVisible: 'focusVisible',
-  open: 'open',
-  readOnly: 'readOnly',
-  required: 'required',
-  selected: 'selected'
-};
-function generateUtilityClass(componentName, slot, globalStatePrefix = 'Mui') {
-  const globalStateClass = globalStateClasses[slot];
-  return globalStateClass ? `${globalStatePrefix}-${globalStateClass}` : `${ClassNameGenerator$1.generate(componentName)}-${slot}`;
-}
-
-function clamp(val, min = Number.MIN_SAFE_INTEGER, max = Number.MAX_SAFE_INTEGER) {
-  return Math.max(min, Math.min(val, max));
-}
-
-const _excluded$6 = ["values", "unit", "step"];
+const _excluded$7 = ["values", "unit", "step"];
 const sortBreakpointsValues = values => {
   const breakpointsAsArray = Object.keys(values).map(key => ({
     key,
@@ -26884,7 +26847,7 @@ function createBreakpoints(breakpoints) {
       unit = 'px',
       step = 5
     } = breakpoints,
-    other = _objectWithoutPropertiesLoose(breakpoints, _excluded$6);
+    other = _objectWithoutPropertiesLoose(breakpoints, _excluded$7);
   const sortedValues = sortBreakpointsValues(values);
   const keys = Object.keys(sortedValues);
   function up(key) {
@@ -27008,6 +26971,17 @@ function removeUnusedBreakpoints(breakpointKeys, style) {
     }
     return acc;
   }, style);
+}
+
+// It should to be noted that this function isn't equivalent to `text-transform: capitalize`.
+//
+// A strict capitalization should uppercase the first letter of each word in the sentence.
+// We only handle the first word.
+function capitalize(string) {
+  if (typeof string !== 'string') {
+    throw new Error(process.env.NODE_ENV !== "production" ? `MUI: \`capitalize(string)\` expects a string argument.` : formatMuiErrorMessage$1(7));
+  }
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 function getPath(obj, path, checkVars = true) {
@@ -27977,7 +27951,7 @@ function applyStyles(key, styles) {
   return {};
 }
 
-const _excluded$5 = ["breakpoints", "palette", "spacing", "shape"];
+const _excluded$6 = ["breakpoints", "palette", "spacing", "shape"];
 function createTheme$1(options = {}, ...args) {
   const {
       breakpoints: breakpointsInput = {},
@@ -27985,7 +27959,7 @@ function createTheme$1(options = {}, ...args) {
       spacing: spacingInput,
       shape: shapeInput = {}
     } = options,
-    other = _objectWithoutPropertiesLoose(options, _excluded$5);
+    other = _objectWithoutPropertiesLoose(options, _excluded$6);
   const breakpoints = createBreakpoints(breakpointsInput);
   const spacing = createSpacing(spacingInput);
   let muiTheme = deepmerge({
@@ -28019,215 +27993,70 @@ function useTheme$1(defaultTheme = null) {
   return !contextTheme || isObjectEmpty(contextTheme) ? defaultTheme : contextTheme;
 }
 
-/**
- * Returns a number whose value is limited to the given range.
- * @param {number} value The value to be clamped
- * @param {number} min The lower boundary of the output range
- * @param {number} max The upper boundary of the output range
- * @returns {number} A number in the range [min, max]
- */
-function clampWrapper(value, min = 0, max = 1) {
-  if (process.env.NODE_ENV !== 'production') {
-    if (value < min || value > max) {
-      console.error(`MUI: The value provided ${value} is out of range [${min}, ${max}].`);
-    }
-  }
-  return clamp(value, min, max);
-}
-
-/**
- * Converts a color from CSS hex format to CSS rgb format.
- * @param {string} color - Hex color, i.e. #nnn or #nnnnnn
- * @returns {string} A CSS rgb color string
- */
-function hexToRgb(color) {
-  color = color.slice(1);
-  const re = new RegExp(`.{1,${color.length >= 6 ? 2 : 1}}`, 'g');
-  let colors = color.match(re);
-  if (colors && colors[0].length === 1) {
-    colors = colors.map(n => n + n);
-  }
-  return colors ? `rgb${colors.length === 4 ? 'a' : ''}(${colors.map((n, index) => {
-    return index < 3 ? parseInt(n, 16) : Math.round(parseInt(n, 16) / 255 * 1000) / 1000;
-  }).join(', ')})` : '';
-}
-
-/**
- * Returns an object with the type and values of a color.
- *
- * Note: Does not support rgb % values.
- * @param {string} color - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla(), color()
- * @returns {object} - A MUI color object: {type: string, values: number[]}
- */
-function decomposeColor(color) {
-  // Idempotent
-  if (color.type) {
-    return color;
-  }
-  if (color.charAt(0) === '#') {
-    return decomposeColor(hexToRgb(color));
-  }
-  const marker = color.indexOf('(');
-  const type = color.substring(0, marker);
-  if (['rgb', 'rgba', 'hsl', 'hsla', 'color'].indexOf(type) === -1) {
-    throw new Error(process.env.NODE_ENV !== "production" ? `MUI: Unsupported \`${color}\` color.
-The following formats are supported: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla(), color().` : formatMuiErrorMessage(9, color));
-  }
-  let values = color.substring(marker + 1, color.length - 1);
-  let colorSpace;
-  if (type === 'color') {
-    values = values.split(' ');
-    colorSpace = values.shift();
-    if (values.length === 4 && values[3].charAt(0) === '/') {
-      values[3] = values[3].slice(1);
-    }
-    if (['srgb', 'display-p3', 'a98-rgb', 'prophoto-rgb', 'rec-2020'].indexOf(colorSpace) === -1) {
-      throw new Error(process.env.NODE_ENV !== "production" ? `MUI: unsupported \`${colorSpace}\` color space.
-The following color spaces are supported: srgb, display-p3, a98-rgb, prophoto-rgb, rec-2020.` : formatMuiErrorMessage(10, colorSpace));
-    }
-  } else {
-    values = values.split(',');
-  }
-  values = values.map(value => parseFloat(value));
+const defaultGenerator = componentName => componentName;
+const createClassNameGenerator = () => {
+  let generate = defaultGenerator;
   return {
-    type,
-    values,
-    colorSpace
+    configure(generator) {
+      generate = generator;
+    },
+    generate(componentName) {
+      return generate(componentName);
+    },
+    reset() {
+      generate = defaultGenerator;
+    }
   };
+};
+const ClassNameGenerator = createClassNameGenerator();
+var ClassNameGenerator$1 = ClassNameGenerator;
+
+const globalStateClasses = {
+  active: 'active',
+  checked: 'checked',
+  completed: 'completed',
+  disabled: 'disabled',
+  error: 'error',
+  expanded: 'expanded',
+  focused: 'focused',
+  focusVisible: 'focusVisible',
+  open: 'open',
+  readOnly: 'readOnly',
+  required: 'required',
+  selected: 'selected'
+};
+function generateUtilityClass(componentName, slot, globalStatePrefix = 'Mui') {
+  const globalStateClass = globalStateClasses[slot];
+  return globalStateClass ? `${globalStatePrefix}-${globalStateClass}` : `${ClassNameGenerator$1.generate(componentName)}-${slot}`;
 }
 
-/**
- * Converts a color object with type and values to a string.
- * @param {object} color - Decomposed color
- * @param {string} color.type - One of: 'rgb', 'rgba', 'hsl', 'hsla', 'color'
- * @param {array} color.values - [n,n,n] or [n,n,n,n]
- * @returns {string} A CSS color string
- */
-function recomposeColor(color) {
-  const {
-    type,
-    colorSpace
-  } = color;
-  let {
-    values
-  } = color;
-  if (type.indexOf('rgb') !== -1) {
-    // Only convert the first 3 values to int (i.e. not alpha)
-    values = values.map((n, i) => i < 3 ? parseInt(n, 10) : n);
-  } else if (type.indexOf('hsl') !== -1) {
-    values[1] = `${values[1]}%`;
-    values[2] = `${values[2]}%`;
-  }
-  if (type.indexOf('color') !== -1) {
-    values = `${colorSpace} ${values.join(' ')}`;
-  } else {
-    values = `${values.join(', ')}`;
-  }
-  return `${type}(${values})`;
+function clamp$1(val, min = Number.MIN_SAFE_INTEGER, max = Number.MAX_SAFE_INTEGER) {
+  return Math.max(min, Math.min(val, max));
 }
 
-/**
- * Converts a color from hsl format to rgb format.
- * @param {string} color - HSL color values
- * @returns {string} rgb color values
- */
-function hslToRgb(color) {
-  color = decomposeColor(color);
-  const {
-    values
-  } = color;
-  const h = values[0];
-  const s = values[1] / 100;
-  const l = values[2] / 100;
-  const a = s * Math.min(l, 1 - l);
-  const f = (n, k = (n + h / 30) % 12) => l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
-  let type = 'rgb';
-  const rgb = [Math.round(f(0) * 255), Math.round(f(8) * 255), Math.round(f(4) * 255)];
-  if (color.type === 'hsla') {
-    type += 'a';
-    rgb.push(values[3]);
+var clamp = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: clamp$1
+});
+
+// This module is based on https://github.com/airbnb/prop-types-exact repository.
+// However, in order to reduce the number of dependencies and to remove some extra safe checks
+// the module was forked.
+
+const specialProperty = 'exact-prop: \u200b';
+function exactProp(propTypes) {
+  if (process.env.NODE_ENV === 'production') {
+    return propTypes;
   }
-  return recomposeColor({
-    type,
-    values: rgb
+  return _extends({}, propTypes, {
+    [specialProperty]: props => {
+      const unsupportedProps = Object.keys(props).filter(prop => !propTypes.hasOwnProperty(prop));
+      if (unsupportedProps.length > 0) {
+        return new Error(`The following props are not supported: ${unsupportedProps.map(prop => `\`${prop}\``).join(', ')}. Please remove them.`);
+      }
+      return null;
+    }
   });
-}
-/**
- * The relative brightness of any point in a color space,
- * normalized to 0 for darkest black and 1 for lightest white.
- *
- * Formula: https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
- * @param {string} color - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla(), color()
- * @returns {number} The relative brightness of the color in the range 0 - 1
- */
-function getLuminance(color) {
-  color = decomposeColor(color);
-  let rgb = color.type === 'hsl' || color.type === 'hsla' ? decomposeColor(hslToRgb(color)).values : color.values;
-  rgb = rgb.map(val => {
-    if (color.type !== 'color') {
-      val /= 255; // normalized
-    }
-    return val <= 0.03928 ? val / 12.92 : ((val + 0.055) / 1.055) ** 2.4;
-  });
-
-  // Truncate at 3 digits
-  return Number((0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2]).toFixed(3));
-}
-
-/**
- * Calculates the contrast ratio between two colors.
- *
- * Formula: https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
- * @param {string} foreground - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla()
- * @param {string} background - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla()
- * @returns {number} A contrast ratio value in the range 0 - 21.
- */
-function getContrastRatio(foreground, background) {
-  const lumA = getLuminance(foreground);
-  const lumB = getLuminance(background);
-  return (Math.max(lumA, lumB) + 0.05) / (Math.min(lumA, lumB) + 0.05);
-}
-
-/**
- * Darkens a color.
- * @param {string} color - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla(), color()
- * @param {number} coefficient - multiplier in the range 0 - 1
- * @returns {string} A CSS color string. Hex input values are returned as rgb
- */
-function darken(color, coefficient) {
-  color = decomposeColor(color);
-  coefficient = clampWrapper(coefficient);
-  if (color.type.indexOf('hsl') !== -1) {
-    color.values[2] *= 1 - coefficient;
-  } else if (color.type.indexOf('rgb') !== -1 || color.type.indexOf('color') !== -1) {
-    for (let i = 0; i < 3; i += 1) {
-      color.values[i] *= 1 - coefficient;
-    }
-  }
-  return recomposeColor(color);
-}
-
-/**
- * Lightens a color.
- * @param {string} color - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla(), color()
- * @param {number} coefficient - multiplier in the range 0 - 1
- * @returns {string} A CSS color string. Hex input values are returned as rgb
- */
-function lighten(color, coefficient) {
-  color = decomposeColor(color);
-  coefficient = clampWrapper(coefficient);
-  if (color.type.indexOf('hsl') !== -1) {
-    color.values[2] += (100 - color.values[2]) * coefficient;
-  } else if (color.type.indexOf('rgb') !== -1) {
-    for (let i = 0; i < 3; i += 1) {
-      color.values[i] += (255 - color.values[i]) * coefficient;
-    }
-  } else if (color.type.indexOf('color') !== -1) {
-    for (let i = 0; i < 3; i += 1) {
-      color.values[i] += (1 - color.values[i]) * coefficient;
-    }
-  }
-  return recomposeColor(color);
 }
 
 const ThemeContext = /*#__PURE__*/reactExports.createContext(null);
@@ -28303,6 +28132,22 @@ if (process.env.NODE_ENV !== 'production') {
   process.env.NODE_ENV !== "production" ? ThemeProvider$3.propTypes = exactProp(ThemeProvider$3.propTypes) : void 0;
 }
 
+const _excluded$5 = ["value"];
+const RtlContext = /*#__PURE__*/reactExports.createContext();
+function RtlProvider(_ref) {
+  let {
+      value
+    } = _ref,
+    props = _objectWithoutPropertiesLoose(_ref, _excluded$5);
+  return /*#__PURE__*/jsxRuntimeExports.jsx(RtlContext.Provider, _extends({
+    value: value != null ? value : true
+  }, props));
+}
+process.env.NODE_ENV !== "production" ? RtlProvider.propTypes = {
+  children: PropTypes.node,
+  value: PropTypes.bool
+} : void 0;
+
 const EMPTY_THEME = {};
 function useThemeScoping(themeId, upperTheme, localTheme, isPrivate = false) {
   return reactExports.useMemo(() => {
@@ -28347,11 +28192,15 @@ function ThemeProvider$2(props) {
   }
   const engineTheme = useThemeScoping(themeId, upperTheme, localTheme);
   const privateTheme = useThemeScoping(themeId, upperPrivateTheme, localTheme, true);
+  const rtlValue = engineTheme.direction === 'rtl';
   return /*#__PURE__*/jsxRuntimeExports.jsx(ThemeProvider$3, {
     theme: privateTheme,
     children: /*#__PURE__*/jsxRuntimeExports.jsx(react$1.ThemeContext.Provider, {
       value: engineTheme,
-      children: children
+      children: /*#__PURE__*/jsxRuntimeExports.jsx(RtlProvider, {
+        value: rtlValue,
+        children: children
+      })
     })
   });
 }
@@ -28391,6 +28240,396 @@ function createMixins(breakpoints, mixins) {
       }
     }
   }, mixins);
+}
+
+var colorManipulator = {};
+
+var interopRequireDefault = {exports: {}};
+
+(function (module) {
+	function _interopRequireDefault(obj) {
+	  return obj && obj.__esModule ? obj : {
+	    "default": obj
+	  };
+	}
+	module.exports = _interopRequireDefault, module.exports.__esModule = true, module.exports["default"] = module.exports; 
+} (interopRequireDefault));
+
+var interopRequireDefaultExports = interopRequireDefault.exports;
+
+var require$$1 = /*@__PURE__*/getAugmentedNamespace(formatMuiErrorMessage);
+
+var require$$2 = /*@__PURE__*/getAugmentedNamespace(clamp);
+
+var _interopRequireDefault = interopRequireDefaultExports;
+Object.defineProperty(colorManipulator, "__esModule", {
+  value: true
+});
+colorManipulator.alpha = alpha;
+colorManipulator.blend = blend;
+colorManipulator.colorChannel = void 0;
+var darken_1 = colorManipulator.darken = darken;
+colorManipulator.decomposeColor = decomposeColor;
+colorManipulator.emphasize = emphasize;
+var getContrastRatio_1 = colorManipulator.getContrastRatio = getContrastRatio;
+colorManipulator.getLuminance = getLuminance;
+colorManipulator.hexToRgb = hexToRgb;
+colorManipulator.hslToRgb = hslToRgb;
+var lighten_1 = colorManipulator.lighten = lighten;
+colorManipulator.private_safeAlpha = private_safeAlpha;
+colorManipulator.private_safeColorChannel = void 0;
+colorManipulator.private_safeDarken = private_safeDarken;
+colorManipulator.private_safeEmphasize = private_safeEmphasize;
+colorManipulator.private_safeLighten = private_safeLighten;
+colorManipulator.recomposeColor = recomposeColor;
+colorManipulator.rgbToHex = rgbToHex;
+var _formatMuiErrorMessage2 = _interopRequireDefault(require$$1);
+var _clamp = _interopRequireDefault(require$$2);
+/* eslint-disable @typescript-eslint/naming-convention */
+
+/**
+ * Returns a number whose value is limited to the given range.
+ * @param {number} value The value to be clamped
+ * @param {number} min The lower boundary of the output range
+ * @param {number} max The upper boundary of the output range
+ * @returns {number} A number in the range [min, max]
+ */
+function clampWrapper(value, min = 0, max = 1) {
+  if (process.env.NODE_ENV !== 'production') {
+    if (value < min || value > max) {
+      console.error(`MUI: The value provided ${value} is out of range [${min}, ${max}].`);
+    }
+  }
+  return (0, _clamp.default)(value, min, max);
+}
+
+/**
+ * Converts a color from CSS hex format to CSS rgb format.
+ * @param {string} color - Hex color, i.e. #nnn or #nnnnnn
+ * @returns {string} A CSS rgb color string
+ */
+function hexToRgb(color) {
+  color = color.slice(1);
+  const re = new RegExp(`.{1,${color.length >= 6 ? 2 : 1}}`, 'g');
+  let colors = color.match(re);
+  if (colors && colors[0].length === 1) {
+    colors = colors.map(n => n + n);
+  }
+  return colors ? `rgb${colors.length === 4 ? 'a' : ''}(${colors.map((n, index) => {
+    return index < 3 ? parseInt(n, 16) : Math.round(parseInt(n, 16) / 255 * 1000) / 1000;
+  }).join(', ')})` : '';
+}
+function intToHex(int) {
+  const hex = int.toString(16);
+  return hex.length === 1 ? `0${hex}` : hex;
+}
+
+/**
+ * Returns an object with the type and values of a color.
+ *
+ * Note: Does not support rgb % values.
+ * @param {string} color - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla(), color()
+ * @returns {object} - A MUI color object: {type: string, values: number[]}
+ */
+function decomposeColor(color) {
+  // Idempotent
+  if (color.type) {
+    return color;
+  }
+  if (color.charAt(0) === '#') {
+    return decomposeColor(hexToRgb(color));
+  }
+  const marker = color.indexOf('(');
+  const type = color.substring(0, marker);
+  if (['rgb', 'rgba', 'hsl', 'hsla', 'color'].indexOf(type) === -1) {
+    throw new Error(process.env.NODE_ENV !== "production" ? `MUI: Unsupported \`${color}\` color.
+The following formats are supported: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla(), color().` : (0, _formatMuiErrorMessage2.default)(9, color));
+  }
+  let values = color.substring(marker + 1, color.length - 1);
+  let colorSpace;
+  if (type === 'color') {
+    values = values.split(' ');
+    colorSpace = values.shift();
+    if (values.length === 4 && values[3].charAt(0) === '/') {
+      values[3] = values[3].slice(1);
+    }
+    if (['srgb', 'display-p3', 'a98-rgb', 'prophoto-rgb', 'rec-2020'].indexOf(colorSpace) === -1) {
+      throw new Error(process.env.NODE_ENV !== "production" ? `MUI: unsupported \`${colorSpace}\` color space.
+The following color spaces are supported: srgb, display-p3, a98-rgb, prophoto-rgb, rec-2020.` : (0, _formatMuiErrorMessage2.default)(10, colorSpace));
+    }
+  } else {
+    values = values.split(',');
+  }
+  values = values.map(value => parseFloat(value));
+  return {
+    type,
+    values,
+    colorSpace
+  };
+}
+
+/**
+ * Returns a channel created from the input color.
+ *
+ * @param {string} color - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla(), color()
+ * @returns {string} - The channel for the color, that can be used in rgba or hsla colors
+ */
+const colorChannel = color => {
+  const decomposedColor = decomposeColor(color);
+  return decomposedColor.values.slice(0, 3).map((val, idx) => decomposedColor.type.indexOf('hsl') !== -1 && idx !== 0 ? `${val}%` : val).join(' ');
+};
+colorManipulator.colorChannel = colorChannel;
+const private_safeColorChannel = (color, warning) => {
+  try {
+    return colorChannel(color);
+  } catch (error) {
+    if (warning && process.env.NODE_ENV !== 'production') {
+      console.warn(warning);
+    }
+    return color;
+  }
+};
+
+/**
+ * Converts a color object with type and values to a string.
+ * @param {object} color - Decomposed color
+ * @param {string} color.type - One of: 'rgb', 'rgba', 'hsl', 'hsla', 'color'
+ * @param {array} color.values - [n,n,n] or [n,n,n,n]
+ * @returns {string} A CSS color string
+ */
+colorManipulator.private_safeColorChannel = private_safeColorChannel;
+function recomposeColor(color) {
+  const {
+    type,
+    colorSpace
+  } = color;
+  let {
+    values
+  } = color;
+  if (type.indexOf('rgb') !== -1) {
+    // Only convert the first 3 values to int (i.e. not alpha)
+    values = values.map((n, i) => i < 3 ? parseInt(n, 10) : n);
+  } else if (type.indexOf('hsl') !== -1) {
+    values[1] = `${values[1]}%`;
+    values[2] = `${values[2]}%`;
+  }
+  if (type.indexOf('color') !== -1) {
+    values = `${colorSpace} ${values.join(' ')}`;
+  } else {
+    values = `${values.join(', ')}`;
+  }
+  return `${type}(${values})`;
+}
+
+/**
+ * Converts a color from CSS rgb format to CSS hex format.
+ * @param {string} color - RGB color, i.e. rgb(n, n, n)
+ * @returns {string} A CSS rgb color string, i.e. #nnnnnn
+ */
+function rgbToHex(color) {
+  // Idempotent
+  if (color.indexOf('#') === 0) {
+    return color;
+  }
+  const {
+    values
+  } = decomposeColor(color);
+  return `#${values.map((n, i) => intToHex(i === 3 ? Math.round(255 * n) : n)).join('')}`;
+}
+
+/**
+ * Converts a color from hsl format to rgb format.
+ * @param {string} color - HSL color values
+ * @returns {string} rgb color values
+ */
+function hslToRgb(color) {
+  color = decomposeColor(color);
+  const {
+    values
+  } = color;
+  const h = values[0];
+  const s = values[1] / 100;
+  const l = values[2] / 100;
+  const a = s * Math.min(l, 1 - l);
+  const f = (n, k = (n + h / 30) % 12) => l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+  let type = 'rgb';
+  const rgb = [Math.round(f(0) * 255), Math.round(f(8) * 255), Math.round(f(4) * 255)];
+  if (color.type === 'hsla') {
+    type += 'a';
+    rgb.push(values[3]);
+  }
+  return recomposeColor({
+    type,
+    values: rgb
+  });
+}
+/**
+ * The relative brightness of any point in a color space,
+ * normalized to 0 for darkest black and 1 for lightest white.
+ *
+ * Formula: https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ * @param {string} color - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla(), color()
+ * @returns {number} The relative brightness of the color in the range 0 - 1
+ */
+function getLuminance(color) {
+  color = decomposeColor(color);
+  let rgb = color.type === 'hsl' || color.type === 'hsla' ? decomposeColor(hslToRgb(color)).values : color.values;
+  rgb = rgb.map(val => {
+    if (color.type !== 'color') {
+      val /= 255; // normalized
+    }
+    return val <= 0.03928 ? val / 12.92 : ((val + 0.055) / 1.055) ** 2.4;
+  });
+
+  // Truncate at 3 digits
+  return Number((0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2]).toFixed(3));
+}
+
+/**
+ * Calculates the contrast ratio between two colors.
+ *
+ * Formula: https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ * @param {string} foreground - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla()
+ * @param {string} background - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla()
+ * @returns {number} A contrast ratio value in the range 0 - 21.
+ */
+function getContrastRatio(foreground, background) {
+  const lumA = getLuminance(foreground);
+  const lumB = getLuminance(background);
+  return (Math.max(lumA, lumB) + 0.05) / (Math.min(lumA, lumB) + 0.05);
+}
+
+/**
+ * Sets the absolute transparency of a color.
+ * Any existing alpha values are overwritten.
+ * @param {string} color - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla(), color()
+ * @param {number} value - value to set the alpha channel to in the range 0 - 1
+ * @returns {string} A CSS color string. Hex input values are returned as rgb
+ */
+function alpha(color, value) {
+  color = decomposeColor(color);
+  value = clampWrapper(value);
+  if (color.type === 'rgb' || color.type === 'hsl') {
+    color.type += 'a';
+  }
+  if (color.type === 'color') {
+    color.values[3] = `/${value}`;
+  } else {
+    color.values[3] = value;
+  }
+  return recomposeColor(color);
+}
+function private_safeAlpha(color, value, warning) {
+  try {
+    return alpha(color, value);
+  } catch (error) {
+    if (warning && process.env.NODE_ENV !== 'production') {
+      console.warn(warning);
+    }
+    return color;
+  }
+}
+
+/**
+ * Darkens a color.
+ * @param {string} color - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla(), color()
+ * @param {number} coefficient - multiplier in the range 0 - 1
+ * @returns {string} A CSS color string. Hex input values are returned as rgb
+ */
+function darken(color, coefficient) {
+  color = decomposeColor(color);
+  coefficient = clampWrapper(coefficient);
+  if (color.type.indexOf('hsl') !== -1) {
+    color.values[2] *= 1 - coefficient;
+  } else if (color.type.indexOf('rgb') !== -1 || color.type.indexOf('color') !== -1) {
+    for (let i = 0; i < 3; i += 1) {
+      color.values[i] *= 1 - coefficient;
+    }
+  }
+  return recomposeColor(color);
+}
+function private_safeDarken(color, coefficient, warning) {
+  try {
+    return darken(color, coefficient);
+  } catch (error) {
+    if (warning && process.env.NODE_ENV !== 'production') {
+      console.warn(warning);
+    }
+    return color;
+  }
+}
+
+/**
+ * Lightens a color.
+ * @param {string} color - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla(), color()
+ * @param {number} coefficient - multiplier in the range 0 - 1
+ * @returns {string} A CSS color string. Hex input values are returned as rgb
+ */
+function lighten(color, coefficient) {
+  color = decomposeColor(color);
+  coefficient = clampWrapper(coefficient);
+  if (color.type.indexOf('hsl') !== -1) {
+    color.values[2] += (100 - color.values[2]) * coefficient;
+  } else if (color.type.indexOf('rgb') !== -1) {
+    for (let i = 0; i < 3; i += 1) {
+      color.values[i] += (255 - color.values[i]) * coefficient;
+    }
+  } else if (color.type.indexOf('color') !== -1) {
+    for (let i = 0; i < 3; i += 1) {
+      color.values[i] += (1 - color.values[i]) * coefficient;
+    }
+  }
+  return recomposeColor(color);
+}
+function private_safeLighten(color, coefficient, warning) {
+  try {
+    return lighten(color, coefficient);
+  } catch (error) {
+    if (warning && process.env.NODE_ENV !== 'production') {
+      console.warn(warning);
+    }
+    return color;
+  }
+}
+
+/**
+ * Darken or lighten a color, depending on its luminance.
+ * Light colors are darkened, dark colors are lightened.
+ * @param {string} color - CSS color, i.e. one of: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla(), color()
+ * @param {number} coefficient=0.15 - multiplier in the range 0 - 1
+ * @returns {string} A CSS color string. Hex input values are returned as rgb
+ */
+function emphasize(color, coefficient = 0.15) {
+  return getLuminance(color) > 0.5 ? darken(color, coefficient) : lighten(color, coefficient);
+}
+function private_safeEmphasize(color, coefficient, warning) {
+  try {
+    return emphasize(color, coefficient);
+  } catch (error) {
+    if (warning && process.env.NODE_ENV !== 'production') {
+      console.warn(warning);
+    }
+    return color;
+  }
+}
+
+/**
+ * Blend a transparent overlay color with a background color, resulting in a single
+ * RGB color.
+ * @param {string} background - CSS color
+ * @param {string} overlay - CSS color
+ * @param {number} opacity - Opacity multiplier in the range 0 - 1
+ * @param {number} [gamma=1.0] - Gamma correction factor. For gamma-correct blending, 2.2 is usual.
+ */
+function blend(background, overlay, opacity, gamma = 1.0) {
+  const blendChannel = (b, o) => Math.round((b ** (1 / gamma) * (1 - opacity) + o ** (1 / gamma) * opacity) ** gamma);
+  const backgroundColor = decomposeColor(background);
+  const overlayColor = decomposeColor(overlay);
+  const rgb = [blendChannel(backgroundColor.values[0], overlayColor.values[0]), blendChannel(backgroundColor.values[1], overlayColor.values[1]), blendChannel(backgroundColor.values[2], overlayColor.values[2])];
+  return recomposeColor({
+    type: 'rgb',
+    values: rgb
+  });
 }
 
 const common = {
@@ -28597,9 +28836,9 @@ function addLightOrDark(intent, direction, shade, tonalOffset) {
     if (intent.hasOwnProperty(shade)) {
       intent[direction] = intent[shade];
     } else if (direction === 'light') {
-      intent.light = lighten(intent.main, tonalOffsetLight);
+      intent.light = lighten_1(intent.main, tonalOffsetLight);
     } else if (direction === 'dark') {
-      intent.dark = darken(intent.main, tonalOffsetDark);
+      intent.dark = darken_1(intent.main, tonalOffsetDark);
     }
   }
 }
@@ -28706,9 +28945,9 @@ function createPalette(palette) {
   // Bootstrap: https://github.com/twbs/bootstrap/blob/1d6e3710dd447de1a200f29e8fa521f8a0908f70/scss/_functions.scss#L59
   // and material-components-web https://github.com/material-components/material-components-web/blob/ac46b8863c4dab9fc22c4c662dc6bd1b65dd652f/packages/mdc-theme/_functions.scss#L54
   function getContrastText(background) {
-    const contrastText = getContrastRatio(background, dark.text.primary) >= contrastThreshold ? dark.text.primary : light.text.primary;
+    const contrastText = getContrastRatio_1(background, dark.text.primary) >= contrastThreshold ? dark.text.primary : light.text.primary;
     if (process.env.NODE_ENV !== 'production') {
-      const contrast = getContrastRatio(background, contrastText);
+      const contrast = getContrastRatio_1(background, contrastText);
       if (contrast < 3) {
         console.error([`MUI: The contrast ratio of ${contrast}:1 for ${contrastText} on ${background}`, 'falls below the WCAG recommended absolute minimum contrast ratio of 3:1.', 'https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-contrast'].join('\n'));
       }
@@ -28728,7 +28967,7 @@ function createPalette(palette) {
     }
     if (!color.hasOwnProperty('main')) {
       throw new Error(process.env.NODE_ENV !== "production" ? `MUI: The color${name ? ` (${name})` : ''} provided to augmentColor(color) is invalid.
-The color object needs to have a \`main\` property or a \`${mainShade}\` property.` : formatMuiErrorMessage(11, name ? ` (${name})` : '', mainShade));
+The color object needs to have a \`main\` property or a \`${mainShade}\` property.` : formatMuiErrorMessage$1(11, name ? ` (${name})` : '', mainShade));
     }
     if (typeof color.main !== 'string') {
       throw new Error(process.env.NODE_ENV !== "production" ? `MUI: The color${name ? ` (${name})` : ''} provided to augmentColor(color) is invalid.
@@ -28744,7 +28983,7 @@ const theme1 = createTheme({ palette: {
 
 const theme2 = createTheme({ palette: {
   primary: { main: green[500] },
-} });` : formatMuiErrorMessage(12, name ? ` (${name})` : '', JSON.stringify(color.main)));
+} });` : formatMuiErrorMessage$1(12, name ? ` (${name})` : '', JSON.stringify(color.main)));
     }
     addLightOrDark(color, 'light', lightShade, tonalOffset);
     addLightOrDark(color, 'dark', darkShade, tonalOffset);
@@ -29029,7 +29268,7 @@ function createTheme(options = {}, ...args) {
     other = _objectWithoutPropertiesLoose(options, _excluded$1);
   if (options.vars) {
     throw new Error(process.env.NODE_ENV !== "production" ? `MUI: \`vars\` is a private field used for CSS variables support.
-Please use another name.` : formatMuiErrorMessage(18));
+Please use another name.` : formatMuiErrorMessage$1(18));
   }
   const palette = createPalette(paletteInput);
   const systemTheme = createTheme$1(options);
@@ -29514,12 +29753,12 @@ exports.ZoomStyle = ZoomStyle;
 exports.ZoomStyles = ZoomStyles;
 exports.addSheet = addSheet;
 exports.addSvg = addSvg;
-exports.alpha = alpha;
+exports.alpha = alpha$1;
 exports.applyOverrides = applyOverrides;
 exports.arrayify = arrayify;
 exports.breakpoints = breakpoints;
 exports.capitalize = capitalize$1;
-exports.clamp = clamp$1;
+exports.clamp = clamp$2;
 exports.composeFlexChildClasses = composeFlexChildClasses;
 exports.composeFlexClasses = composeFlexClasses;
 exports.composeFormContentInput = composeFormContentInput;

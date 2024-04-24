@@ -38,6 +38,7 @@ import { RadioGroup } from '../RadioGroup/index';
 import { Select } from '../Select/index';
 import { Switch } from '../Switch/index';
 import { TextField } from '../TextField/index';
+import { FormGroup } from '../FormGroup';
 export var FormContentClassKey = getClassKey('form-content');
 export function FormContentStyles(theme) {
     return applyOverrides({
@@ -60,13 +61,17 @@ export function composeFormContentInput(formInput) {
         case InputControls.Checkbox:
             controlEl = _jsx(Checkbox, __assign({}, rest), key);
             break;
+        case InputControls.CheckboxGroup:
+            var checkboxElements = arrayify(rest['elements']);
+            controlEl = (_jsxs(FormGroup, { children: [_jsx(FormLabel, { id: rest['labelId'], children: label }), checkboxElements.map(function (element, index) { return (_jsx(FormControlLabel, __assign({ control: _jsx(Checkbox, {}) }, element), index)); })] }));
+            return controlEl;
         case InputControls.Radio:
             controlEl = _jsx(Radio, __assign({}, rest), key);
             break;
         case InputControls.RadioGroup:
             var name_1 = rest['name'] || key;
-            var elements = arrayify(rest['elements']);
-            controlEl = (_jsxs(FormControl, { children: [_jsx(FormLabel, { id: rest['labelId'], children: label }), _jsx(RadioGroup, { name: name_1, defaultValue: rest['defaultValue'], children: elements.map(function (element, index) { return (_jsx(FormControlLabel, __assign({ control: _jsx(Radio, {}) }, element), index)); }) }, key)] }));
+            var radioElements = arrayify(rest['elements']);
+            controlEl = (_jsxs(FormControl, { children: [_jsx(FormLabel, { id: rest['labelId'], children: label }), _jsx(RadioGroup, { name: name_1, defaultValue: rest['defaultValue'], children: radioElements.map(function (element, index) { return (_jsx(FormControlLabel, __assign({ control: _jsx(Radio, {}) }, element), index)); }) }, key)] }));
             return controlEl;
         case InputControls.Select:
             var options_1 = arrayify(rest['options']);

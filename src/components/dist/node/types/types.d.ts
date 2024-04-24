@@ -368,6 +368,7 @@ export type RenderedCSS = {
 export type LabelPlacement = 'bottom' | 'end' | 'start' | 'top';
 export declare const InputControls: {
     readonly Checkbox: "checkbox";
+    readonly CheckboxGroup: "checkboxGroup";
     readonly Radio: "radio";
     readonly RadioGroup: "radioGroup";
     readonly Switch: "switch";
@@ -375,7 +376,7 @@ export declare const InputControls: {
     readonly TextField: "textField";
 };
 export type InputControlKeys = (typeof InputControls)[keyof typeof InputControls];
-export type InputControlOptions = CheckboxOptions | RadioOptions | RadioGroupOptions | SelectOptions | SwitchOptions | TextFieldOptions;
+export type InputControlOptions = CheckboxOptions | CheckboxGroupOptions | RadioOptions | RadioGroupOptions | SelectOptions | SwitchOptions | TextFieldOptions;
 export interface FormControlBaseOptions {
     checked?: boolean;
     checkedIcon?: React.ReactNode;
@@ -389,6 +390,13 @@ export interface FormControlBaseOptions {
     value?: string;
 }
 export interface CheckboxOptions extends FormControlBaseOptions {
+}
+export interface CheckboxGroupOptions {
+    defaultValue?: number | string;
+    elements: CheckboxOptions | CheckboxOptions[];
+    label?: string;
+    labelId?: string;
+    name?: string;
 }
 export interface RadioOptions extends FormControlBaseOptions {
     name?: string;

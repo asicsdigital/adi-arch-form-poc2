@@ -1,5 +1,6 @@
 export var InputControls = {
     Checkbox: 'checkbox',
+    CheckboxGroup: 'checkboxGroup',
     Radio: 'radio',
     RadioGroup: 'radioGroup',
     Switch: 'switch',

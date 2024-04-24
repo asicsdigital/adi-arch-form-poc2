@@ -16,7 +16,7 @@ import { applyOverrides } from '../../helpers/index';
 import { useTheme } from '../../styles/index';
 export function ButtonStyles(theme) {
     return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
+        borderRadius: theme.shape.borderRadius * 3
     }, 'Button');
 }
 var theme = useTheme();
