@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { CssBaseline } from '@mui/material';
 import '@fontsource/roboto/300.css';
@@ -14,7 +16,7 @@ const theme = createTheme({
 
 export function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider themeOptions={theme}>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       {children}
     </ThemeProvider>
