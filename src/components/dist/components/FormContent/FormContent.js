@@ -54,7 +54,7 @@ var theme = useTheme();
 export var FormContentStyle = FormContentStyles(theme);
 export function composeFormContentInput(formInput) {
     var controlEl;
-    var control = formInput.control, key = formInput.key, _a = formInput.options, options = _a === void 0 ? {} : _a;
+    var control = formInput.control, key = formInput.key, _a = formInput.options, options = _a === void 0 ? {} : _a, rhfControl = formInput.rhfControl;
     var composedOptions = __assign({ label: '' }, options);
     var label = composedOptions.label, rest = __rest(composedOptions, ["label"]);
     switch (control) {
@@ -81,7 +81,7 @@ export function composeFormContentInput(formInput) {
             controlEl = _jsx(Switch, __assign({}, rest), key);
             break;
         case InputControls.TextField:
-            return _jsx(TextField, __assign({}, composedOptions), key);
+            return _jsx(TextField, __assign({ rhfControl: rhfControl }, composedOptions), key);
     }
     return label ? _jsx(FormControlLabel, __assign({ control: controlEl, label: label }, rest), key) : controlEl;
 }
@@ -92,7 +92,9 @@ export function FormContent(props) {
         gap: theme.spacing.unit
     };
     var composedProps = __assign(__assign({}, defaultProps), props);
-    var children = composedProps.children, direction = composedProps.direction, gap = composedProps.gap, inputs = composedProps.inputs;
+    var children = composedProps.children, direction = composedProps.direction, gap = composedProps.gap, inputs = composedProps.inputs, rhfControl = composedProps.rhfControl;
     var composedInputs = arrayify(inputs);
-    return (_jsxs(Flex, { alignContent: "flexStart", alignItems: "flexStart", flexDirection: direction, gap: gap, children: [children, composedInputs.map(function (input, index) { return (input ? composeFormContentInput(__assign({ key: "".concat(input.control, "-").concat(index) }, input)) : null); })] }));
+    return (_jsxs(Flex, { alignContent: "flexStart", alignItems: "flexStart", flexDirection: direction, gap: gap, children: [children, composedInputs.map(function (input, index) {
+                return input ? composeFormContentInput(__assign(__assign({ key: "".concat(input.control, "-").concat(index) }, input), { rhfControl: rhfControl })) : null;
+            })] }));
 }

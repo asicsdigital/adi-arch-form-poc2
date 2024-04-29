@@ -1,9 +1,11 @@
 /// <reference types="react" />
+import { Control } from 'react-hook-form';
 import { CSSProperties, FormContentOptions, FormInput, Styles, Theme } from '../../types/index';
 type DirectionProp = CSSProperties['flexDirection'];
 type GapProp = CSSProperties['gap'];
 export interface FormContentProps extends FormContentOptions {
     children?: React.ReactNode;
+    rhfControl?: Control;
     direction?: DirectionProp;
     gap?: GapProp;
 }

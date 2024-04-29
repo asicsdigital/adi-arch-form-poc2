@@ -27,36 +27,29 @@ export interface Link {
   href: string;
 }
 
+export interface Metadata {
+  uid?: string;
+}
+
 export interface Checkbox {
-  /** Label */
-  label: string;
-  /** Options */
+  control?: string;
+  label?: string;
   input_options: {
-    /** Checked */
     checked?: boolean;
-    /** Color */
     color?: 'error' | 'info' | 'primary' | 'secondary' | 'success' | 'warning';
-    /** Disabled */
     disabled?: boolean;
-    /** Label placement */
     label_placement?: 'bottom' | 'end' | 'start' | 'top';
-    /** Required */
     required?: boolean;
-    /** Size */
     size?: 'small' | 'medium';
-    /** Value */
     value?: string;
   };
-  /** Control */
-  control?: string;
+  name?: string;
 }
 
 export interface Button {
-  /** Label */
+  control?: string;
   label?: string;
-  /** Options */
   input_options?: {
-    /** Color */
     color?:
       | 'default'
       | 'error'
@@ -66,11 +59,8 @@ export interface Button {
       | 'secondary'
       | 'success'
       | 'warning';
-    /** Variant */
     variant?: 'contained' | 'outlined' | 'text';
   };
-  /** Control */
-  control?: string;
 }
 
 export interface Form {
@@ -87,37 +77,25 @@ export interface Form {
 }
 
 export interface Select {
-  /** Label */
+  control?: string;
   label?: string;
-  /** Options */
   element_options?: {
-    /** Auto width */
     auto_width?: boolean;
-    /** Default open */
     default_open?: boolean;
-    /** Display empty */
     display_empty?: boolean;
-    /** Full width */
     full_width?: boolean;
-    /** Label ID */
     label_id?: string;
-    /** Multiple */
     multiple?: boolean;
-    /** Variant */
     variant?: 'filled' | 'outlined' | 'standard';
   };
-  /** Control */
-  control?: string;
 }
 
 export interface Radio {
-  /** Label */
+  control: string;
   label: string;
-  /** Options */
+  name: string;
   element_options: {
-    /** Checked */
     checked?: boolean;
-    /** Color */
     color?:
       | 'Default'
       | 'Error'
@@ -126,49 +104,31 @@ export interface Radio {
       | 'Secondary'
       | 'Success'
       | 'Warning';
-    /** Disabled */
     disabled?: boolean;
-    /** Label placement */
     label_placement?: 'bottom' | 'end' | 'start' | 'top';
-    /** Name */
-    name?: string;
-    /** Required */
     required?: boolean;
-    /** Size */
     size?: 'small' | 'medium';
-    /** Value */
     value?: string;
   };
-  /** Control */
-  control?: string;
 }
 
 export interface RadioGroup {
-  /** Label */
   label?: string;
-  /** Name */
   name?: string;
-  /** Control */
   control?: string;
 }
 
 export interface CheckboxGroup {
-  /** Label */
   label: string;
-  /** Name */
   name: string;
-  /** Control */
   control: string;
 }
 
 export interface TextField {
-  /** Label */
   label: string;
-  /** Options */
+  name?: string;
   element_options: {
-    /** Auto focus */
     auto_focus?: boolean;
-    /** Color */
     color?:
       | 'default'
       | 'error'
@@ -177,31 +137,17 @@ export interface TextField {
       | 'secondary'
       | 'success'
       | 'warning';
-    /** Disabled */
     disabled?: boolean;
-    /** Full width */
     full_width?: boolean;
-    /** Helper text */
     helper_text?: string;
-    /** Margin */
     margin?: 'dense' | 'none';
-    /** Max rows */
     max_rows?: number;
-    /** Min rows */
     min_rows?: number;
-    /** Multiline */
     multiline?: boolean;
-    /** Name */
-    name?: string;
-    /** Placeholder */
     placeholder?: string;
-    /** Required */
     required?: boolean;
-    /** Rows */
     rows?: number;
-    /** Size */
     size?: 'medium' | 'small';
-    /** Type */
     type?:
       | 'date'
       | 'email'
@@ -211,12 +157,9 @@ export interface TextField {
       | 'tel'
       | 'text'
       | 'url';
-    /** Value */
     value?: string;
-    /** Variant */
     variant?: 'filled' | 'outlined' | 'standard';
   };
-  /** Control */
   control: string;
 }
 

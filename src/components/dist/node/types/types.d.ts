@@ -1,5 +1,6 @@
 import * as CSS from 'csstype';
 import React from 'react';
+import { Control } from 'react-hook-form';
 import { Classes as ClassesJSS, Styles as StylesJSS, StyleSheet as StyleSheetJSS, StyleSheetFactoryOptions as StyleSheetFactoryOptionsJSS } from 'jss';
 import { Overrides } from './overrides';
 type Required<T> = {
@@ -461,6 +462,7 @@ export interface FormInput {
     control: InputControlKeys;
     key?: string;
     options?: InputControlOptions;
+    rhfControl?: Control;
 }
 export interface FormOptions {
     action?: string;

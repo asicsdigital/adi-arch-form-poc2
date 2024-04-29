@@ -1,13 +1,11 @@
 import { GetStaticProps } from 'next';
+import { FieldValues, useForm } from 'react-hook-form';
 import {
-  AppBar,
   Button,
   Container,
   Flex,
   Form,
   FormContent,
-  FormInput,
-  Toolbar,
   Typography
 } from '../components/dist';
 import { fetchSubscribe } from '../lib';
@@ -30,12 +28,13 @@ export const getStaticProps: GetStaticProps = async (): Promise<{
 
 export default function Home(props: HomeProps) {
   const { subscribePage } = props;
+  const { handleSubmit, control, reset } = useForm({});
+
+  const onSubmit = (data: FieldValues) => console.log(data);
+
   return (
     <>
-      <AppBar elevation={0} position="relative">
-        <Toolbar>Form POC</Toolbar>
-      </AppBar>
-      <Container sx={{ mt: 3 }}>
+      <Container sx={{ mt: 12 }}>
         <Typography paragraph variant="h1">
           {subscribePage.title}
         </Typography>
@@ -55,7 +54,9 @@ export default function Home(props: HomeProps) {
               <FormContent inputs={subscribePage.inputs.terms} />
             </Flex>
           ) : null}
-          <Button variant="contained">Submit</Button>
+          <Button onClick={handleSubmit(onSubmit)} variant="contained">
+            Submit
+          </Button>
         </Form>
       </Container>
     </>

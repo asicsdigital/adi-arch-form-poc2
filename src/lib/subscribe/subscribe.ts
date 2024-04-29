@@ -65,9 +65,10 @@ function prepareCheckboxGroup(checkboxGroup: {
   return {
     control: 'checkboxGroup',
     options: {
-      elements: arrayify(checkboxes).map((checkbox) =>
-        prepareCheckboxOptions(checkbox)
-      ),
+      elements: arrayify(checkboxes).map((checkbox) => {
+        checkbox.name = container.name;
+        return prepareCheckboxOptions(checkbox);
+      }),
       label: container.label,
       name: container.name
     }
@@ -76,14 +77,14 @@ function prepareCheckboxGroup(checkboxGroup: {
 
 function prepareRadio(radio: Radio): FormInput {
   const options = radio.element_options;
-  const { label } = radio;
+  const { label, name } = radio;
   const { label_placement, ...rest } = options;
   return {
     control: 'radio',
     options: {
       ...rest,
       label,
-      labelPlacement: label_placement
+      name
     }
   };
 }
@@ -101,7 +102,8 @@ function prepareTextField(field: TextField): FormInput {
       helperText: helper_text,
       label: field.label,
       maxRows: max_rows,
-      minRows: min_rows
+      minRows: min_rows,
+      name: field.name
     }
   };
 }
