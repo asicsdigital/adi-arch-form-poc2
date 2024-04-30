@@ -47,13 +47,14 @@ export function prepareSubscribePage(
 }
 
 function prepareCheckboxOptions(checkboxOptions: Checkbox): CheckboxOptions {
-  const { label } = checkboxOptions;
+  const { label, name } = checkboxOptions;
   const options = checkboxOptions.input_options;
   const { label_placement, ...rest } = options;
   return {
     ...rest,
     label,
-    labelPlacement: label_placement
+    labelPlacement: label_placement,
+    name
   };
 }
 
@@ -66,7 +67,6 @@ function prepareCheckboxGroup(checkboxGroup: {
     control: 'checkboxGroup',
     options: {
       elements: arrayify(checkboxes).map((checkbox) => {
-        checkbox.name = container.name;
         return prepareCheckboxOptions(checkbox);
       }),
       label: container.label,

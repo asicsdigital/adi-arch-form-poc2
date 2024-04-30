@@ -5,9 +5,9 @@ type DirectionProp = CSSProperties['flexDirection'];
 type GapProp = CSSProperties['gap'];
 export interface FormContentProps extends FormContentOptions {
     children?: React.ReactNode;
-    rhfControl?: Control;
     direction?: DirectionProp;
     gap?: GapProp;
+    rhfControl?: Control;
 }
 export declare const FormContentClassKey: string;
 export type FormContentClasses = 'root';

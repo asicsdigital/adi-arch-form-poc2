@@ -63,7 +63,10 @@ export function composeFormContentInput(formInput) {
             break;
         case InputControls.CheckboxGroup:
             var checkboxElements = arrayify(rest['elements']);
-            controlEl = (_jsxs(FormGroup, { children: [_jsx(FormLabel, { id: rest['labelId'], children: label }), checkboxElements.map(function (element, index) { return (_jsx(FormControlLabel, __assign({ control: _jsx(Checkbox, {}) }, element), index)); })] }));
+            controlEl = (_jsxs(FormGroup, { children: [_jsx(FormLabel, { id: rest['labelId'], children: label }), checkboxElements.map(function (element, index) {
+                        var value = element.value ? element.value : element.label;
+                        return _jsx(FormControlLabel, __assign({ control: _jsx(Checkbox, __assign({ value: value, rhfControl: rhfControl }, element)) }, element), index);
+                    })] }));
             return controlEl;
         case InputControls.Radio:
             controlEl = _jsx(Radio, __assign({}, rest), key);

@@ -1,6 +1,8 @@
+import { Control } from 'react-hook-form';
 import { CheckboxClasses as MuiCheckboxClasses, CheckboxProps as MuiCheckboxProps } from '@mui/material';
 import { Styles, Theme } from '../../types/index';
 export interface CheckboxProps extends MuiCheckboxProps {
+    rhfControl?: Control;
 }
 export type CheckboxClasses = Extract<MuiCheckboxClasses, 'root'>;
 export declare function CheckboxStyles(theme: Theme): Styles;

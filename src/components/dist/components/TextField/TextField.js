@@ -38,9 +38,10 @@ export function TextField(props) {
     /* Add custom prop defaults here */
     };
     var composedProps = __assign(__assign({}, defaultProps), props);
-    var helperText = composedProps.helperText, error = composedProps.error, onChange = composedProps.onChange, value = composedProps.value, rhfRest = __rest(composedProps, ["helperText", "error", "onChange", "value"]);
-    return composedProps.rhfControl ? (_jsx(Controller, { name: composedProps.name ? composedProps.name : '', control: composedProps.rhfControl, render: function (_a) {
+    var rhfControl = composedProps.rhfControl, muiProps = __rest(composedProps, ["rhfControl"]);
+    var helperText = muiProps.helperText, error = muiProps.error, name = muiProps.name, onChange = muiProps.onChange, value = muiProps.value, rhfProps = __rest(muiProps, ["helperText", "error", "name", "onChange", "value"]);
+    return rhfControl ? (_jsx(Controller, { name: name ? name : '', control: rhfControl, defaultValue: '', render: function (_a) {
             var _b = _a.field, onChange = _b.onChange, value = _b.value, error = _a.fieldState.error, formState = _a.formState;
-            return (_jsx(MuiTextField, __assign({ sx: TextFieldStyle, error: !!error, helperText: error ? error.message : composedProps.helperText, onChange: onChange, value: value }, rhfRest)));
-        } })) : (_jsx(MuiTextField, __assign({ sx: TextFieldStyle }, composedProps)));
+            return (_jsx(MuiTextField, __assign({ sx: TextFieldStyle, error: !!error, helperText: error ? error.message : helperText, onChange: onChange, value: value }, rhfProps)));
+        } })) : (_jsx(MuiTextField, __assign({ sx: TextFieldStyle }, muiProps)));
 }

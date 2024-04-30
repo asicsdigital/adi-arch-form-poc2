@@ -386,6 +386,7 @@ export interface FormControlBaseOptions {
     icon?: React.ReactNode;
     label?: string;
     labelPlacement?: LabelPlacement;
+    name?: string;
     required?: boolean;
     size?: 'small' | 'medium';
     value?: string;
