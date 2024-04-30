@@ -1,5 +1,9 @@
 import { ContactForm, ContactPage } from '../../types';
-import { FormInput } from '../../components/dist';
+import {
+  FormInput,
+  InputControlOptions,
+  fromSnakeToCamel
+} from '../../components/dist';
 
 export async function fetchContact(): Promise<ContactPage> {
   const url = `${process.env.CS_BASE_URL}/content_types/contact_form/entries?environment=development`;
@@ -16,7 +20,6 @@ export async function fetchContact(): Promise<ContactPage> {
 }
 
 export function prepareContactPage(contactForm: ContactForm): ContactPage {
-  console.log(contactForm);
   const { description, form, title } = contactForm;
   const { container, inputs } = form;
   const inputsSource = Object.values(inputs);

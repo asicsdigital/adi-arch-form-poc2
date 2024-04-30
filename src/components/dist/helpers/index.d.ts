@@ -10,6 +10,7 @@ export * from './fade/index';
 export * from './formatMs/index';
 export * from './fromCamelToKebab/index';
 export * from './fromKebabToCamel/index';
+export * from './fromSnakeToCamel/index';
 export * from './getClassKey/index';
 export * from './getContrastRatio/index';
 export * from './getLuminance/index';

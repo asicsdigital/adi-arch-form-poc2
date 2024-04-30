@@ -52,7 +52,7 @@ export function ContactForm(props: ContactFormProps) {
   return (
     <>
       <Form {...form}>
-        <Flex flexDirection="column">
+        <Flex alignItems="flexStart" flexDirection="column" gap={8}>
           {inputs.map((input: FormInput) => createInput[input.control](input))}
           <Button onClick={handleSubmit(onSubmit)} variant="contained">
             Submit
