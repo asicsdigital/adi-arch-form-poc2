@@ -13,3 +13,10 @@ export interface SubscribePage {
   inputs: SubscribePageInputs;
   title: string;
 }
+
+export interface ContactPage {
+  description: string;
+  form: FormOptions;
+  inputs: FormInput[];
+  title: string;
+}

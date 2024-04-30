@@ -1,3 +1,5 @@
+import { InputControlKeys } from '../components/dist';
+
 export interface File {
   uid: string;
   created_at: string;
@@ -27,29 +29,228 @@ export interface Link {
   href: string;
 }
 
-export interface Metadata {
-  uid?: string;
+export interface CheckboxBasic {
+  /** Label */
+  label?: string;
+  /** Name */
+  name?: string;
+  /** Checked */
+  checked?: boolean;
+  /** Required */
+  required?: boolean;
+  /** Value */
+  value?: string;
+  /** Control */
+  control: InputControlKeys;
 }
 
 export interface Checkbox {
-  control?: string;
+  /** Label */
   label?: string;
-  input_options: {
+  /** Name */
+  name?: string;
+  /** Options */
+  input_options?: {
+    /** Checked */
     checked?: boolean;
-    color?: 'error' | 'info' | 'primary' | 'secondary' | 'success' | 'warning';
+    /** Color */
+    color?:
+      | 'default'
+      | 'error'
+      | 'info'
+      | 'primary'
+      | 'secondary'
+      | 'success'
+      | 'warning';
+    /** Disabled */
     disabled?: boolean;
+    /** Label placement */
     label_placement?: 'bottom' | 'end' | 'start' | 'top';
+    /** Required */
     required?: boolean;
+    /** Size */
     size?: 'small' | 'medium';
+    /** Value */
     value?: string;
   };
+  /** Control */
+  control: InputControlKeys;
+}
+
+export interface Textfield {
+  /** Label */
+  label?: string;
+  /** Name */
   name?: string;
+  /** Type */
+  type?:
+    | 'date'
+    | 'email'
+    | 'file'
+    | 'password'
+    | 'search'
+    | 'tel'
+    | 'text'
+    | 'url';
+  /** Required */
+  required?: boolean;
+  /** Helper text */
+  helper_text?: string;
+  /** Placeholder */
+  placeholder?: string;
+  /** Multiline */
+  multiline?: boolean;
+  /** Rows */
+  rows?: number;
+  /** Full width */
+  full_width?: boolean;
+  /** Control */
+  control: InputControlKeys;
+}
+
+export interface TextField {
+  /** Label */
+  label?: string;
+  /** Name */
+  name?: string;
+  /** Options */
+  element_options?: {
+    /** Auto focus */
+    auto_focus?: boolean;
+    /** Color */
+    color?: 'error' | 'info' | 'primary' | 'secondary' | 'success' | 'warning';
+    /** Disabled */
+    disabled?: boolean;
+    /** Full width */
+    full_width?: boolean;
+    /** Helper text */
+    helper_text?: string;
+    /** Margin */
+    margin?: 'dense' | 'none';
+    /** Max rows */
+    max_rows?: number;
+    /** Min rows */
+    min_rows?: number;
+    /** Multiline */
+    multiline?: boolean;
+    /** Placeholder */
+    placeholder?: string;
+    /** Required */
+    required?: boolean;
+    /** Rows */
+    rows?: number;
+    /** Size */
+    size?: 'medium' | 'small';
+    /** Type */
+    type?:
+      | 'date'
+      | 'email'
+      | 'file'
+      | 'password'
+      | 'search'
+      | 'tel'
+      | 'text'
+      | 'url';
+    /** Value */
+    value?: string;
+    /** Variant */
+    variant?: 'filled' | 'outlined' | 'standard';
+  };
+  /** Control */
+  control: InputControlKeys;
+}
+
+export interface Select {
+  /** Label */
+  label?: string;
+  /** Name */
+  name?: string;
+  /** Options */
+  element_options?: {
+    /** Auto width */
+    auto_width?: boolean;
+    /** Default open */
+    default_open?: boolean;
+    /** Display empty */
+    display_empty?: boolean;
+    /** Full width */
+    full_width?: boolean;
+    /** Label ID */
+    label_id?: string;
+    /** Multiple */
+    multiple?: boolean;
+    /** Variant */
+    variant?: 'filled' | 'outlined' | 'standard';
+  };
+  /** Control */
+  control?: InputControlKeys;
+}
+
+export interface Radio {
+  /** Label */
+  label?: string;
+  /** Name */
+  name?: string;
+  /** Options */
+  element_options?: {
+    /** Checked */
+    checked?: boolean;
+    /** Color */
+    color?:
+      | 'default'
+      | 'error'
+      | 'info'
+      | 'primary'
+      | 'secondary'
+      | 'success'
+      | 'warning';
+    /** Disabled */
+    disabled?: boolean;
+    /** Label placement */
+    label_placement?: 'bottom' | 'end' | 'start' | 'top';
+    /** Required */
+    required?: boolean;
+    /** Size */
+    size?: 'small' | 'medium';
+    /** Value */
+    value?: string;
+  };
+  /** Control */
+  control?: InputControlKeys;
+}
+
+export interface CheckboxOptions {
+  /** Checked */
+  checked?: boolean;
+  /** Color */
+  color?:
+    | 'default'
+    | 'error'
+    | 'info'
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'warning';
+  /** Disabled */
+  disabled?: boolean;
+  /** Label placement */
+  label_placement?: 'bottom' | 'end' | 'start' | 'top';
+  /** Required */
+  required?: boolean;
+  /** Size */
+  size?: 'small' | 'medium';
+  /** Value */
+  value?: string;
+  /** Control */
+  control: InputControlKeys;
 }
 
 export interface Button {
-  control?: string;
+  /** Label */
   label?: string;
+  /** Options */
   input_options?: {
+    /** Color */
     color?:
       | 'default'
       | 'error'
@@ -59,8 +260,11 @@ export interface Button {
       | 'secondary'
       | 'success'
       | 'warning';
+    /** Variant */
     variant?: 'contained' | 'outlined' | 'text';
   };
+  /** Control */
+  control?: InputControlKeys;
 }
 
 export interface Form {
@@ -73,94 +277,25 @@ export interface Form {
   /** Name */
   name?: string;
   /** Control */
-  control?: string;
-}
-
-export interface Select {
-  control?: string;
-  label?: string;
-  element_options?: {
-    auto_width?: boolean;
-    default_open?: boolean;
-    display_empty?: boolean;
-    full_width?: boolean;
-    label_id?: string;
-    multiple?: boolean;
-    variant?: 'filled' | 'outlined' | 'standard';
-  };
-}
-
-export interface Radio {
-  control: string;
-  label: string;
-  name: string;
-  element_options: {
-    checked?: boolean;
-    color?:
-      | 'Default'
-      | 'Error'
-      | 'Info'
-      | 'Primary'
-      | 'Secondary'
-      | 'Success'
-      | 'Warning';
-    disabled?: boolean;
-    label_placement?: 'bottom' | 'end' | 'start' | 'top';
-    required?: boolean;
-    size?: 'small' | 'medium';
-    value?: string;
-  };
+  control?: InputControlKeys;
 }
 
 export interface RadioGroup {
+  /** Label */
   label?: string;
+  /** Name */
   name?: string;
-  control?: string;
+  /** Control */
+  control?: InputControlKeys;
 }
 
 export interface CheckboxGroup {
-  label: string;
-  name: string;
-  control: string;
-}
-
-export interface TextField {
-  label: string;
+  /** Label */
+  label?: string;
+  /** Name */
   name?: string;
-  element_options: {
-    auto_focus?: boolean;
-    color?:
-      | 'default'
-      | 'error'
-      | 'info'
-      | 'primary'
-      | 'secondary'
-      | 'success'
-      | 'warning';
-    disabled?: boolean;
-    full_width?: boolean;
-    helper_text?: string;
-    margin?: 'dense' | 'none';
-    max_rows?: number;
-    min_rows?: number;
-    multiline?: boolean;
-    placeholder?: string;
-    required?: boolean;
-    rows?: number;
-    size?: 'medium' | 'small';
-    type?:
-      | 'date'
-      | 'email'
-      | 'file'
-      | 'password'
-      | 'search'
-      | 'tel'
-      | 'text'
-      | 'url';
-    value?: string;
-    variant?: 'filled' | 'outlined' | 'standard';
-  };
-  control: string;
+  /** Control */
+  control?: InputControlKeys;
 }
 
 export interface ElementGroup {
@@ -220,47 +355,100 @@ export interface Seo {
   enable_search_indexing?: boolean;
 }
 
+export interface TextFieldOptions {}
+
+export interface ContactUs {
+  /** Title */
+  title: string;
+  /** Form */
+  form?: {
+    /** Email */
+    email?: TextField;
+    /** Subject */
+    subject?: TextField;
+    /** Comments */
+    comments?: TextField;
+  };
+}
+
+export interface FormExampleWithRegex {
+  /** Title */
+  title: string;
+  /** Customer form */
+  customer_form?: {
+    /** Form */
+    form?: Form;
+    /** Username */
+    username?: {
+      /** Label */
+      label?: string;
+      /** Options */
+      element_options?: TextFieldOptions;
+      /** Password */
+      password?: {
+        /** Label */
+        label?: string;
+        /** Options */
+        element_options?: TextFieldOptions;
+      };
+    };
+  };
+}
+
 export interface Subscribe {
   /** Title */
   title: string;
   /** Description */
   description?: string;
   /** Form */
-  form: {
+  form?: {
     /** Form options */
-    form_options: Form;
+    form_options?: Form;
     /** Username */
-    username: TextField;
+    username?: TextField;
     /** Password */
-    password: TextField;
+    password?: TextField;
     /** Full name */
-    full_name: TextField;
+    full_name?: TextField;
     /** Dates */
-    dates: TextField | TextField[];
+    dates?: TextField;
     /** Topics */
-    topics: {
+    topics?: {
       /** Container */
-      container: CheckboxGroup;
+      container?: CheckboxGroup;
       /** Checkboxes */
-      checkboxes: Checkbox | Checkbox[];
+      checkboxes?: Checkbox;
     };
     /** Terms */
-    terms: Radio;
+    terms?: Radio;
     /** Submit button */
-    submit_button: Button;
+    submit_button?: Button;
   };
 }
 
 export interface ContactForm {
-  /** Label */
+  /** Title */
   title: string;
+  /** Description */
+  description: string;
   /** Form */
-  form?: {
-    /** Text field */
-    text_field?: TextField;
-    /** Checkbox */
-    checkbox?: Checkbox;
-  }[];
+  form: {
+    /** Container */
+    container: Form;
+    /** Inputs */
+    inputs: {
+      /** Name */
+      name: Textfield;
+      /** Email */
+      email: Textfield;
+      /** Subject */
+      subject: Textfield;
+      /** Description */
+      description: Textfield;
+      /** Terms */
+      terms: CheckboxBasic;
+    };
+  };
 }
 
 export interface SignupForm {
