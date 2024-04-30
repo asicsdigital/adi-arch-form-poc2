@@ -16,6 +16,7 @@ export async function fetchContact(): Promise<ContactPage> {
 }
 
 export function prepareContactPage(contactForm: ContactForm): ContactPage {
+  console.log(contactForm);
   const { description, form, title } = contactForm;
   const { container, inputs } = form;
   const inputsSource = Object.values(inputs);
