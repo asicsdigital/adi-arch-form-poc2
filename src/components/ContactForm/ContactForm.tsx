@@ -2,8 +2,10 @@ import React from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
 import {
   Button,
+  Checkbox,
   Flex,
   Form,
+  FormControlLabel,
   FormOptions,
   FormInput,
   InputControlKeys,
@@ -20,7 +22,7 @@ interface ContactFormInput {
   email: string;
   subject: string;
   description: string;
-  terms: boolean | string;
+  terms: boolean;
 }
 
 const contactFormDefaults: ContactFormInput = {
@@ -28,7 +30,7 @@ const contactFormDefaults: ContactFormInput = {
   email: '',
   subject: '',
   description: '',
-  terms: ''
+  terms: false
 };
 
 type CreateInput = {
@@ -37,7 +39,7 @@ type CreateInput = {
 
 export function ContactForm(props: ContactFormProps) {
   const { form, inputs } = props;
-  const { handleSubmit, control } = useForm<ContactFormInput>({
+  const { handleSubmit, control: rhfControl } = useForm<ContactFormInput>({
     defaultValues: contactFormDefaults
   });
 
@@ -45,7 +47,16 @@ export function ContactForm(props: ContactFormProps) {
 
   const createInput: CreateInput = {
     checkbox: (input: FormInput): React.ReactNode => {
-      return <>checkbox</>;
+      const { control, ...options } = input;
+      return (
+        <FormControlLabel
+          control={
+            <Checkbox key={control} rhfControl={rhfControl} {...options} />
+          }
+          key={input.options?.label}
+          label={input.options?.label}
+        />
+      );
     },
     checkboxGroup: (input: FormInput): React.ReactNode => {
       return <>checkboxGroup</>;
@@ -63,7 +74,13 @@ export function ContactForm(props: ContactFormProps) {
       return <>select</>;
     },
     textField: (input: FormInput): React.ReactNode => {
-      return <TextField rhfControl={control} {...input.options} />;
+      return (
+        <TextField
+          key={input.options?.label}
+          rhfControl={rhfControl}
+          {...input.options}
+        />
+      );
     }
   };
 

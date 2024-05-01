@@ -106,7 +106,6 @@ export interface Textfield {
   full_width?: boolean;
   /** Control */
   control: InputControlKeys;
-  [key: string]: boolean | number | string | InputControlKeys | undefined;
 }
 
 export interface TextField {

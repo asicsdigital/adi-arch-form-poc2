@@ -24329,7 +24329,7 @@ function Checkbox(props) {
     var composedProps = __assign(__assign({}, defaultProps), props);
     var rhfControl = composedProps.rhfControl, muiProps = __rest(composedProps, ["rhfControl"]);
     var name = muiProps.name; muiProps.onChange; muiProps.value; var rhfProps = __rest(muiProps, ["name", "onChange", "value"]);
-    return rhfControl ? (jsxRuntimeExports.jsx(Controller, { name: name ? name : 'checkbox', control: rhfControl, defaultValue: '', render: function (_a) {
+    return rhfControl ? (jsxRuntimeExports.jsx(Controller, { name: name ? name : '', control: rhfControl, defaultValue: false, render: function (_a) {
             var props = _a.field;
             return jsxRuntimeExports.jsx(material.Checkbox, __assign({ sx: CheckboxStyle, onChange: props.onChange, checked: props.value }, rhfProps));
         } })) : (jsxRuntimeExports.jsx(material.Checkbox, __assign({ sx: CheckboxStyle }, muiProps)));

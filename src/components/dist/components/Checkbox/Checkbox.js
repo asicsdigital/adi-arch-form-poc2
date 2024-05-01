@@ -40,7 +40,7 @@ export function Checkbox(props) {
     var composedProps = __assign(__assign({}, defaultProps), props);
     var rhfControl = composedProps.rhfControl, muiProps = __rest(composedProps, ["rhfControl"]);
     var name = muiProps.name, onChange = muiProps.onChange, value = muiProps.value, rhfProps = __rest(muiProps, ["name", "onChange", "value"]);
-    return rhfControl ? (_jsx(Controller, { name: name ? name : 'checkbox', control: rhfControl, defaultValue: '', render: function (_a) {
+    return rhfControl ? (_jsx(Controller, { name: name ? name : '', control: rhfControl, defaultValue: false, render: function (_a) {
             var props = _a.field;
             return _jsx(MuiCheckbox, __assign({ sx: CheckboxStyle, onChange: props.onChange, checked: props.value }, rhfProps));
         } })) : (_jsx(MuiCheckbox, __assign({ sx: CheckboxStyle }, muiProps)));
