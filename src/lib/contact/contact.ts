@@ -1,9 +1,10 @@
-import { ContactForm, ContactPage } from '../../types';
 import {
-  FormInput,
-  InputControlOptions,
-  fromSnakeToCamel
-} from '../../components/dist';
+  CheckboxBasic,
+  ContactForm,
+  ContactPage,
+  Textfield
+} from '../../types';
+import { FormInput, fromSnakeToCamel } from '../../components/dist';
 
 export async function fetchContact(): Promise<ContactPage> {
   const url = `${process.env.CS_BASE_URL}/content_types/contact_form/entries?environment=development`;
@@ -22,11 +23,25 @@ export async function fetchContact(): Promise<ContactPage> {
 export function prepareContactPage(contactForm: ContactForm): ContactPage {
   const { description, form, title } = contactForm;
   const { container, inputs } = form;
-  const inputsSource = Object.values(inputs);
-  const preparedInputs: FormInput[] = inputsSource.map((input) => {
-    const { control, ...options } = input;
-    return { control, options };
+  const preparedInputs: FormInput[] = [];
+  const inputNames = ['name', 'email', 'subject', 'description', 'terms'];
+
+  inputNames.forEach((name) => {
+    const preparedInput = prepareInput(inputs[name]);
+    preparedInputs.push(preparedInput);
   });
 
   return { description, form: container, inputs: preparedInputs, title };
+}
+
+function prepareInput(input: CheckboxBasic | Textfield): FormInput {
+  const { control, ...options } = input;
+  const preparedOptions: Record<string, unknown> = {};
+  const inputKeys = Object.keys(options);
+  inputKeys.forEach((inputKey) => {
+    const key = inputKey as keyof typeof options;
+    const newKey = fromSnakeToCamel(key);
+    preparedOptions[newKey] = options[key];
+  });
+  return { control, options: preparedOptions };
 }

@@ -15,13 +15,31 @@ interface ContactFormProps {
   inputs: FormInput[];
 }
 
+interface ContactFormInput {
+  name: string;
+  email: string;
+  subject: string;
+  description: string;
+  terms: boolean | string;
+}
+
+const contactFormDefaults: ContactFormInput = {
+  name: '',
+  email: '',
+  subject: '',
+  description: '',
+  terms: ''
+};
+
 type CreateInput = {
   [key in InputControlKeys]: (input: FormInput) => React.ReactNode;
 };
 
 export function ContactForm(props: ContactFormProps) {
   const { form, inputs } = props;
-  const { handleSubmit, control } = useForm();
+  const { handleSubmit, control } = useForm<ContactFormInput>({
+    defaultValues: contactFormDefaults
+  });
 
   const onSubmit = (data: FieldValues) => console.log(data);
 

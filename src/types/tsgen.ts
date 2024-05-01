@@ -106,6 +106,7 @@ export interface Textfield {
   full_width?: boolean;
   /** Control */
   control: InputControlKeys;
+  [key: string]: boolean | number | string | InputControlKeys | undefined;
 }
 
 export interface TextField {
@@ -447,6 +448,7 @@ export interface ContactForm {
       description: Textfield;
       /** Terms */
       terms: CheckboxBasic;
+      [key: string]: CheckboxBasic | Textfield;
     };
   };
 }
