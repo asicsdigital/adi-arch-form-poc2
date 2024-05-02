@@ -24327,11 +24327,20 @@ function Checkbox(props) {
     /* Add custom prop defaults here */
     };
     var composedProps = __assign(__assign({}, defaultProps), props);
-    var rhfControl = composedProps.rhfControl, muiProps = __rest(composedProps, ["rhfControl"]);
-    var name = muiProps.name; muiProps.onChange; muiProps.value; var rhfProps = __rest(muiProps, ["name", "onChange", "value"]);
-    return rhfControl ? (jsxRuntimeExports.jsx(Controller, { name: name ? name : '', control: rhfControl, defaultValue: false, render: function (_a) {
-            var props = _a.field;
-            return jsxRuntimeExports.jsx(material.Checkbox, __assign({ sx: CheckboxStyle, onChange: props.onChange, checked: props.value }, rhfProps));
+    var rhfControl = composedProps.rhfControl, setValue = composedProps.setValue, muiProps = __rest(composedProps, ["rhfControl", "setValue"]);
+    var name = muiProps.name; muiProps.onChange; var rhfProps = __rest(muiProps, ["name", "onChange"]);
+    var checkboxName = name ? name : '';
+    var _a = reactExports.useState(false), checkboxValue = _a[0], setCheckboxValue = _a[1];
+    reactExports.useEffect(function () {
+        if (checkboxValue && setValue)
+            setValue(checkboxName, checkboxValue);
+    }, [checkboxName, setValue, checkboxValue]);
+    var handleChange = function (event, newValue) {
+        setCheckboxValue(newValue);
+    };
+    return rhfControl ? (jsxRuntimeExports.jsx(Controller, { name: checkboxName, control: rhfControl, defaultValue: false, render: function (_a) {
+            _a.field;
+            return jsxRuntimeExports.jsx(material.Checkbox, __assign({ sx: CheckboxStyle, name: name, onChange: handleChange, checked: checkboxValue }, rhfProps));
         } })) : (jsxRuntimeExports.jsx(material.Checkbox, __assign({ sx: CheckboxStyle }, muiProps)));
 }
 

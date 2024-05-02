@@ -30,7 +30,7 @@ const contactFormDefaults: ContactFormInput = {
   email: '',
   subject: '',
   description: '',
-  terms: false
+  terms: true
 };
 
 type CreateInput = {
@@ -39,7 +39,11 @@ type CreateInput = {
 
 export function ContactForm(props: ContactFormProps) {
   const { form, inputs } = props;
-  const { handleSubmit, control: rhfControl } = useForm<ContactFormInput>({
+  const {
+    handleSubmit,
+    control: rhfControl,
+    setValue
+  } = useForm<ContactFormInput>({
     defaultValues: contactFormDefaults
   });
 
@@ -47,14 +51,18 @@ export function ContactForm(props: ContactFormProps) {
 
   const createInput: CreateInput = {
     checkbox: (input: FormInput): React.ReactNode => {
-      const { control, ...options } = input;
+      const { control, options } = input;
       return (
         <FormControlLabel
           control={
-            <Checkbox key={control} rhfControl={rhfControl} {...options} />
+            <Checkbox
+              key={control}
+              setValue={setValue}
+              rhfControl={rhfControl}
+            />
           }
-          key={input.options?.label}
-          label={input.options?.label}
+          key={options?.label}
+          label={options?.label}
         />
       );
     },
