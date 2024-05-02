@@ -22,6 +22,7 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx } from "react/jsx-runtime";
+import { useEffect, useState } from 'react';
 import { Controller } from 'react-hook-form';
 import { Checkbox as MuiCheckbox } from '@mui/material';
 import { applyOverrides } from '../../helpers/index';
@@ -38,10 +39,19 @@ export function Checkbox(props) {
     /* Add custom prop defaults here */
     };
     var composedProps = __assign(__assign({}, defaultProps), props);
-    var rhfControl = composedProps.rhfControl, muiProps = __rest(composedProps, ["rhfControl"]);
-    var name = muiProps.name, onChange = muiProps.onChange, value = muiProps.value, rhfProps = __rest(muiProps, ["name", "onChange", "value"]);
-    return rhfControl ? (_jsx(Controller, { name: name ? name : 'checkbox', control: rhfControl, defaultValue: '', render: function (_a) {
-            var props = _a.field;
-            return _jsx(MuiCheckbox, __assign({ sx: CheckboxStyle, onChange: props.onChange, checked: props.value }, rhfProps));
+    var rhfControl = composedProps.rhfControl, setValue = composedProps.setValue, muiProps = __rest(composedProps, ["rhfControl", "setValue"]);
+    var name = muiProps.name, onChange = muiProps.onChange, rhfProps = __rest(muiProps, ["name", "onChange"]);
+    var checkboxName = name ? name : '';
+    var _a = useState(false), checkboxValue = _a[0], setCheckboxValue = _a[1];
+    useEffect(function () {
+        if (checkboxValue && setValue)
+            setValue(checkboxName, checkboxValue);
+    }, [checkboxName, setValue, checkboxValue]);
+    var handleChange = function (event, newValue) {
+        setCheckboxValue(newValue);
+    };
+    return rhfControl ? (_jsx(Controller, { name: checkboxName, control: rhfControl, defaultValue: false, render: function (_a) {
+            var field = _a.field;
+            return _jsx(MuiCheckbox, __assign({ sx: CheckboxStyle, name: name, onChange: handleChange, checked: checkboxValue }, rhfProps));
         } })) : (_jsx(MuiCheckbox, __assign({ sx: CheckboxStyle }, muiProps)));
 }

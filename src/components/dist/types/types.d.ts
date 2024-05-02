@@ -413,6 +413,7 @@ export interface RadioGroupOptions {
 export interface OptionOptions {
     id?: number | string;
     label?: string;
+    name?: string;
     value?: string;
 }
 export interface SelectOptions {
@@ -424,6 +425,7 @@ export interface SelectOptions {
     label?: string;
     labelId?: string;
     multiple?: boolean;
+    name?: string;
     native?: boolean;
     onChange?: never;
     onClose?: never;

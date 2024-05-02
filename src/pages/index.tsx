@@ -1,77 +1,36 @@
 import { GetStaticProps } from 'next';
-import { FieldValues, useForm } from 'react-hook-form';
-import {
-  Button,
-  Checkbox,
-  Container,
-  Flex,
-  Form,
-  FormControlLabel,
-  FormContent,
-  Typography
-} from '../components/dist';
-import { fetchSubscribe } from '../lib';
-import { SubscribePage } from '../types';
+import { Container, Typography } from '../components/dist';
+import { ContactForm } from '../components';
+import { fetchContact } from '../lib';
+import { ContactPage } from '../types';
 
 export interface HomeProps {
-  subscribePage: SubscribePage;
+  contactPage: ContactPage;
 }
 
 export const getStaticProps: GetStaticProps = async (): Promise<{
   props: HomeProps;
 }> => {
-  const subscribePage = await fetchSubscribe();
+  const contactPage = await fetchContact();
   return {
     props: {
-      subscribePage
+      contactPage
     }
   };
 };
 
 export default function Home(props: HomeProps) {
-  const { subscribePage } = props;
-  const { handleSubmit, control } = useForm({});
-
-  const onSubmit = (data: FieldValues) => console.log(data);
+  const { contactPage } = props;
+  const { description, form, inputs, title } = contactPage;
 
   return (
     <>
       <Container sx={{ mt: 12 }}>
         <Typography paragraph variant="h1">
-          {subscribePage.title}
+          {title}
         </Typography>
-        <Typography paragraph>{subscribePage.description}</Typography>
-        <Form {...subscribePage.form}>
-          {subscribePage ? (
-            <Flex flexDirection="column" gap={8}>
-              <FormContent
-                inputs={subscribePage.inputs.textFields}
-                rhfControl={control}
-              />
-              <FormContent
-                direction="row"
-                inputs={subscribePage.inputs.dateFields}
-                rhfControl={control}
-              />
-              <FormContent
-                direction="row"
-                inputs={subscribePage.inputs.topics}
-                rhfControl={control}
-              />
-              <FormContent
-                inputs={subscribePage.inputs.terms}
-                rhfControl={control}
-              />
-            </Flex>
-          ) : null}
-          <FormControlLabel
-            control={<Checkbox rhfControl={control} name="testingBox" />}
-            label="Checkbox group"
-          />
-          <Button onClick={handleSubmit(onSubmit)} variant="contained">
-            Submit
-          </Button>
-        </Form>
+        <Typography paragraph>{description}</Typography>
+        <ContactForm form={form} inputs={inputs} />
       </Container>
     </>
   );

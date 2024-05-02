@@ -457,14 +457,14 @@ var l=Symbol.for("react.element"),n=Symbol.for("react.portal"),p=Symbol.for("rea
 	function R(a,b,e,d,c){var k=typeof a;if("undefined"===k||"boolean"===k)a=null;var h=!1;if(null===a)h=!0;else switch(k){case "string":case "number":h=!0;break;case "object":switch(a.$$typeof){case l:case n:h=!0;}}if(h)return h=a,c=c(h),a=""===d?"."+Q(h,0):d,I(c)?(e="",null!=a&&(e=a.replace(P,"$&/")+"/"),R(c,b,e,"",function(a){return a})):null!=c&&(O(c)&&(c=N(c,e+(!c.key||h&&h.key===c.key?"":(""+c.key).replace(P,"$&/")+"/")+a)),b.push(c)),1;h=0;d=""===d?".":d+":";if(I(a))for(var g=0;g<a.length;g++){k=
 	a[g];var f=d+Q(k,g);h+=R(k,b,e,f,c);}else if(f=A(a),"function"===typeof f)for(a=f.call(a),g=0;!(k=a.next()).done;)k=k.value,f=d+Q(k,g++),h+=R(k,b,e,f,c);else if("object"===k)throw b=String(a),Error("Objects are not valid as a React child (found: "+("[object Object]"===b?"object with keys {"+Object.keys(a).join(", ")+"}":b)+"). If you meant to render a collection of children, use an array instead.");return h}
 	function S(a,b,e){if(null==a)return a;var d=[],c=0;R(a,d,"","",function(a){return b.call(e,a,c++)});return d}function T(a){if(-1===a._status){var b=a._result;b=b();b.then(function(b){if(0===a._status||-1===a._status)a._status=1,a._result=b;},function(b){if(0===a._status||-1===a._status)a._status=2,a._result=b;});-1===a._status&&(a._status=0,a._result=b);}if(1===a._status)return a._result.default;throw a._result;}
-	var U={current:null},V={transition:null},W={ReactCurrentDispatcher:U,ReactCurrentBatchConfig:V,ReactCurrentOwner:K};react_production_min.Children={map:S,forEach:function(a,b,e){S(a,function(){b.apply(this,arguments);},e);},count:function(a){var b=0;S(a,function(){b++;});return b},toArray:function(a){return S(a,function(a){return a})||[]},only:function(a){if(!O(a))throw Error("React.Children.only expected to receive a single React element child.");return a}};react_production_min.Component=E;react_production_min.Fragment=p;
-	react_production_min.Profiler=r;react_production_min.PureComponent=G;react_production_min.StrictMode=q;react_production_min.Suspense=w;react_production_min.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED=W;
+	var U={current:null},V={transition:null},W={ReactCurrentDispatcher:U,ReactCurrentBatchConfig:V,ReactCurrentOwner:K};function X(){throw Error("act(...) is not supported in production builds of React.");}
+	react_production_min.Children={map:S,forEach:function(a,b,e){S(a,function(){b.apply(this,arguments);},e);},count:function(a){var b=0;S(a,function(){b++;});return b},toArray:function(a){return S(a,function(a){return a})||[]},only:function(a){if(!O(a))throw Error("React.Children.only expected to receive a single React element child.");return a}};react_production_min.Component=E;react_production_min.Fragment=p;react_production_min.Profiler=r;react_production_min.PureComponent=G;react_production_min.StrictMode=q;react_production_min.Suspense=w;
+	react_production_min.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED=W;react_production_min.act=X;
 	react_production_min.cloneElement=function(a,b,e){if(null===a||void 0===a)throw Error("React.cloneElement(...): The argument must be a React element, but you passed "+a+".");var d=C({},a.props),c=a.key,k=a.ref,h=a._owner;if(null!=b){void 0!==b.ref&&(k=b.ref,h=K.current);void 0!==b.key&&(c=""+b.key);if(a.type&&a.type.defaultProps)var g=a.type.defaultProps;for(f in b)J.call(b,f)&&!L.hasOwnProperty(f)&&(d[f]=void 0===b[f]&&void 0!==g?g[f]:b[f]);}var f=arguments.length-2;if(1===f)d.children=e;else if(1<f){g=Array(f);
 	for(var m=0;m<f;m++)g[m]=arguments[m+2];d.children=g;}return {$$typeof:l,type:a.type,key:c,ref:k,props:d,_owner:h}};react_production_min.createContext=function(a){a={$$typeof:u,_currentValue:a,_currentValue2:a,_threadCount:0,Provider:null,Consumer:null,_defaultValue:null,_globalName:null};a.Provider={$$typeof:t,_context:a};return a.Consumer=a};react_production_min.createElement=M;react_production_min.createFactory=function(a){var b=M.bind(null,a);b.type=a;return b};react_production_min.createRef=function(){return {current:null}};
-	react_production_min.forwardRef=function(a){return {$$typeof:v,render:a}};react_production_min.isValidElement=O;react_production_min.lazy=function(a){return {$$typeof:y,_payload:{_status:-1,_result:a},_init:T}};react_production_min.memo=function(a,b){return {$$typeof:x,type:a,compare:void 0===b?null:b}};react_production_min.startTransition=function(a){var b=V.transition;V.transition={};try{a();}finally{V.transition=b;}};react_production_min.unstable_act=function(){throw Error("act(...) is not supported in production builds of React.");};
-	react_production_min.useCallback=function(a,b){return U.current.useCallback(a,b)};react_production_min.useContext=function(a){return U.current.useContext(a)};react_production_min.useDebugValue=function(){};react_production_min.useDeferredValue=function(a){return U.current.useDeferredValue(a)};react_production_min.useEffect=function(a,b){return U.current.useEffect(a,b)};react_production_min.useId=function(){return U.current.useId()};react_production_min.useImperativeHandle=function(a,b,e){return U.current.useImperativeHandle(a,b,e)};
-	react_production_min.useInsertionEffect=function(a,b){return U.current.useInsertionEffect(a,b)};react_production_min.useLayoutEffect=function(a,b){return U.current.useLayoutEffect(a,b)};react_production_min.useMemo=function(a,b){return U.current.useMemo(a,b)};react_production_min.useReducer=function(a,b,e){return U.current.useReducer(a,b,e)};react_production_min.useRef=function(a){return U.current.useRef(a)};react_production_min.useState=function(a){return U.current.useState(a)};react_production_min.useSyncExternalStore=function(a,b,e){return U.current.useSyncExternalStore(a,b,e)};
-	react_production_min.useTransition=function(){return U.current.useTransition()};react_production_min.version="18.2.0";
+	react_production_min.forwardRef=function(a){return {$$typeof:v,render:a}};react_production_min.isValidElement=O;react_production_min.lazy=function(a){return {$$typeof:y,_payload:{_status:-1,_result:a},_init:T}};react_production_min.memo=function(a,b){return {$$typeof:x,type:a,compare:void 0===b?null:b}};react_production_min.startTransition=function(a){var b=V.transition;V.transition={};try{a();}finally{V.transition=b;}};react_production_min.unstable_act=X;react_production_min.useCallback=function(a,b){return U.current.useCallback(a,b)};react_production_min.useContext=function(a){return U.current.useContext(a)};
+	react_production_min.useDebugValue=function(){};react_production_min.useDeferredValue=function(a){return U.current.useDeferredValue(a)};react_production_min.useEffect=function(a,b){return U.current.useEffect(a,b)};react_production_min.useId=function(){return U.current.useId()};react_production_min.useImperativeHandle=function(a,b,e){return U.current.useImperativeHandle(a,b,e)};react_production_min.useInsertionEffect=function(a,b){return U.current.useInsertionEffect(a,b)};react_production_min.useLayoutEffect=function(a,b){return U.current.useLayoutEffect(a,b)};
+	react_production_min.useMemo=function(a,b){return U.current.useMemo(a,b)};react_production_min.useReducer=function(a,b,e){return U.current.useReducer(a,b,e)};react_production_min.useRef=function(a){return U.current.useRef(a)};react_production_min.useState=function(a){return U.current.useState(a)};react_production_min.useSyncExternalStore=function(a,b,e){return U.current.useSyncExternalStore(a,b,e)};react_production_min.useTransition=function(){return U.current.useTransition()};react_production_min.version="18.3.1";
 	return react_production_min;
 }
 
@@ -499,7 +499,7 @@ function requireReact_development () {
 		) {
 		  __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
 		}
-		          var ReactVersion = '18.2.0';
+		          var ReactVersion = '18.3.1';
 
 		// ATTENTION
 		// When adding new symbols to this file,
@@ -3175,6 +3175,7 @@ function requireReact_development () {
 		exports.StrictMode = REACT_STRICT_MODE_TYPE;
 		exports.Suspense = REACT_SUSPENSE_TYPE;
 		exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals;
+		exports.act = act;
 		exports.cloneElement = cloneElement$1;
 		exports.createContext = createContext;
 		exports.createElement = createElement$1;
@@ -4461,6 +4462,7 @@ function requireReactJsxRuntime_development () {
 	  }
 	}
 
+	var didWarnAboutKeySpread = {};
 	function jsxWithValidation(type, props, key, isStaticChildren, source, self) {
 	  {
 	    var validType = isValidElementType(type); // We warn in this case but don't throw. We expect the element creation to
@@ -4527,6 +4529,24 @@ function requireReactJsxRuntime_development () {
 	          }
 	        } else {
 	          validateChildKeys(children, type);
+	        }
+	      }
+	    }
+
+	    {
+	      if (hasOwnProperty.call(props, 'key')) {
+	        var componentName = getComponentNameFromType(type);
+	        var keys = Object.keys(props).filter(function (k) {
+	          return k !== 'key';
+	        });
+	        var beforeExample = keys.length > 0 ? '{key: someKey, ' + keys.join(': ..., ') + ': ...}' : '{key: someKey}';
+
+	        if (!didWarnAboutKeySpread[componentName + beforeExample]) {
+	          var afterExample = keys.length > 0 ? '{' + keys.join(': ..., ') + ': ...}' : '{}';
+
+	          error('A props object containing a "key" prop is being spread into JSX:\n' + '  let props = %s;\n' + '  <%s {...props} />\n' + 'React keys must be passed directly to JSX without using spread:\n' + '  let props = %s;\n' + '  <%s key={someKey} {...props} />', beforeExample, componentName, afterExample, componentName);
+
+	          didWarnAboutKeySpread[componentName + beforeExample] = true;
 	        }
 	      }
 	    }
@@ -22277,6 +22297,10 @@ function fromKebabToCamel(value) {
     return value.replace(/-./g, function (m) { return m.toUpperCase()[1]; });
 }
 
+function fromSnakeToCamel(value) {
+    return value.replace(/_./g, function (m) { return m.toUpperCase()[1]; });
+}
+
 var globalConstants = {
     delimiter: '-',
     prefix: 'adi'
@@ -24303,11 +24327,20 @@ function Checkbox(props) {
     /* Add custom prop defaults here */
     };
     var composedProps = __assign(__assign({}, defaultProps), props);
-    var rhfControl = composedProps.rhfControl, muiProps = __rest(composedProps, ["rhfControl"]);
-    var name = muiProps.name; muiProps.onChange; muiProps.value; var rhfProps = __rest(muiProps, ["name", "onChange", "value"]);
-    return rhfControl ? (jsxRuntimeExports.jsx(Controller, { name: name ? name : 'checkbox', control: rhfControl, defaultValue: '', render: function (_a) {
-            var props = _a.field;
-            return jsxRuntimeExports.jsx(material.Checkbox, __assign({ sx: CheckboxStyle, onChange: props.onChange, checked: props.value }, rhfProps));
+    var rhfControl = composedProps.rhfControl, setValue = composedProps.setValue, muiProps = __rest(composedProps, ["rhfControl", "setValue"]);
+    var name = muiProps.name; muiProps.onChange; var rhfProps = __rest(muiProps, ["name", "onChange"]);
+    var checkboxName = name ? name : '';
+    var _a = reactExports.useState(false), checkboxValue = _a[0], setCheckboxValue = _a[1];
+    reactExports.useEffect(function () {
+        if (checkboxValue && setValue)
+            setValue(checkboxName, checkboxValue);
+    }, [checkboxName, setValue, checkboxValue]);
+    var handleChange = function (event, newValue) {
+        setCheckboxValue(newValue);
+    };
+    return rhfControl ? (jsxRuntimeExports.jsx(Controller, { name: checkboxName, control: rhfControl, defaultValue: false, render: function (_a) {
+            _a.field;
+            return jsxRuntimeExports.jsx(material.Checkbox, __assign({ sx: CheckboxStyle, name: name, onChange: handleChange, checked: checkboxValue }, rhfProps));
         } })) : (jsxRuntimeExports.jsx(material.Checkbox, __assign({ sx: CheckboxStyle }, muiProps)));
 }
 
@@ -26091,12 +26124,11 @@ function _extends() {
 function _objectWithoutPropertiesLoose(source, excluded) {
   if (source == null) return {};
   var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
+  for (var key in source) {
+    if (Object.prototype.hasOwnProperty.call(source, key)) {
+      if (excluded.indexOf(key) >= 0) continue;
+      target[key] = source[key];
+    }
   }
   return target;
 }
@@ -30299,6 +30331,7 @@ exports.fontWeights = fontWeights;
 exports.formatMs = formatMs$1;
 exports.fromCamelToKebab = fromCamelToKebab;
 exports.fromKebabToCamel = fromKebabToCamel;
+exports.fromSnakeToCamel = fromSnakeToCamel;
 exports.getClassKey = getClassKey;
 exports.getContrastRatio = getContrastRatio$1;
 exports.getLuminance = getLuminance$1;
