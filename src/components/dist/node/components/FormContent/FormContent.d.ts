@@ -1,7 +1,7 @@
 import { FieldValues } from 'react-hook-form';
 import { ButtonProps } from '../Button';
 import { FlexProps } from '../Flex';
-import { FormInput, FormOptions, Styles, Theme } from '../../types';
+import { FormInput, Styles, Theme } from '../../types';
 interface ButtonProp extends ButtonProps {
     label?: string;
     submit?: boolean;
@@ -9,7 +9,6 @@ interface ButtonProp extends ButtonProps {
 export interface ContactFormProps extends FlexProps {
     buttons?: ButtonProp | ButtonProp[];
     defaultValues: Record<string, any>;
-    form: Partial<FormOptions>;
     inputs: FormInput[];
     onSubmit: (data: FieldValues) => any;
 }

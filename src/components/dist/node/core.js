@@ -25845,7 +25845,7 @@ provideClasses(FormContentStyles, options);
 withTheme();
 var FormContentStyle = FormContentStyles();
 function FormContent(props) {
-    var buttons = props.buttons, defaultValues = props.defaultValues, form = props.form, inputs = props.inputs, onSubmit = props.onSubmit, flexProps = __rest(props, ["buttons", "defaultValues", "form", "inputs", "onSubmit"]);
+    var buttons = props.buttons, defaultValues = props.defaultValues, inputs = props.inputs, onSubmit = props.onSubmit, flexProps = __rest(props, ["buttons", "defaultValues", "inputs", "onSubmit"]);
     arrayify(buttons);
     var composedFlexProps = __assign({ alignItems: 'flex-start', flexDirection: 'column', gap: 8 }, flexProps);
     var _a = useForm({
@@ -25876,7 +25876,7 @@ function FormContent(props) {
             return (jsxRuntimeExports.jsx(TextField, __assign({ rhfControl: rhfControl }, input.options), (_a = input.options) === null || _a === void 0 ? void 0 : _a.label));
         }
     };
-    return (jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: jsxRuntimeExports.jsx(Form, __assign({}, form, { children: jsxRuntimeExports.jsxs(Flex, __assign({}, composedFlexProps, { children: [inputs.map(function (input) { return createInput[input.control](input); }), jsxRuntimeExports.jsx(Button, { onClick: handleSubmit(onSubmit), variant: "contained", children: "Submit" })] })) })) }));
+    return (jsxRuntimeExports.jsxs(Flex, __assign({}, composedFlexProps, { children: [inputs.map(function (input) { return createInput[input.control](input); }), jsxRuntimeExports.jsx(Button, { onClick: handleSubmit(onSubmit), variant: "contained", children: "Submit" })] })));
 }
 
 function FormControlStyles(theme) {

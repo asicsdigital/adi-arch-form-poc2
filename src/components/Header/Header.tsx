@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  ChevronRight as ChevronRightIcon,
   Close as CloseIcon,
   Menu as MenuIcon,
   Person as PersonIcon,
@@ -11,16 +10,10 @@ import {
   AppBarProps,
   Button,
   ButtonProps,
-  Divider,
   Flex,
   FlexChild,
   GroundProps,
   Hidden,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-  Menu,
   TextFieldProps,
   Toolbar,
   Typography,
@@ -70,35 +63,7 @@ export const HeaderDefaultProps: HeaderProps = {
 
 export function Header(props: HeaderProps) {
   const composedProps = merge({}, HeaderDefaultProps, props);
-  const {
-    color,
-    className,
-    menuCloseIcon,
-    menuIcon,
-    navigation,
-    onSearch,
-    searchIcon,
-    searchProps,
-    showUser,
-    showSearch,
-    title,
-    titleTypographyProps,
-    userIcon,
-    userMenuNavigation
-  } = composedProps;
-
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const [drawerOpen, setDrawerOpen] = React.useState(false);
-  const [userMenuOpen, setUserMenuOpen] = React.useState(false);
-
-  const handleDrawerClick = () => {
-    setDrawerOpen(!drawerOpen);
-  };
-
-  const handleUserMenuControlClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-    setUserMenuOpen(!userMenuOpen);
-  };
+  const { color, className, navigation, title } = composedProps;
 
   return (
     <>

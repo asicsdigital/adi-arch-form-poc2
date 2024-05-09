@@ -26,7 +26,6 @@ import { useForm } from 'react-hook-form';
 import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
 import { Flex } from '../Flex';
-import { Form } from '../Form';
 import { FormControlLabel } from '../FormControlLabel';
 import { TextField } from '../TextField';
 import { applyOverrides, getClassKey } from '../../helpers/index';
@@ -46,7 +45,7 @@ var classes = provideClasses(FormContentStyles, options);
 var theme = withTheme();
 export var FormContentStyle = FormContentStyles(theme);
 export function FormContent(props) {
-    var buttons = props.buttons, defaultValues = props.defaultValues, form = props.form, inputs = props.inputs, onSubmit = props.onSubmit, flexProps = __rest(props, ["buttons", "defaultValues", "form", "inputs", "onSubmit"]);
+    var buttons = props.buttons, defaultValues = props.defaultValues, inputs = props.inputs, onSubmit = props.onSubmit, flexProps = __rest(props, ["buttons", "defaultValues", "inputs", "onSubmit"]);
     var composedButtons = arrayify(buttons);
     var composedFlexProps = __assign({ alignItems: 'flex-start', flexDirection: 'column', gap: 8 }, flexProps);
     var _a = useForm({
@@ -77,5 +76,5 @@ export function FormContent(props) {
             return (_jsx(TextField, __assign({ rhfControl: rhfControl }, input.options), (_a = input.options) === null || _a === void 0 ? void 0 : _a.label));
         }
     };
-    return (_jsx(_Fragment, { children: _jsx(Form, __assign({}, form, { children: _jsxs(Flex, __assign({}, composedFlexProps, { children: [inputs.map(function (input) { return createInput[input.control](input); }), _jsx(Button, { onClick: handleSubmit(onSubmit), variant: "contained", children: "Submit" })] })) })) }));
+    return (_jsxs(Flex, __assign({}, composedFlexProps, { children: [inputs.map(function (input) { return createInput[input.control](input); }), _jsx(Button, { onClick: handleSubmit(onSubmit), variant: "contained", children: "Submit" })] })));
 }
