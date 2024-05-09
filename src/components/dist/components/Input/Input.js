@@ -13,13 +13,13 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx } from "react/jsx-runtime";
 import { Input as MuiInput } from '@mui/material';
 import { applyOverrides } from '../../helpers/index';
-import { useTheme } from '../../styles/index';
+import { withTheme } from '../../styles/index';
 export function InputStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Input');
 }
-var theme = useTheme();
+var theme = withTheme();
 export var InputStyle = InputStyles(theme);
 export function Input(props) {
     var defaultProps = {

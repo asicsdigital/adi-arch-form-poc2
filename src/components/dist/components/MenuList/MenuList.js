@@ -13,13 +13,13 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx } from "react/jsx-runtime";
 import { MenuList as MuiMenuList } from '@mui/material';
 import { applyOverrides } from '../../helpers/index';
-import { useTheme } from '../../styles/index';
+import { withTheme } from '../../styles/index';
 export function MenuListStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'MenuList');
 }
-var theme = useTheme();
+var theme = withTheme();
 export var MenuListStyle = MenuListStyles(theme);
 export function MenuList(props) {
     var defaultProps = {

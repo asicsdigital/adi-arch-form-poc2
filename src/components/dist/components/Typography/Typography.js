@@ -13,13 +13,13 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx } from "react/jsx-runtime";
 import { Typography as MuiTypography } from '@mui/material';
 import { applyOverrides } from '../../helpers/index';
-import { useTheme } from '../../styles/index';
+import { withTheme } from '../../styles/index';
 export function TypographyStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Typography');
 }
-var theme = useTheme();
+var theme = withTheme();
 export var TypographyStyle = TypographyStyles(theme);
 export function Typography(props) {
     var defaultProps = {

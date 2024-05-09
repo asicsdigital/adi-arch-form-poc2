@@ -13,13 +13,13 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx } from "react/jsx-runtime";
 import { Container as MuiContainer } from '@mui/material';
 import { applyOverrides } from '../../helpers/index';
-import { useTheme } from '../../styles/index';
+import { withTheme } from '../../styles/index';
 export function ContainerStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Container');
 }
-var theme = useTheme();
+var theme = withTheme();
 export var ContainerStyle = ContainerStyles(theme);
 export function Container(props) {
     var defaultProps = {

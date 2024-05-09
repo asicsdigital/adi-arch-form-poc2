@@ -1,7 +1,7 @@
-import { useTheme } from '../../styles/useTheme/index';
+import { withTheme } from '../../styles/withTheme/index';
 var between = function (begin, end, withAtRule) {
     if (withAtRule === void 0) { withAtRule = true; }
-    var theme = useTheme();
+    var theme = withTheme();
     var _a = theme.breakpoints, keys = _a.keys, values = _a.values;
     var endIndex = keys.includes(end) ? keys.indexOf(end) + 1 : undefined;
     if (endIndex === keys.length) {
@@ -16,7 +16,7 @@ var between = function (begin, end, withAtRule) {
 };
 var down = function (begin, withAtRule) {
     if (withAtRule === void 0) { withAtRule = true; }
-    var theme = useTheme();
+    var theme = withTheme();
     var _a = theme.breakpoints, keys = _a.keys, values = _a.values;
     var beginIndex = keys.includes(begin) ? keys.indexOf(begin) + 1 : undefined;
     if (beginIndex === keys.length) {
@@ -32,14 +32,14 @@ var only = function (begin, withAtRule) {
 };
 var up = function (begin, withAtRule) {
     if (withAtRule === void 0) { withAtRule = true; }
-    var theme = useTheme();
+    var theme = withTheme();
     var _a = theme.breakpoints, keys = _a.keys, values = _a.values;
     var value = keys.includes(begin) ? values[begin] : begin;
     var prefix = withAtRule ? '@media ' : '';
     return Number.isNaN(parseInt('' + value, 10)) ? '' : "".concat(prefix, "(min-width: ").concat(value, "px)");
 };
 var width = function (key) {
-    var theme = useTheme();
+    var theme = withTheme();
     var values = theme.breakpoints.values;
     return values[key];
 };

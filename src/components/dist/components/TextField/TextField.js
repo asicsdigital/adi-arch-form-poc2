@@ -25,13 +25,13 @@ import { jsx as _jsx } from "react/jsx-runtime";
 import { Controller } from 'react-hook-form';
 import { TextField as MuiTextField } from '@mui/material';
 import { applyOverrides } from '../../helpers/index';
-import { useTheme } from '../../styles/index';
+import { withTheme } from '../../styles/index';
 export function TextFieldStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'TextField');
 }
-var theme = useTheme();
+var theme = withTheme();
 export var TextFieldStyle = TextFieldStyles(theme);
 export function TextField(props) {
     var defaultProps = {

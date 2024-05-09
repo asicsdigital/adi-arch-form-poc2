@@ -13,13 +13,13 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx } from "react/jsx-runtime";
 import { ClickAwayListener as MuiClickAwayListener } from '@mui/material';
 import { applyOverrides } from '../../helpers/index';
-import { useTheme } from '../../styles/index';
+import { withTheme } from '../../styles/index';
 export function ClickAwayListenerStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'ClickAwayListener');
 }
-var theme = useTheme();
+var theme = withTheme();
 export var ClickAwayListenerStyle = ClickAwayListenerStyles(theme);
 export function ClickAwayListener(props) {
     return _jsx(MuiClickAwayListener, __assign({ sx: ClickAwayListenerStyle }, props));

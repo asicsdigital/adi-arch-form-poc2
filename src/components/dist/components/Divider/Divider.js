@@ -13,13 +13,13 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx } from "react/jsx-runtime";
 import { Divider as MuiDivider } from '@mui/material';
 import { applyOverrides } from '../../helpers/index';
-import { useTheme } from '../../styles/index';
+import { withTheme } from '../../styles/index';
 export function DividerStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Divider');
 }
-var theme = useTheme();
+var theme = withTheme();
 export var DividerStyle = DividerStyles(theme);
 export function Divider(props) {
     var defaultProps = {

@@ -12,7 +12,7 @@ var __assign = (this && this.__assign) || function () {
 };
 import { jsx as _jsx } from "react/jsx-runtime";
 import { applyOverrides, capitalize, fromKebabToCamel, getClassKey, replaceMultipleSpaces } from '../../helpers/index';
-import { provideClasses, provideStylesheet, useTheme } from '../../styles/index';
+import { provideClasses, provideStylesheet, withTheme } from '../../styles/index';
 export var defaultFlexChildProps = {
     alignSelf: 'auto',
     className: '',
@@ -51,7 +51,7 @@ var options = {
     meta: FlexChildClassKey
 };
 var classes = provideClasses(FlexChildStyles, options);
-var theme = useTheme();
+var theme = withTheme();
 export var FlexChildStyle = FlexChildStyles(theme);
 export var composeFlexChildClasses = function (userProps) {
     if (userProps === void 0) { userProps = {}; }

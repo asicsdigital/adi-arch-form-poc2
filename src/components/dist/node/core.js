@@ -11,334 +11,6 @@ function _interopDefault (e) { return e && e.__esModule ? e : { default: e }; }
 var preset__default = /*#__PURE__*/_interopDefault(preset);
 var jss__default = /*#__PURE__*/_interopDefault(jss);
 
-var Amber = {
-    '50': '#fff8e1',
-    '100': '#ffecb3',
-    '200': '#ffe082',
-    '300': '#ffd54f',
-    '400': '#ffca28',
-    '500': '#ffc107',
-    '600': '#ffb300',
-    '700': '#ffa000',
-    '800': '#ff8f00',
-    '900': '#ff6f00',
-    A100: '#ffe57f',
-    A200: '#ffd740',
-    A400: '#ffc400',
-    A700: '#ffab00'
-};
-
-var Blue = {
-    '50': '#e3f2fd',
-    '100': '#bbdefb',
-    '200': '#90caf9',
-    '300': '#64b5f6',
-    '400': '#42a5f5',
-    '500': '#2196f3',
-    '600': '#1e88e5',
-    '700': '#1976d2',
-    '800': '#1565c0',
-    '900': '#0d47a1',
-    A100: '#82b1ff',
-    A200: '#448aff',
-    A400: '#2979ff',
-    A700: '#2962ff'
-};
-
-var BlueGrey = {
-    '50': '#eceff1',
-    '100': '#cfd8dc',
-    '200': '#b0bec5',
-    '300': '#90a4ae',
-    '400': '#78909c',
-    '500': '#607d8b',
-    '600': '#546e7a',
-    '700': '#455a64',
-    '800': '#37474f',
-    '900': '#263238',
-    A100: '#cfd8dc',
-    A200: '#b0bec5',
-    A400: '#78909c',
-    A700: '#455a64'
-};
-
-var Brown = {
-    '50': '#efebe9',
-    '100': '#d7ccc8',
-    '200': '#bcaaa4',
-    '300': '#a1887f',
-    '400': '#8d6e63',
-    '500': '#795548',
-    '600': '#6d4c41',
-    '700': '#5d4037',
-    '800': '#4e342e',
-    '900': '#3e2723',
-    A100: '#d7ccc8',
-    A200: '#bcaaa4',
-    A400: '#8d6e63',
-    A700: '#5d4037'
-};
-
-var Common = {
-    black: '#0b0a14',
-    white: '#fff'
-};
-
-var Cyan = {
-    '50': '#e0f7fa',
-    '100': '#b2ebf2',
-    '200': '#80deea',
-    '300': '#4dd0e1',
-    '400': '#26c6da',
-    '500': '#00bcd4',
-    '600': '#00acc1',
-    '700': '#0097a7',
-    '800': '#00838f',
-    '900': '#006064',
-    A100: '#84ffff',
-    A200: '#18ffff',
-    A400: '#00e5ff',
-    A700: '#00b8d4'
-};
-
-var DeepOrange = {
-    '50': '#fbe9e7',
-    '100': '#ffccbc',
-    '200': '#ffab91',
-    '300': '#ff8a65',
-    '400': '#ff7043',
-    '500': '#ff5722',
-    '600': '#f4511e',
-    '700': '#e64a19',
-    '800': '#d84315',
-    '900': '#bf360c',
-    A100: '#ff9e80',
-    A200: '#ff6e40',
-    A400: '#ff3d00',
-    A700: '#dd2c00'
-};
-
-var DeepPurple = {
-    '50': '#ede7f6',
-    '100': '#d1c4e9',
-    '200': '#b39ddb',
-    '300': '#9575cd',
-    '400': '#7e57c2',
-    '500': '#673ab7',
-    '600': '#5e35b1',
-    '700': '#512da8',
-    '800': '#4527a0',
-    '900': '#311b92',
-    A100: '#b388ff',
-    A200: '#7c4dff',
-    A400: '#651fff',
-    A700: '#6200ea'
-};
-
-var Green = {
-    '50': '#e8f5e9',
-    '100': '#c8e6c9',
-    '200': '#a5d6a7',
-    '300': '#81c784',
-    '400': '#66bb6a',
-    '500': '#4caf50',
-    '600': '#43a047',
-    '700': '#388e3c',
-    '800': '#2e7d32',
-    '900': '#1b5e20',
-    A100: '#b9f6ca',
-    A200: '#69f0ae',
-    A400: '#00e676',
-    A700: '#00c853'
-};
-
-var Grey = {
-    '50': '#fafafa',
-    '100': '#f8f8f8',
-    '200': '#f5f5f5',
-    '300': '#f0f0f0',
-    '400': '#e8e8e8',
-    '500': '#c9c9c9',
-    '600': '#999999',
-    '700': '#777777',
-    '800': '#555555',
-    '900': '#212121',
-    A100: '#d5d5d5',
-    A200: '#4c4b4b',
-    A400: '#383737',
-    A700: '#242323'
-};
-
-var Indigo = {
-    '50': '#e8eaf6',
-    '100': '#c5cae9',
-    '200': '#9fa8da',
-    '300': '#7986cb',
-    '400': '#5c6bc0',
-    '500': '#3f51b5',
-    '600': '#3949ab',
-    '700': '#303f9f',
-    '800': '#283593',
-    '900': '#1a237e',
-    A100: '#8c9eff',
-    A200: '#536dfe',
-    A400: '#3d5afe',
-    A700: '#304ffe'
-};
-
-var LightBlue = {
-    '50': '#e1f5fe',
-    '100': '#b3e5fc',
-    '200': '#81d4fa',
-    '300': '#4fc3f7',
-    '400': '#29b6f6',
-    '500': '#03a9f4',
-    '600': '#039be5',
-    '700': '#0288d1',
-    '800': '#0277bd',
-    '900': '#01579b',
-    A100: '#80d8ff',
-    A200: '#40c4ff',
-    A400: '#00b0ff',
-    A700: '#0091ea'
-};
-
-var LightGreen = {
-    '50': '#f1f8e9',
-    '100': '#dcedc8',
-    '200': '#c5e1a5',
-    '300': '#aed581',
-    '400': '#9ccc65',
-    '500': '#8bc34a',
-    '600': '#7cb342',
-    '700': '#689f38',
-    '800': '#558b2f',
-    '900': '#33691e',
-    A100: '#ccff90',
-    A200: '#b2ff59',
-    A400: '#76ff03',
-    A700: '#64dd17'
-};
-
-var Lime = {
-    '50': '#f9fbe7',
-    '100': '#f0f4c3',
-    '200': '#e6ee9c',
-    '300': '#dce775',
-    '400': '#d4e157',
-    '500': '#cddc39',
-    '600': '#c0ca33',
-    '700': '#afb42b',
-    '800': '#9e9d24',
-    '900': '#827717',
-    A100: '#f4ff81',
-    A200: '#eeff41',
-    A400: '#c6ff00',
-    A700: '#aeea00'
-};
-
-var Orange = {
-    '50': '#fff3e0',
-    '100': '#ffe0b2',
-    '200': '#ffcc80',
-    '300': '#ffb74d',
-    '400': '#ffa726',
-    '500': '#ff9800',
-    '600': '#fb8c00',
-    '700': '#f57c00',
-    '800': '#ef6c00',
-    '900': '#e65100',
-    A100: '#ffd180',
-    A200: '#ffab40',
-    A400: '#ff9100',
-    A700: '#ff6d00'
-};
-
-var Pink = {
-    '50': '#fce4ec',
-    '100': '#f8bbd0',
-    '200': '#f48fb1',
-    '300': '#f06292',
-    '400': '#ec407a',
-    '500': '#e91e63',
-    '600': '#d81b60',
-    '700': '#c2185b',
-    '800': '#ad1457',
-    '900': '#880e4f',
-    A100: '#ff80ab',
-    A200: '#ff4081',
-    A400: '#f50057',
-    A700: '#c51162'
-};
-
-var Purple = {
-    '50': '#f3e5f5',
-    '100': '#e1bee7',
-    '200': '#ce93d8',
-    '300': '#ba68c8',
-    '400': '#ab47bc',
-    '500': '#9c27b0',
-    '600': '#8e24aa',
-    '700': '#7b1fa2',
-    '800': '#6a1b9a',
-    '900': '#4a148c',
-    A100: '#ea80fc',
-    A200: '#e040fb',
-    A400: '#d500f9',
-    A700: '#aa00ff'
-};
-
-var Red = {
-    '50': '#ffebee',
-    '100': '#ffcdd2',
-    '200': '#ef9a9a',
-    '300': '#e57373',
-    '400': '#ef5350',
-    '500': '#f44336',
-    '600': '#e53935',
-    '700': '#d32f2f',
-    '800': '#c62828',
-    '900': '#b71c1c',
-    A100: '#ff8a80',
-    A200: '#ff5252',
-    A400: '#ff1744',
-    A700: '#d50000'
-};
-
-var Teal = {
-    '50': '#e0f2f1',
-    '100': '#b2dfdb',
-    '200': '#80cbc4',
-    '300': '#4db6ac',
-    '400': '#26a69a',
-    '500': '#009688',
-    '600': '#00897b',
-    '700': '#00796b',
-    '800': '#00695c',
-    '900': '#004d40',
-    A100: '#a7ffeb',
-    A200: '#64ffda',
-    A400: '#1de9b6',
-    A700: '#00bfa5'
-};
-
-var Yellow = {
-    '50': '#fffde7',
-    '100': '#fff9c4',
-    '200': '#fff59d',
-    '300': '#fff176',
-    '400': '#ffee58',
-    '500': '#ffeb3b',
-    '600': '#fdd835',
-    '700': '#fbc02d',
-    '800': '#f9a825',
-    '900': '#f57f17',
-    A100: '#ffff8d',
-    A200: '#ffff00',
-    A400: '#ffea00',
-    A700: '#ffd600'
-};
-
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
 
@@ -457,14 +129,14 @@ var l=Symbol.for("react.element"),n=Symbol.for("react.portal"),p=Symbol.for("rea
 	function R(a,b,e,d,c){var k=typeof a;if("undefined"===k||"boolean"===k)a=null;var h=!1;if(null===a)h=!0;else switch(k){case "string":case "number":h=!0;break;case "object":switch(a.$$typeof){case l:case n:h=!0;}}if(h)return h=a,c=c(h),a=""===d?"."+Q(h,0):d,I(c)?(e="",null!=a&&(e=a.replace(P,"$&/")+"/"),R(c,b,e,"",function(a){return a})):null!=c&&(O(c)&&(c=N(c,e+(!c.key||h&&h.key===c.key?"":(""+c.key).replace(P,"$&/")+"/")+a)),b.push(c)),1;h=0;d=""===d?".":d+":";if(I(a))for(var g=0;g<a.length;g++){k=
 	a[g];var f=d+Q(k,g);h+=R(k,b,e,f,c);}else if(f=A(a),"function"===typeof f)for(a=f.call(a),g=0;!(k=a.next()).done;)k=k.value,f=d+Q(k,g++),h+=R(k,b,e,f,c);else if("object"===k)throw b=String(a),Error("Objects are not valid as a React child (found: "+("[object Object]"===b?"object with keys {"+Object.keys(a).join(", ")+"}":b)+"). If you meant to render a collection of children, use an array instead.");return h}
 	function S(a,b,e){if(null==a)return a;var d=[],c=0;R(a,d,"","",function(a){return b.call(e,a,c++)});return d}function T(a){if(-1===a._status){var b=a._result;b=b();b.then(function(b){if(0===a._status||-1===a._status)a._status=1,a._result=b;},function(b){if(0===a._status||-1===a._status)a._status=2,a._result=b;});-1===a._status&&(a._status=0,a._result=b);}if(1===a._status)return a._result.default;throw a._result;}
-	var U={current:null},V={transition:null},W={ReactCurrentDispatcher:U,ReactCurrentBatchConfig:V,ReactCurrentOwner:K};function X(){throw Error("act(...) is not supported in production builds of React.");}
-	react_production_min.Children={map:S,forEach:function(a,b,e){S(a,function(){b.apply(this,arguments);},e);},count:function(a){var b=0;S(a,function(){b++;});return b},toArray:function(a){return S(a,function(a){return a})||[]},only:function(a){if(!O(a))throw Error("React.Children.only expected to receive a single React element child.");return a}};react_production_min.Component=E;react_production_min.Fragment=p;react_production_min.Profiler=r;react_production_min.PureComponent=G;react_production_min.StrictMode=q;react_production_min.Suspense=w;
-	react_production_min.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED=W;react_production_min.act=X;
+	var U={current:null},V={transition:null},W={ReactCurrentDispatcher:U,ReactCurrentBatchConfig:V,ReactCurrentOwner:K};react_production_min.Children={map:S,forEach:function(a,b,e){S(a,function(){b.apply(this,arguments);},e);},count:function(a){var b=0;S(a,function(){b++;});return b},toArray:function(a){return S(a,function(a){return a})||[]},only:function(a){if(!O(a))throw Error("React.Children.only expected to receive a single React element child.");return a}};react_production_min.Component=E;react_production_min.Fragment=p;
+	react_production_min.Profiler=r;react_production_min.PureComponent=G;react_production_min.StrictMode=q;react_production_min.Suspense=w;react_production_min.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED=W;
 	react_production_min.cloneElement=function(a,b,e){if(null===a||void 0===a)throw Error("React.cloneElement(...): The argument must be a React element, but you passed "+a+".");var d=C({},a.props),c=a.key,k=a.ref,h=a._owner;if(null!=b){void 0!==b.ref&&(k=b.ref,h=K.current);void 0!==b.key&&(c=""+b.key);if(a.type&&a.type.defaultProps)var g=a.type.defaultProps;for(f in b)J.call(b,f)&&!L.hasOwnProperty(f)&&(d[f]=void 0===b[f]&&void 0!==g?g[f]:b[f]);}var f=arguments.length-2;if(1===f)d.children=e;else if(1<f){g=Array(f);
 	for(var m=0;m<f;m++)g[m]=arguments[m+2];d.children=g;}return {$$typeof:l,type:a.type,key:c,ref:k,props:d,_owner:h}};react_production_min.createContext=function(a){a={$$typeof:u,_currentValue:a,_currentValue2:a,_threadCount:0,Provider:null,Consumer:null,_defaultValue:null,_globalName:null};a.Provider={$$typeof:t,_context:a};return a.Consumer=a};react_production_min.createElement=M;react_production_min.createFactory=function(a){var b=M.bind(null,a);b.type=a;return b};react_production_min.createRef=function(){return {current:null}};
-	react_production_min.forwardRef=function(a){return {$$typeof:v,render:a}};react_production_min.isValidElement=O;react_production_min.lazy=function(a){return {$$typeof:y,_payload:{_status:-1,_result:a},_init:T}};react_production_min.memo=function(a,b){return {$$typeof:x,type:a,compare:void 0===b?null:b}};react_production_min.startTransition=function(a){var b=V.transition;V.transition={};try{a();}finally{V.transition=b;}};react_production_min.unstable_act=X;react_production_min.useCallback=function(a,b){return U.current.useCallback(a,b)};react_production_min.useContext=function(a){return U.current.useContext(a)};
-	react_production_min.useDebugValue=function(){};react_production_min.useDeferredValue=function(a){return U.current.useDeferredValue(a)};react_production_min.useEffect=function(a,b){return U.current.useEffect(a,b)};react_production_min.useId=function(){return U.current.useId()};react_production_min.useImperativeHandle=function(a,b,e){return U.current.useImperativeHandle(a,b,e)};react_production_min.useInsertionEffect=function(a,b){return U.current.useInsertionEffect(a,b)};react_production_min.useLayoutEffect=function(a,b){return U.current.useLayoutEffect(a,b)};
-	react_production_min.useMemo=function(a,b){return U.current.useMemo(a,b)};react_production_min.useReducer=function(a,b,e){return U.current.useReducer(a,b,e)};react_production_min.useRef=function(a){return U.current.useRef(a)};react_production_min.useState=function(a){return U.current.useState(a)};react_production_min.useSyncExternalStore=function(a,b,e){return U.current.useSyncExternalStore(a,b,e)};react_production_min.useTransition=function(){return U.current.useTransition()};react_production_min.version="18.3.1";
+	react_production_min.forwardRef=function(a){return {$$typeof:v,render:a}};react_production_min.isValidElement=O;react_production_min.lazy=function(a){return {$$typeof:y,_payload:{_status:-1,_result:a},_init:T}};react_production_min.memo=function(a,b){return {$$typeof:x,type:a,compare:void 0===b?null:b}};react_production_min.startTransition=function(a){var b=V.transition;V.transition={};try{a();}finally{V.transition=b;}};react_production_min.unstable_act=function(){throw Error("act(...) is not supported in production builds of React.");};
+	react_production_min.useCallback=function(a,b){return U.current.useCallback(a,b)};react_production_min.useContext=function(a){return U.current.useContext(a)};react_production_min.useDebugValue=function(){};react_production_min.useDeferredValue=function(a){return U.current.useDeferredValue(a)};react_production_min.useEffect=function(a,b){return U.current.useEffect(a,b)};react_production_min.useId=function(){return U.current.useId()};react_production_min.useImperativeHandle=function(a,b,e){return U.current.useImperativeHandle(a,b,e)};
+	react_production_min.useInsertionEffect=function(a,b){return U.current.useInsertionEffect(a,b)};react_production_min.useLayoutEffect=function(a,b){return U.current.useLayoutEffect(a,b)};react_production_min.useMemo=function(a,b){return U.current.useMemo(a,b)};react_production_min.useReducer=function(a,b,e){return U.current.useReducer(a,b,e)};react_production_min.useRef=function(a){return U.current.useRef(a)};react_production_min.useState=function(a){return U.current.useState(a)};react_production_min.useSyncExternalStore=function(a,b,e){return U.current.useSyncExternalStore(a,b,e)};
+	react_production_min.useTransition=function(){return U.current.useTransition()};react_production_min.version="18.2.0";
 	return react_production_min;
 }
 
@@ -499,7 +171,7 @@ function requireReact_development () {
 		) {
 		  __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
 		}
-		          var ReactVersion = '18.3.1';
+		          var ReactVersion = '18.2.0';
 
 		// ATTENTION
 		// When adding new symbols to this file,
@@ -3175,7 +2847,6 @@ function requireReact_development () {
 		exports.StrictMode = REACT_STRICT_MODE_TYPE;
 		exports.Suspense = REACT_SUSPENSE_TYPE;
 		exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals;
-		exports.act = act;
 		exports.cloneElement = cloneElement$1;
 		exports.createContext = createContext;
 		exports.createElement = createElement$1;
@@ -4462,7 +4133,6 @@ function requireReactJsxRuntime_development () {
 	  }
 	}
 
-	var didWarnAboutKeySpread = {};
 	function jsxWithValidation(type, props, key, isStaticChildren, source, self) {
 	  {
 	    var validType = isValidElementType(type); // We warn in this case but don't throw. We expect the element creation to
@@ -4529,24 +4199,6 @@ function requireReactJsxRuntime_development () {
 	          }
 	        } else {
 	          validateChildKeys(children, type);
-	        }
-	      }
-	    }
-
-	    {
-	      if (hasOwnProperty.call(props, 'key')) {
-	        var componentName = getComponentNameFromType(type);
-	        var keys = Object.keys(props).filter(function (k) {
-	          return k !== 'key';
-	        });
-	        var beforeExample = keys.length > 0 ? '{key: someKey, ' + keys.join(': ..., ') + ': ...}' : '{key: someKey}';
-
-	        if (!didWarnAboutKeySpread[componentName + beforeExample]) {
-	          var afterExample = keys.length > 0 ? '{' + keys.join(': ..., ') + ': ...}' : '{}';
-
-	          error('A props object containing a "key" prop is being spread into JSX:\n' + '  let props = %s;\n' + '  <%s {...props} />\n' + 'React keys must be passed directly to JSX without using spread:\n' + '  let props = %s;\n' + '  <%s key={someKey} {...props} />', beforeExample, componentName, afterExample, componentName);
-
-	          didWarnAboutKeySpread[componentName + beforeExample] = true;
 	        }
 	      }
 	    }
@@ -22194,12 +21846,12 @@ function updateCss(css) {
     return { type: UPDATE_CSS, css: css };
 }
 
-function useTheme$2() {
+function withTheme() {
     return store.getState().theme;
 }
 
 function applyOverrides(styles, component) {
-    var theme = useTheme$2();
+    var theme = withTheme();
     var overrides = __assign({}, theme.overrides);
     var override = overrides[component] || {};
     return lodashExports.merge(styles, override);
@@ -22211,7 +21863,7 @@ function arrayify(value) {
 
 var between = function (begin, end, withAtRule) {
     if (withAtRule === void 0) { withAtRule = true; }
-    var theme = useTheme$2();
+    var theme = withTheme();
     var _a = theme.breakpoints, keys = _a.keys, values = _a.values;
     var endIndex = keys.includes(end) ? keys.indexOf(end) + 1 : undefined;
     if (endIndex === keys.length) {
@@ -22226,7 +21878,7 @@ var between = function (begin, end, withAtRule) {
 };
 var down = function (begin, withAtRule) {
     if (withAtRule === void 0) { withAtRule = true; }
-    var theme = useTheme$2();
+    var theme = withTheme();
     var _a = theme.breakpoints, keys = _a.keys, values = _a.values;
     var beginIndex = keys.includes(begin) ? keys.indexOf(begin) + 1 : undefined;
     if (beginIndex === keys.length) {
@@ -22242,14 +21894,14 @@ var only = function (begin, withAtRule) {
 };
 var up = function (begin, withAtRule) {
     if (withAtRule === void 0) { withAtRule = true; }
-    var theme = useTheme$2();
+    var theme = withTheme();
     var _a = theme.breakpoints, keys = _a.keys, values = _a.values;
     var value = keys.includes(begin) ? values[begin] : begin;
     var prefix = withAtRule ? '@media ' : '';
     return Number.isNaN(parseInt('' + value, 10)) ? '' : "".concat(prefix, "(min-width: ").concat(value, "px)");
 };
 var width$1 = function (key) {
-    var theme = useTheme$2();
+    var theme = withTheme();
     var values = theme.breakpoints.values;
     return values[key];
 };
@@ -22388,7 +22040,7 @@ function useInt(value) {
 }
 
 function pxToRem(size) {
-    var theme = useTheme$2();
+    var theme = withTheme();
     var fontSize = theme.typography.fontSize;
     var calculatedFontSize = parseFloat("".concat(fontSize));
     var parsedSize = useInt(size);
@@ -22412,7 +22064,7 @@ function selectModeColor(color, type, options) {
 var create = function (props, options) {
     if (props === void 0) { props = ['all']; }
     if (options === void 0) { options = {}; }
-    var theme = useTheme$2();
+    var theme = withTheme();
     var _a = options.duration, durationOption = _a === void 0 ? theme.transitions.duration.standard : _a, _b = options.easing, easingOption = _b === void 0 ? theme.transitions.easing.easeInOut : _b, _c = options.delay, delayOption = _c === void 0 ? 0 : _c;
     var duration = typeof durationOption === 'string' ? durationOption : formatMs$1(durationOption);
     var delay = typeof delayOption === 'string' ? delayOption : formatMs$1(delayOption);
@@ -22567,10 +22219,6 @@ var LineHeights15 = 12;
 var LineHeights16 = 18;
 var LineHeights17 = 14;
 var LineHeights18 = 48;
-var LineHeights19 = 46;
-var LineHeights20 = 34;
-var LineHeights21 = 16;
-var LineHeights22 = 13;
 var FontWeightsLight = "Light";
 var FontWeightsRegular = "Regular";
 var FontWeightsBold = "Bold";
@@ -22600,17 +22248,15 @@ var LetterSpacing8 = 0.4;
 var LetterSpacing9 = 0.14;
 var LetterSpacing10 = 0.46;
 var LetterSpacing11 = 0.16;
-var LetterSpacing12 = 0.3;
-var ParagraphSpacing1 = 15;
 var ParagraphSpacingNone = 0;
-var TypographyH1 = { "fontFamily": "ASICS Font 3.0", "fontWeight": "Bold", "lineHeight": 46, "fontSize": 42, "letterSpacing": 0, "paragraphSpacing": 0, "paragraphIndent": 0, "textCase": "none", "textDecoration": "none" };
-var TypographyH2 = { "fontFamily": "ASICS Font 3.0", "fontWeight": "Bold", "lineHeight": 34, "fontSize": 30, "letterSpacing": 0.3, "paragraphSpacing": 0, "paragraphIndent": 0, "textCase": "none", "textDecoration": "none" };
-var TypographyH3 = { "fontFamily": "ASICS Font 3.0", "fontWeight": "Bold", "lineHeight": 22, "fontSize": 18, "letterSpacing": 0.3, "paragraphSpacing": 0, "paragraphIndent": 0, "textCase": "none", "textDecoration": "none" };
-var TypographyH4 = { "fontFamily": "ASICS Font 3.0", "fontWeight": "Bold", "lineHeight": 20, "fontSize": 15, "letterSpacing": 0.3, "paragraphSpacing": 0, "paragraphIndent": 0, "textCase": "none", "textDecoration": "none" };
-var TypographyH5 = { "fontFamily": "ASICS Font 3.0", "fontWeight": "Bold", "lineHeight": 16, "fontSize": 13, "letterSpacing": 0.3, "paragraphSpacing": 0, "paragraphIndent": 0, "textCase": "none", "textDecoration": "none" };
-var TypographyH6 = { "fontFamily": "ASICS Font 3.0", "fontWeight": "Bold", "lineHeight": 13, "fontSize": 11, "letterSpacing": 0.3, "paragraphSpacing": 0, "paragraphIndent": 0, "textCase": "none", "textDecoration": "none" };
-var TypographyBody1 = { "fontFamily": "ASICS Font 3.0", "fontWeight": "Regular", "lineHeight": 20, "fontSize": 15, "letterSpacing": 0.3, "paragraphSpacing": 15, "paragraphIndent": 0, "textCase": "none", "textDecoration": "none" };
-var TypographyBody2 = { "fontFamily": "ASICS Font 3.0", "fontWeight": "Regular", "lineHeight": 18, "fontSize": 13, "letterSpacing": 0.3, "paragraphSpacing": 15, "paragraphIndent": 0, "textCase": "none", "textDecoration": "none" };
+var TypographyH1 = { "fontFamily": "ASICS Font 3.0", "fontWeight": "Bold", "lineHeight": "116.7%", "fontSize": 42, "letterSpacing": -1.5, "paragraphSpacing": 0, "paragraphIndent": 0, "textCase": "none", "textDecoration": "none" };
+var TypographyH2 = { "fontFamily": "ASICS Font 3.0", "fontWeight": "Bold", "lineHeight": "120%", "fontSize": 30, "letterSpacing": -0.5, "paragraphSpacing": 0, "paragraphIndent": 0, "textCase": "none", "textDecoration": "none" };
+var TypographyH3 = { "fontFamily": "ASICS Font 3.0", "fontWeight": "Bold", "lineHeight": "116.7%", "fontSize": 18, "letterSpacing": 0, "paragraphSpacing": 0, "paragraphIndent": 0, "textCase": "none", "textDecoration": "none" };
+var TypographyH4 = { "fontFamily": "ASICS Font 3.0", "fontWeight": "Bold", "lineHeight": "123.5%", "fontSize": 15, "letterSpacing": 0.25, "paragraphSpacing": 0, "paragraphIndent": 0, "textCase": "none", "textDecoration": "none" };
+var TypographyH5 = { "fontFamily": "ASICS Font 3.0", "fontWeight": "Bold", "lineHeight": "133.4%", "fontSize": 13, "letterSpacing": 0, "paragraphSpacing": 0, "paragraphIndent": 0, "textCase": "none", "textDecoration": "none" };
+var TypographyH6 = { "fontFamily": "ASICS Font 3.0", "fontWeight": "Bold", "lineHeight": "160%", "fontSize": 11, "letterSpacing": 0.15, "paragraphSpacing": 0, "paragraphIndent": 0, "textCase": "none", "textDecoration": "none" };
+var TypographyBody1 = { "fontFamily": "ASICS Font 3.0", "fontWeight": "Regular", "lineHeight": "150%", "fontSize": 15, "letterSpacing": 0.15, "paragraphSpacing": 0, "paragraphIndent": 0, "textCase": "none", "textDecoration": "none" };
+var TypographyBody2 = { "fontFamily": "ASICS Font 3.0", "fontWeight": "Regular", "lineHeight": "143%", "fontSize": 13, "letterSpacing": 0.17, "paragraphSpacing": 0, "paragraphIndent": 0, "textCase": "none", "textDecoration": "none" };
 var TypographyButton = { "fontFamily": "ASICS Font 3.0", "fontWeight": "Regular", "lineHeight": "143%", "fontSize": 14, "letterSpacing": 0.17, "paragraphSpacing": 0, "paragraphIndent": 0, "textCase": "none", "textDecoration": "none" };
 var TypographySubtitle1 = { "fontFamily": "ASICS Font 3.0", "fontWeight": "Regular", "lineHeight": "175%", "fontSize": 15, "letterSpacing": 0.15, "paragraphSpacing": 0, "paragraphIndent": 0, "textCase": "none", "textDecoration": "none" };
 var TypographySubtitle2 = { "fontFamily": "ASICS Font 3.0", "fontWeight": "Regular", "lineHeight": "157%", "fontSize": 13, "letterSpacing": 0.1, "paragraphSpacing": 0, "paragraphIndent": 0, "textCase": "none", "textDecoration": "none" };
@@ -22878,7 +22524,6 @@ var core = /*#__PURE__*/Object.freeze({
     LetterSpacing1: LetterSpacing1,
     LetterSpacing10: LetterSpacing10,
     LetterSpacing11: LetterSpacing11,
-    LetterSpacing12: LetterSpacing12,
     LetterSpacing2: LetterSpacing2,
     LetterSpacing3: LetterSpacing3,
     LetterSpacing4: LetterSpacing4,
@@ -22898,11 +22543,7 @@ var core = /*#__PURE__*/Object.freeze({
     LineHeights16: LineHeights16,
     LineHeights17: LineHeights17,
     LineHeights18: LineHeights18,
-    LineHeights19: LineHeights19,
     LineHeights2: LineHeights2,
-    LineHeights20: LineHeights20,
-    LineHeights21: LineHeights21,
-    LineHeights22: LineHeights22,
     LineHeights3: LineHeights3,
     LineHeights4: LineHeights4,
     LineHeights5: LineHeights5,
@@ -22935,7 +22576,6 @@ var core = /*#__PURE__*/Object.freeze({
     OverridesSwitchKnobFill: OverridesSwitchKnobFill,
     OverridesSwitchSlideFill: OverridesSwitchSlideFill,
     ParagraphIndentNone: ParagraphIndentNone,
-    ParagraphSpacing1: ParagraphSpacing1,
     ParagraphSpacingNone: ParagraphSpacingNone,
     PrimaryContrast: PrimaryContrast,
     PrimaryDark: PrimaryDark,
@@ -23263,7 +22903,7 @@ function createTheme$2(userTheme) {
     };
 }
 
-var theme$2 = useTheme$2();
+var theme = withTheme();
 var cssBaselineStyles = {
     '@global': {
         html: {
@@ -23277,12 +22917,12 @@ var cssBaselineStyles = {
             boxSizing: 'inherit'
         },
         'strong, b': {
-            fontWeight: theme$2.typography.fontWeightBold
+            fontWeight: theme.typography.fontWeightBold
         },
-        body: __assign(__assign({}, theme$2.typography.variants.body1), { backgroundColor: theme$2.palette.background.default, color: theme$2.palette.text.primary, fontFamily: theme$2.typography.fontFamily, height: '100%', scrollBehavior: 'smooth', textRendering: 'optimizeSpeed', '@media print': {
-                backgroundColor: theme$2.palette.common.white
+        body: __assign(__assign({}, theme.typography.variants.body1), { backgroundColor: theme.palette.background.default, color: theme.palette.text.primary, fontFamily: theme.typography.fontFamily, height: '100%', scrollBehavior: 'smooth', textRendering: 'optimizeSpeed', '@media print': {
+                backgroundColor: theme.palette.common.white
             }, '&::backdrop': {
-                backgroundColor: theme$2.palette.background.default
+                backgroundColor: theme.palette.background.default
             } }),
         'input, button, textarea, select': {
             font: 'inherit'
@@ -23328,10 +22968,10 @@ function provideTheme(themeOptions) {
 
 function provideClasses(stylesOrCreator, options) {
     if (options === void 0) { options = {}; }
-    var theme = useTheme$2();
+    var theme = withTheme();
     if (theme.initial) {
         provideTheme();
-        theme = useTheme$2();
+        theme = withTheme();
     }
     var styles = typeof stylesOrCreator === 'function' ? stylesOrCreator(theme) : stylesOrCreator;
     var sheet = provideStylesheet(styles, options);
@@ -23340,10 +22980,10 @@ function provideClasses(stylesOrCreator, options) {
 
 function provideCssBaseline() {
     var _a;
-    var theme = useTheme$2();
+    var theme = withTheme();
     if (theme.initial) {
         provideTheme();
-        theme = useTheme$2();
+        theme = withTheme();
     }
     var key = 'baseline';
     var stateCss = store.getState().css[key] || '';
@@ -23364,16 +23004,16 @@ function provideTokens(tokens) {
     store.dispatch(setTokens(tokens));
 }
 
-function useStyleOverrides() {
-    useTheme$2();
+function withStyleOverrides() {
+    withTheme();
     var styleOverrides = {};
     return styleOverrides;
 }
 
-function useMuiTheme() {
+function withMuiTheme() {
     var _a, _b, _c, _d, _e, _f, _g, _h;
-    var dsprotoTheme = useTheme$2();
-    var styleOverrides = useStyleOverrides();
+    var dsprotoTheme = withTheme();
+    var styleOverrides = withStyleOverrides();
     var muiStyleOverrides = {};
     var keys = Object.keys(styleOverrides);
     keys.forEach(function (key) { return (muiStyleOverrides["Mui".concat(key)] = styleOverrides[key]); });
@@ -23396,64 +23036,12 @@ function useMuiTheme() {
     return muiTheme;
 }
 
-function useTailwindTheme() {
-    provideTheme();
-    var dsprotoTheme = useTheme$2();
-    var tailwindTheme = {
-        borderRadius: {
-            primary: "".concat(dsprotoTheme.shape.borderRadius, "px")
-        },
-        colors: {
-            gray: __assign({}, dsprotoTheme.palette.grey)
-        },
-        extend: {
-            colors: {
-                action: {
-                    active: dsprotoTheme.palette.action.active,
-                    disabled: dsprotoTheme.palette.action.disabled,
-                    disabledBackground: dsprotoTheme.palette.action.disabledBackground,
-                    focus: dsprotoTheme.palette.action.focus,
-                    hover: dsprotoTheme.palette.action.hover,
-                    selected: dsprotoTheme.palette.action.selected
-                },
-                background: __assign({}, dsprotoTheme.palette.background),
-                common: __assign({}, dsprotoTheme.palette.common),
-                divider: dsprotoTheme.palette.divider,
-                error: __assign({}, dsprotoTheme.palette.error),
-                info: __assign({}, dsprotoTheme.palette.info),
-                primary: __assign({}, dsprotoTheme.palette.primary),
-                secondary: __assign({}, dsprotoTheme.palette.secondary),
-                success: __assign({}, dsprotoTheme.palette.success),
-                warning: __assign({}, dsprotoTheme.palette.warning)
-            },
-            contrastThreshold: dsprotoTheme.palette.contrastThreshold,
-            opacity: {
-                activatedOpacity: "".concat(dsprotoTheme.palette.action.activatedOpacity),
-                disabledOpacity: "".concat(dsprotoTheme.palette.action.disabledOpacity),
-                focusOpacity: "".concat(dsprotoTheme.palette.action.focusOpacity),
-                hoverOpacity: "".concat(dsprotoTheme.palette.action.hoverOpacity),
-                selectedOpacity: "".concat(dsprotoTheme.palette.action.selectedOpacity)
-            },
-            spacingUnit: dsprotoTheme.spacing.unit,
-            typography: __assign({}, dsprotoTheme.typography.variants),
-            zIndexes: __assign({}, dsprotoTheme.zIndex)
-        },
-        screens: {
-            lg: "".concat(dsprotoTheme.breakpoints.values.lg, "px"),
-            md: "".concat(dsprotoTheme.breakpoints.values.md, "px"),
-            sm: "".concat(dsprotoTheme.breakpoints.values.sm, "px"),
-            xl: "".concat(dsprotoTheme.breakpoints.values.xl, "px")
-        }
-    };
-    return tailwindTheme;
-}
-
 function AccordionStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Accordion');
 }
-useTheme$2();
+withTheme();
 var AccordionStyle = AccordionStyles();
 function Accordion(props) {
     var defaultProps = {
@@ -23469,7 +23057,7 @@ function AccordionActionsStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'AccordionActions');
 }
-useTheme$2();
+withTheme();
 var AccordionActionsStyle = AccordionActionsStyles();
 function AccordionActions(props) {
     var defaultProps = {
@@ -23484,7 +23072,7 @@ function AccordionDetailsStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'AccordionDetails');
 }
-useTheme$2();
+withTheme();
 var AccordionDetailsStyle = AccordionDetailsStyles();
 function AccordionDetails(props) {
     var defaultProps = {
@@ -23499,7 +23087,7 @@ function AccordionSummaryStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'AccordionSummary');
 }
-useTheme$2();
+withTheme();
 var AccordionSummaryStyle = AccordionSummaryStyles();
 function AccordionSummary(props) {
     var defaultProps = {
@@ -23514,7 +23102,7 @@ function AlertStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Alert');
 }
-useTheme$2();
+withTheme();
 var AlertStyle = AlertStyles();
 function Alert(props) {
     var defaultProps = {
@@ -23529,7 +23117,7 @@ function AlertTitleStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'AlertTitle');
 }
-useTheme$2();
+withTheme();
 var AlertTitleStyle = AlertTitleStyles();
 function AlertTitle(props) {
     var defaultProps = {
@@ -23544,7 +23132,7 @@ function AppBarStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'AppBar');
 }
-useTheme$2();
+withTheme();
 var AppBarStyle = AppBarStyles();
 function AppBar(props) {
     var defaultProps = {
@@ -23554,119 +23142,12 @@ function AppBar(props) {
     return jsxRuntimeExports.jsx(material.AppBar, __assign({ sx: AppBarStyle }, composedProps));
 }
 
-function AvatarStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Avatar');
-}
-useTheme$2();
-var AvatarStyle = AvatarStyles();
-function Avatar(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Avatar, __assign({ sx: AvatarStyle }, composedProps));
-}
-
-function AvatarGroupStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'AvatarGroup');
-}
-useTheme$2();
-var AvatarGroupStyle = AvatarGroupStyles();
-function AvatarGroup(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.AvatarGroup, __assign({ sx: AvatarGroupStyle }, composedProps));
-}
-
-function BackdropStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Backdrop');
-}
-useTheme$2();
-var BackdropStyle = BackdropStyles();
-function Backdrop(props) {
-    var defaultProps = {
-        open: false
-        /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Backdrop, __assign({ sx: BackdropStyle }, composedProps));
-}
-
-function BadgeStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Badge');
-}
-useTheme$2();
-var BadgeStyle = BadgeStyles();
-function Badge(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Badge, __assign({ sx: BadgeStyle }, composedProps));
-}
-
-function BottomNavigationStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'BottomNavigation');
-}
-useTheme$2();
-var BottomNavigationStyle = BottomNavigationStyles();
-function BottomNavigation(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.BottomNavigation, __assign({ sx: BottomNavigationStyle }, composedProps));
-}
-
-function BottomNavigationActionStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'BottomNavigationAction');
-}
-useTheme$2();
-var BottomNavigationActionStyle = BottomNavigationActionStyles();
-function BottomNavigationAction(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.BottomNavigationAction, __assign({ sx: BottomNavigationActionStyle }, composedProps));
-}
-
-function BoxStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Box');
-}
-useTheme$2();
-var BoxStyle = BoxStyles();
-function Box(props) {
-    var defaultProps = {
-        children: ''
-        /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Box, __assign({ sx: BoxStyle }, composedProps));
-}
-
 function BreadcrumbsStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Breadcrumbs');
 }
-useTheme$2();
+withTheme();
 var BreadcrumbsStyle = BreadcrumbsStyles();
 function Breadcrumbs(props) {
     var defaultProps = {
@@ -23678,11 +23159,11 @@ function Breadcrumbs(props) {
 
 function ButtonStyles(theme) {
     return applyOverrides({
-        borderRadius: theme.shape.borderRadius * 3
+    /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Button');
 }
-var theme$1 = useTheme$2();
-var ButtonStyle = ButtonStyles(theme$1);
+withTheme();
+var ButtonStyle = ButtonStyles();
 function Button(props) {
     var defaultProps = {
     /* Add custom prop defaults here */
@@ -23696,7 +23177,7 @@ function ButtonBaseStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'ButtonBase');
 }
-useTheme$2();
+withTheme();
 var ButtonBaseStyle = ButtonBaseStyles();
 function ButtonBase(props) {
     var defaultProps = {
@@ -23711,7 +23192,7 @@ function ButtonGroupStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'ButtonGroup');
 }
-useTheme$2();
+withTheme();
 var ButtonGroupStyle = ButtonGroupStyles();
 function ButtonGroup(props) {
     var defaultProps = {
@@ -23726,7 +23207,7 @@ function CardStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Card');
 }
-useTheme$2();
+withTheme();
 var CardStyle = CardStyles();
 function Card(props) {
     var defaultProps = {
@@ -23741,7 +23222,7 @@ function CardActionAreaStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'CardActionArea');
 }
-useTheme$2();
+withTheme();
 var CardActionAreaStyle = CardActionAreaStyles();
 function CardActionArea(props) {
     var defaultProps = {
@@ -23756,7 +23237,7 @@ function CardActionsStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'CardActions');
 }
-useTheme$2();
+withTheme();
 var CardActionsStyle = CardActionsStyles();
 function CardActions(props) {
     var defaultProps = {
@@ -23771,7 +23252,7 @@ function CardContentStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'CardContent');
 }
-useTheme$2();
+withTheme();
 var CardContentStyle = CardContentStyles();
 function CardContent(props) {
     var defaultProps = {
@@ -23786,7 +23267,7 @@ function CardHeaderStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'CardHeader');
 }
-useTheme$2();
+withTheme();
 var CardHeaderStyle = CardHeaderStyles();
 function CardHeader(props) {
     var defaultProps = {
@@ -23801,7 +23282,7 @@ function CardMediaStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'CardMedia');
 }
-useTheme$2();
+withTheme();
 var CardMediaStyle = CardMediaStyles();
 function CardMedia(props) {
     var defaultProps = {
@@ -23900,6 +23381,15 @@ const VALIDATION_MODE = {
     onSubmit: 'onSubmit',
     onTouched: 'onTouched',
     all: 'all',
+};
+const INPUT_VALIDATION_RULES = {
+    max: 'max',
+    min: 'min',
+    maxLength: 'maxLength',
+    minLength: 'minLength',
+    pattern: 'pattern',
+    required: 'required',
+    validate: 'validate',
 };
 
 const HookFormContext = React.createContext(null);
@@ -24315,12 +23805,1654 @@ function useController(props) {
  */
 const Controller = (props) => props.render(useController(props));
 
+var appendErrors = (name, validateAllFieldCriteria, errors, type, message) => validateAllFieldCriteria
+    ? {
+        ...errors[name],
+        types: {
+            ...(errors[name] && errors[name].types ? errors[name].types : {}),
+            [type]: message || true,
+        },
+    }
+    : {};
+
+var getValidationModes = (mode) => ({
+    isOnSubmit: !mode || mode === VALIDATION_MODE.onSubmit,
+    isOnBlur: mode === VALIDATION_MODE.onBlur,
+    isOnChange: mode === VALIDATION_MODE.onChange,
+    isOnAll: mode === VALIDATION_MODE.all,
+    isOnTouch: mode === VALIDATION_MODE.onTouched,
+});
+
+var isWatched = (name, _names, isBlurEvent) => !isBlurEvent &&
+    (_names.watchAll ||
+        _names.watch.has(name) ||
+        [..._names.watch].some((watchName) => name.startsWith(watchName) &&
+            /^\.\w+/.test(name.slice(watchName.length))));
+
+const iterateFieldsByAction = (fields, action, fieldsNames, abortEarly) => {
+    for (const key of fieldsNames || Object.keys(fields)) {
+        const field = get(fields, key);
+        if (field) {
+            const { _f, ...currentField } = field;
+            if (_f) {
+                if (_f.refs && _f.refs[0] && action(_f.refs[0], key) && !abortEarly) {
+                    break;
+                }
+                else if (_f.ref && action(_f.ref, _f.name) && !abortEarly) {
+                    break;
+                }
+                else {
+                    iterateFieldsByAction(currentField, action);
+                }
+            }
+            else if (isObject(currentField)) {
+                iterateFieldsByAction(currentField, action);
+            }
+        }
+    }
+};
+
+var updateFieldArrayRootError = (errors, error, name) => {
+    const fieldArrayErrors = compact(get(errors, name));
+    set(fieldArrayErrors, 'root', error[name]);
+    set(errors, name, fieldArrayErrors);
+    return errors;
+};
+
+var isFileInput = (element) => element.type === 'file';
+
+var isFunction = (value) => typeof value === 'function';
+
+var isHTMLElement = (value) => {
+    if (!isWeb) {
+        return false;
+    }
+    const owner = value ? value.ownerDocument : 0;
+    return (value instanceof
+        (owner && owner.defaultView ? owner.defaultView.HTMLElement : HTMLElement));
+};
+
+var isMessage = (value) => isString(value);
+
+var isRadioInput = (element) => element.type === 'radio';
+
+var isRegex = (value) => value instanceof RegExp;
+
+const defaultResult = {
+    value: false,
+    isValid: false,
+};
+const validResult = { value: true, isValid: true };
+var getCheckboxValue = (options) => {
+    if (Array.isArray(options)) {
+        if (options.length > 1) {
+            const values = options
+                .filter((option) => option && option.checked && !option.disabled)
+                .map((option) => option.value);
+            return { value: values, isValid: !!values.length };
+        }
+        return options[0].checked && !options[0].disabled
+            ? // @ts-expect-error expected to work in the browser
+                options[0].attributes && !isUndefined(options[0].attributes.value)
+                    ? isUndefined(options[0].value) || options[0].value === ''
+                        ? validResult
+                        : { value: options[0].value, isValid: true }
+                    : validResult
+            : defaultResult;
+    }
+    return defaultResult;
+};
+
+const defaultReturn = {
+    isValid: false,
+    value: null,
+};
+var getRadioValue = (options) => Array.isArray(options)
+    ? options.reduce((previous, option) => option && option.checked && !option.disabled
+        ? {
+            isValid: true,
+            value: option.value,
+        }
+        : previous, defaultReturn)
+    : defaultReturn;
+
+function getValidateError(result, ref, type = 'validate') {
+    if (isMessage(result) ||
+        (Array.isArray(result) && result.every(isMessage)) ||
+        (isBoolean(result) && !result)) {
+        return {
+            type,
+            message: isMessage(result) ? result : '',
+            ref,
+        };
+    }
+}
+
+var getValueAndMessage = (validationData) => isObject(validationData) && !isRegex(validationData)
+    ? validationData
+    : {
+        value: validationData,
+        message: '',
+    };
+
+var validateField = async (field, formValues, validateAllFieldCriteria, shouldUseNativeValidation, isFieldArray) => {
+    const { ref, refs, required, maxLength, minLength, min, max, pattern, validate, name, valueAsNumber, mount, disabled, } = field._f;
+    const inputValue = get(formValues, name);
+    if (!mount || disabled) {
+        return {};
+    }
+    const inputRef = refs ? refs[0] : ref;
+    const setCustomValidity = (message) => {
+        if (shouldUseNativeValidation && inputRef.reportValidity) {
+            inputRef.setCustomValidity(isBoolean(message) ? '' : message || '');
+            inputRef.reportValidity();
+        }
+    };
+    const error = {};
+    const isRadio = isRadioInput(ref);
+    const isCheckBox = isCheckBoxInput(ref);
+    const isRadioOrCheckbox = isRadio || isCheckBox;
+    const isEmpty = ((valueAsNumber || isFileInput(ref)) &&
+        isUndefined(ref.value) &&
+        isUndefined(inputValue)) ||
+        (isHTMLElement(ref) && ref.value === '') ||
+        inputValue === '' ||
+        (Array.isArray(inputValue) && !inputValue.length);
+    const appendErrorsCurry = appendErrors.bind(null, name, validateAllFieldCriteria, error);
+    const getMinMaxMessage = (exceedMax, maxLengthMessage, minLengthMessage, maxType = INPUT_VALIDATION_RULES.maxLength, minType = INPUT_VALIDATION_RULES.minLength) => {
+        const message = exceedMax ? maxLengthMessage : minLengthMessage;
+        error[name] = {
+            type: exceedMax ? maxType : minType,
+            message,
+            ref,
+            ...appendErrorsCurry(exceedMax ? maxType : minType, message),
+        };
+    };
+    if (isFieldArray
+        ? !Array.isArray(inputValue) || !inputValue.length
+        : required &&
+            ((!isRadioOrCheckbox && (isEmpty || isNullOrUndefined(inputValue))) ||
+                (isBoolean(inputValue) && !inputValue) ||
+                (isCheckBox && !getCheckboxValue(refs).isValid) ||
+                (isRadio && !getRadioValue(refs).isValid))) {
+        const { value, message } = isMessage(required)
+            ? { value: !!required, message: required }
+            : getValueAndMessage(required);
+        if (value) {
+            error[name] = {
+                type: INPUT_VALIDATION_RULES.required,
+                message,
+                ref: inputRef,
+                ...appendErrorsCurry(INPUT_VALIDATION_RULES.required, message),
+            };
+            if (!validateAllFieldCriteria) {
+                setCustomValidity(message);
+                return error;
+            }
+        }
+    }
+    if (!isEmpty && (!isNullOrUndefined(min) || !isNullOrUndefined(max))) {
+        let exceedMax;
+        let exceedMin;
+        const maxOutput = getValueAndMessage(max);
+        const minOutput = getValueAndMessage(min);
+        if (!isNullOrUndefined(inputValue) && !isNaN(inputValue)) {
+            const valueNumber = ref.valueAsNumber ||
+                (inputValue ? +inputValue : inputValue);
+            if (!isNullOrUndefined(maxOutput.value)) {
+                exceedMax = valueNumber > maxOutput.value;
+            }
+            if (!isNullOrUndefined(minOutput.value)) {
+                exceedMin = valueNumber < minOutput.value;
+            }
+        }
+        else {
+            const valueDate = ref.valueAsDate || new Date(inputValue);
+            const convertTimeToDate = (time) => new Date(new Date().toDateString() + ' ' + time);
+            const isTime = ref.type == 'time';
+            const isWeek = ref.type == 'week';
+            if (isString(maxOutput.value) && inputValue) {
+                exceedMax = isTime
+                    ? convertTimeToDate(inputValue) > convertTimeToDate(maxOutput.value)
+                    : isWeek
+                        ? inputValue > maxOutput.value
+                        : valueDate > new Date(maxOutput.value);
+            }
+            if (isString(minOutput.value) && inputValue) {
+                exceedMin = isTime
+                    ? convertTimeToDate(inputValue) < convertTimeToDate(minOutput.value)
+                    : isWeek
+                        ? inputValue < minOutput.value
+                        : valueDate < new Date(minOutput.value);
+            }
+        }
+        if (exceedMax || exceedMin) {
+            getMinMaxMessage(!!exceedMax, maxOutput.message, minOutput.message, INPUT_VALIDATION_RULES.max, INPUT_VALIDATION_RULES.min);
+            if (!validateAllFieldCriteria) {
+                setCustomValidity(error[name].message);
+                return error;
+            }
+        }
+    }
+    if ((maxLength || minLength) &&
+        !isEmpty &&
+        (isString(inputValue) || (isFieldArray && Array.isArray(inputValue)))) {
+        const maxLengthOutput = getValueAndMessage(maxLength);
+        const minLengthOutput = getValueAndMessage(minLength);
+        const exceedMax = !isNullOrUndefined(maxLengthOutput.value) &&
+            inputValue.length > +maxLengthOutput.value;
+        const exceedMin = !isNullOrUndefined(minLengthOutput.value) &&
+            inputValue.length < +minLengthOutput.value;
+        if (exceedMax || exceedMin) {
+            getMinMaxMessage(exceedMax, maxLengthOutput.message, minLengthOutput.message);
+            if (!validateAllFieldCriteria) {
+                setCustomValidity(error[name].message);
+                return error;
+            }
+        }
+    }
+    if (pattern && !isEmpty && isString(inputValue)) {
+        const { value: patternValue, message } = getValueAndMessage(pattern);
+        if (isRegex(patternValue) && !inputValue.match(patternValue)) {
+            error[name] = {
+                type: INPUT_VALIDATION_RULES.pattern,
+                message,
+                ref,
+                ...appendErrorsCurry(INPUT_VALIDATION_RULES.pattern, message),
+            };
+            if (!validateAllFieldCriteria) {
+                setCustomValidity(message);
+                return error;
+            }
+        }
+    }
+    if (validate) {
+        if (isFunction(validate)) {
+            const result = await validate(inputValue, formValues);
+            const validateError = getValidateError(result, inputRef);
+            if (validateError) {
+                error[name] = {
+                    ...validateError,
+                    ...appendErrorsCurry(INPUT_VALIDATION_RULES.validate, validateError.message),
+                };
+                if (!validateAllFieldCriteria) {
+                    setCustomValidity(validateError.message);
+                    return error;
+                }
+            }
+        }
+        else if (isObject(validate)) {
+            let validationResult = {};
+            for (const key in validate) {
+                if (!isEmptyObject(validationResult) && !validateAllFieldCriteria) {
+                    break;
+                }
+                const validateError = getValidateError(await validate[key](inputValue, formValues), inputRef, key);
+                if (validateError) {
+                    validationResult = {
+                        ...validateError,
+                        ...appendErrorsCurry(key, validateError.message),
+                    };
+                    setCustomValidity(validateError.message);
+                    if (validateAllFieldCriteria) {
+                        error[name] = validationResult;
+                    }
+                }
+            }
+            if (!isEmptyObject(validationResult)) {
+                error[name] = {
+                    ref: inputRef,
+                    ...validationResult,
+                };
+                if (!validateAllFieldCriteria) {
+                    return error;
+                }
+            }
+        }
+    }
+    setCustomValidity(true);
+    return error;
+};
+
+function baseGet(object, updatePath) {
+    const length = updatePath.slice(0, -1).length;
+    let index = 0;
+    while (index < length) {
+        object = isUndefined(object) ? index++ : object[updatePath[index++]];
+    }
+    return object;
+}
+function isEmptyArray(obj) {
+    for (const key in obj) {
+        if (obj.hasOwnProperty(key) && !isUndefined(obj[key])) {
+            return false;
+        }
+    }
+    return true;
+}
+function unset(object, path) {
+    const paths = Array.isArray(path)
+        ? path
+        : isKey(path)
+            ? [path]
+            : stringToPath(path);
+    const childObject = paths.length === 1 ? object : baseGet(object, paths);
+    const index = paths.length - 1;
+    const key = paths[index];
+    if (childObject) {
+        delete childObject[key];
+    }
+    if (index !== 0 &&
+        ((isObject(childObject) && isEmptyObject(childObject)) ||
+            (Array.isArray(childObject) && isEmptyArray(childObject)))) {
+        unset(object, paths.slice(0, -1));
+    }
+    return object;
+}
+
+var createSubject = () => {
+    let _observers = [];
+    const next = (value) => {
+        for (const observer of _observers) {
+            observer.next && observer.next(value);
+        }
+    };
+    const subscribe = (observer) => {
+        _observers.push(observer);
+        return {
+            unsubscribe: () => {
+                _observers = _observers.filter((o) => o !== observer);
+            },
+        };
+    };
+    const unsubscribe = () => {
+        _observers = [];
+    };
+    return {
+        get observers() {
+            return _observers;
+        },
+        next,
+        subscribe,
+        unsubscribe,
+    };
+};
+
+var isPrimitive = (value) => isNullOrUndefined(value) || !isObjectType(value);
+
+function deepEqual(object1, object2) {
+    if (isPrimitive(object1) || isPrimitive(object2)) {
+        return object1 === object2;
+    }
+    if (isDateObject(object1) && isDateObject(object2)) {
+        return object1.getTime() === object2.getTime();
+    }
+    const keys1 = Object.keys(object1);
+    const keys2 = Object.keys(object2);
+    if (keys1.length !== keys2.length) {
+        return false;
+    }
+    for (const key of keys1) {
+        const val1 = object1[key];
+        if (!keys2.includes(key)) {
+            return false;
+        }
+        if (key !== 'ref') {
+            const val2 = object2[key];
+            if ((isDateObject(val1) && isDateObject(val2)) ||
+                (isObject(val1) && isObject(val2)) ||
+                (Array.isArray(val1) && Array.isArray(val2))
+                ? !deepEqual(val1, val2)
+                : val1 !== val2) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+var isMultipleSelect = (element) => element.type === `select-multiple`;
+
+var isRadioOrCheckbox = (ref) => isRadioInput(ref) || isCheckBoxInput(ref);
+
+var live = (ref) => isHTMLElement(ref) && ref.isConnected;
+
+var objectHasFunction = (data) => {
+    for (const key in data) {
+        if (isFunction(data[key])) {
+            return true;
+        }
+    }
+    return false;
+};
+
+function markFieldsDirty(data, fields = {}) {
+    const isParentNodeArray = Array.isArray(data);
+    if (isObject(data) || isParentNodeArray) {
+        for (const key in data) {
+            if (Array.isArray(data[key]) ||
+                (isObject(data[key]) && !objectHasFunction(data[key]))) {
+                fields[key] = Array.isArray(data[key]) ? [] : {};
+                markFieldsDirty(data[key], fields[key]);
+            }
+            else if (!isNullOrUndefined(data[key])) {
+                fields[key] = true;
+            }
+        }
+    }
+    return fields;
+}
+function getDirtyFieldsFromDefaultValues(data, formValues, dirtyFieldsFromValues) {
+    const isParentNodeArray = Array.isArray(data);
+    if (isObject(data) || isParentNodeArray) {
+        for (const key in data) {
+            if (Array.isArray(data[key]) ||
+                (isObject(data[key]) && !objectHasFunction(data[key]))) {
+                if (isUndefined(formValues) ||
+                    isPrimitive(dirtyFieldsFromValues[key])) {
+                    dirtyFieldsFromValues[key] = Array.isArray(data[key])
+                        ? markFieldsDirty(data[key], [])
+                        : { ...markFieldsDirty(data[key]) };
+                }
+                else {
+                    getDirtyFieldsFromDefaultValues(data[key], isNullOrUndefined(formValues) ? {} : formValues[key], dirtyFieldsFromValues[key]);
+                }
+            }
+            else {
+                dirtyFieldsFromValues[key] = !deepEqual(data[key], formValues[key]);
+            }
+        }
+    }
+    return dirtyFieldsFromValues;
+}
+var getDirtyFields = (defaultValues, formValues) => getDirtyFieldsFromDefaultValues(defaultValues, formValues, markFieldsDirty(formValues));
+
+var getFieldValueAs = (value, { valueAsNumber, valueAsDate, setValueAs }) => isUndefined(value)
+    ? value
+    : valueAsNumber
+        ? value === ''
+            ? NaN
+            : value
+                ? +value
+                : value
+        : valueAsDate && isString(value)
+            ? new Date(value)
+            : setValueAs
+                ? setValueAs(value)
+                : value;
+
+function getFieldValue(_f) {
+    const ref = _f.ref;
+    if (_f.refs ? _f.refs.every((ref) => ref.disabled) : ref.disabled) {
+        return;
+    }
+    if (isFileInput(ref)) {
+        return ref.files;
+    }
+    if (isRadioInput(ref)) {
+        return getRadioValue(_f.refs).value;
+    }
+    if (isMultipleSelect(ref)) {
+        return [...ref.selectedOptions].map(({ value }) => value);
+    }
+    if (isCheckBoxInput(ref)) {
+        return getCheckboxValue(_f.refs).value;
+    }
+    return getFieldValueAs(isUndefined(ref.value) ? _f.ref.value : ref.value, _f);
+}
+
+var getResolverOptions = (fieldsNames, _fields, criteriaMode, shouldUseNativeValidation) => {
+    const fields = {};
+    for (const name of fieldsNames) {
+        const field = get(_fields, name);
+        field && set(fields, name, field._f);
+    }
+    return {
+        criteriaMode,
+        names: [...fieldsNames],
+        fields,
+        shouldUseNativeValidation,
+    };
+};
+
+var getRuleValue = (rule) => isUndefined(rule)
+    ? rule
+    : isRegex(rule)
+        ? rule.source
+        : isObject(rule)
+            ? isRegex(rule.value)
+                ? rule.value.source
+                : rule.value
+            : rule;
+
+var hasValidation = (options) => options.mount &&
+    (options.required ||
+        options.min ||
+        options.max ||
+        options.maxLength ||
+        options.minLength ||
+        options.pattern ||
+        options.validate);
+
+function schemaErrorLookup(errors, _fields, name) {
+    const error = get(errors, name);
+    if (error || isKey(name)) {
+        return {
+            error,
+            name,
+        };
+    }
+    const names = name.split('.');
+    while (names.length) {
+        const fieldName = names.join('.');
+        const field = get(_fields, fieldName);
+        const foundError = get(errors, fieldName);
+        if (field && !Array.isArray(field) && name !== fieldName) {
+            return { name };
+        }
+        if (foundError && foundError.type) {
+            return {
+                name: fieldName,
+                error: foundError,
+            };
+        }
+        names.pop();
+    }
+    return {
+        name,
+    };
+}
+
+var skipValidation = (isBlurEvent, isTouched, isSubmitted, reValidateMode, mode) => {
+    if (mode.isOnAll) {
+        return false;
+    }
+    else if (!isSubmitted && mode.isOnTouch) {
+        return !(isTouched || isBlurEvent);
+    }
+    else if (isSubmitted ? reValidateMode.isOnBlur : mode.isOnBlur) {
+        return !isBlurEvent;
+    }
+    else if (isSubmitted ? reValidateMode.isOnChange : mode.isOnChange) {
+        return isBlurEvent;
+    }
+    return true;
+};
+
+var unsetEmptyArray = (ref, name) => !compact(get(ref, name)).length && unset(ref, name);
+
+const defaultOptions = {
+    mode: VALIDATION_MODE.onSubmit,
+    reValidateMode: VALIDATION_MODE.onChange,
+    shouldFocusError: true,
+};
+function createFormControl(props = {}) {
+    let _options = {
+        ...defaultOptions,
+        ...props,
+    };
+    let _formState = {
+        submitCount: 0,
+        isDirty: false,
+        isLoading: isFunction(_options.defaultValues),
+        isValidating: false,
+        isSubmitted: false,
+        isSubmitting: false,
+        isSubmitSuccessful: false,
+        isValid: false,
+        touchedFields: {},
+        dirtyFields: {},
+        validatingFields: {},
+        errors: _options.errors || {},
+        disabled: _options.disabled || false,
+    };
+    let _fields = {};
+    let _defaultValues = isObject(_options.defaultValues) || isObject(_options.values)
+        ? cloneObject(_options.defaultValues || _options.values) || {}
+        : {};
+    let _formValues = _options.shouldUnregister
+        ? {}
+        : cloneObject(_defaultValues);
+    let _state = {
+        action: false,
+        mount: false,
+        watch: false,
+    };
+    let _names = {
+        mount: new Set(),
+        unMount: new Set(),
+        array: new Set(),
+        watch: new Set(),
+    };
+    let delayErrorCallback;
+    let timer = 0;
+    const _proxyFormState = {
+        isDirty: false,
+        dirtyFields: false,
+        validatingFields: false,
+        touchedFields: false,
+        isValidating: false,
+        isValid: false,
+        errors: false,
+    };
+    const _subjects = {
+        values: createSubject(),
+        array: createSubject(),
+        state: createSubject(),
+    };
+    const validationModeBeforeSubmit = getValidationModes(_options.mode);
+    const validationModeAfterSubmit = getValidationModes(_options.reValidateMode);
+    const shouldDisplayAllAssociatedErrors = _options.criteriaMode === VALIDATION_MODE.all;
+    const debounce = (callback) => (wait) => {
+        clearTimeout(timer);
+        timer = setTimeout(callback, wait);
+    };
+    const _updateValid = async (shouldUpdateValid) => {
+        if (_proxyFormState.isValid || shouldUpdateValid) {
+            const isValid = _options.resolver
+                ? isEmptyObject((await _executeSchema()).errors)
+                : await executeBuiltInValidation(_fields, true);
+            if (isValid !== _formState.isValid) {
+                _subjects.state.next({
+                    isValid,
+                });
+            }
+        }
+    };
+    const _updateIsValidating = (names, isValidating) => {
+        if (_proxyFormState.isValidating || _proxyFormState.validatingFields) {
+            (names || Array.from(_names.mount)).forEach((name) => {
+                if (name) {
+                    isValidating
+                        ? set(_formState.validatingFields, name, isValidating)
+                        : unset(_formState.validatingFields, name);
+                }
+            });
+            _subjects.state.next({
+                validatingFields: _formState.validatingFields,
+                isValidating: !isEmptyObject(_formState.validatingFields),
+            });
+        }
+    };
+    const _updateFieldArray = (name, values = [], method, args, shouldSetValues = true, shouldUpdateFieldsAndState = true) => {
+        if (args && method) {
+            _state.action = true;
+            if (shouldUpdateFieldsAndState && Array.isArray(get(_fields, name))) {
+                const fieldValues = method(get(_fields, name), args.argA, args.argB);
+                shouldSetValues && set(_fields, name, fieldValues);
+            }
+            if (shouldUpdateFieldsAndState &&
+                Array.isArray(get(_formState.errors, name))) {
+                const errors = method(get(_formState.errors, name), args.argA, args.argB);
+                shouldSetValues && set(_formState.errors, name, errors);
+                unsetEmptyArray(_formState.errors, name);
+            }
+            if (_proxyFormState.touchedFields &&
+                shouldUpdateFieldsAndState &&
+                Array.isArray(get(_formState.touchedFields, name))) {
+                const touchedFields = method(get(_formState.touchedFields, name), args.argA, args.argB);
+                shouldSetValues && set(_formState.touchedFields, name, touchedFields);
+            }
+            if (_proxyFormState.dirtyFields) {
+                _formState.dirtyFields = getDirtyFields(_defaultValues, _formValues);
+            }
+            _subjects.state.next({
+                name,
+                isDirty: _getDirty(name, values),
+                dirtyFields: _formState.dirtyFields,
+                errors: _formState.errors,
+                isValid: _formState.isValid,
+            });
+        }
+        else {
+            set(_formValues, name, values);
+        }
+    };
+    const updateErrors = (name, error) => {
+        set(_formState.errors, name, error);
+        _subjects.state.next({
+            errors: _formState.errors,
+        });
+    };
+    const _setErrors = (errors) => {
+        _formState.errors = errors;
+        _subjects.state.next({
+            errors: _formState.errors,
+            isValid: false,
+        });
+    };
+    const updateValidAndValue = (name, shouldSkipSetValueAs, value, ref) => {
+        const field = get(_fields, name);
+        if (field) {
+            const defaultValue = get(_formValues, name, isUndefined(value) ? get(_defaultValues, name) : value);
+            isUndefined(defaultValue) ||
+                (ref && ref.defaultChecked) ||
+                shouldSkipSetValueAs
+                ? set(_formValues, name, shouldSkipSetValueAs ? defaultValue : getFieldValue(field._f))
+                : setFieldValue(name, defaultValue);
+            _state.mount && _updateValid();
+        }
+    };
+    const updateTouchAndDirty = (name, fieldValue, isBlurEvent, shouldDirty, shouldRender) => {
+        let shouldUpdateField = false;
+        let isPreviousDirty = false;
+        const output = {
+            name,
+        };
+        const disabledField = !!(get(_fields, name) && get(_fields, name)._f.disabled);
+        if (!isBlurEvent || shouldDirty) {
+            if (_proxyFormState.isDirty) {
+                isPreviousDirty = _formState.isDirty;
+                _formState.isDirty = output.isDirty = _getDirty();
+                shouldUpdateField = isPreviousDirty !== output.isDirty;
+            }
+            const isCurrentFieldPristine = disabledField || deepEqual(get(_defaultValues, name), fieldValue);
+            isPreviousDirty = !!(!disabledField && get(_formState.dirtyFields, name));
+            isCurrentFieldPristine || disabledField
+                ? unset(_formState.dirtyFields, name)
+                : set(_formState.dirtyFields, name, true);
+            output.dirtyFields = _formState.dirtyFields;
+            shouldUpdateField =
+                shouldUpdateField ||
+                    (_proxyFormState.dirtyFields &&
+                        isPreviousDirty !== !isCurrentFieldPristine);
+        }
+        if (isBlurEvent) {
+            const isPreviousFieldTouched = get(_formState.touchedFields, name);
+            if (!isPreviousFieldTouched) {
+                set(_formState.touchedFields, name, isBlurEvent);
+                output.touchedFields = _formState.touchedFields;
+                shouldUpdateField =
+                    shouldUpdateField ||
+                        (_proxyFormState.touchedFields &&
+                            isPreviousFieldTouched !== isBlurEvent);
+            }
+        }
+        shouldUpdateField && shouldRender && _subjects.state.next(output);
+        return shouldUpdateField ? output : {};
+    };
+    const shouldRenderByError = (name, isValid, error, fieldState) => {
+        const previousFieldError = get(_formState.errors, name);
+        const shouldUpdateValid = _proxyFormState.isValid &&
+            isBoolean(isValid) &&
+            _formState.isValid !== isValid;
+        if (props.delayError && error) {
+            delayErrorCallback = debounce(() => updateErrors(name, error));
+            delayErrorCallback(props.delayError);
+        }
+        else {
+            clearTimeout(timer);
+            delayErrorCallback = null;
+            error
+                ? set(_formState.errors, name, error)
+                : unset(_formState.errors, name);
+        }
+        if ((error ? !deepEqual(previousFieldError, error) : previousFieldError) ||
+            !isEmptyObject(fieldState) ||
+            shouldUpdateValid) {
+            const updatedFormState = {
+                ...fieldState,
+                ...(shouldUpdateValid && isBoolean(isValid) ? { isValid } : {}),
+                errors: _formState.errors,
+                name,
+            };
+            _formState = {
+                ..._formState,
+                ...updatedFormState,
+            };
+            _subjects.state.next(updatedFormState);
+        }
+    };
+    const _executeSchema = async (name) => {
+        _updateIsValidating(name, true);
+        const result = await _options.resolver(_formValues, _options.context, getResolverOptions(name || _names.mount, _fields, _options.criteriaMode, _options.shouldUseNativeValidation));
+        _updateIsValidating(name);
+        return result;
+    };
+    const executeSchemaAndUpdateState = async (names) => {
+        const { errors } = await _executeSchema(names);
+        if (names) {
+            for (const name of names) {
+                const error = get(errors, name);
+                error
+                    ? set(_formState.errors, name, error)
+                    : unset(_formState.errors, name);
+            }
+        }
+        else {
+            _formState.errors = errors;
+        }
+        return errors;
+    };
+    const executeBuiltInValidation = async (fields, shouldOnlyCheckValid, context = {
+        valid: true,
+    }) => {
+        for (const name in fields) {
+            const field = fields[name];
+            if (field) {
+                const { _f, ...fieldValue } = field;
+                if (_f) {
+                    const isFieldArrayRoot = _names.array.has(_f.name);
+                    _updateIsValidating([name], true);
+                    const fieldError = await validateField(field, _formValues, shouldDisplayAllAssociatedErrors, _options.shouldUseNativeValidation && !shouldOnlyCheckValid, isFieldArrayRoot);
+                    _updateIsValidating([name]);
+                    if (fieldError[_f.name]) {
+                        context.valid = false;
+                        if (shouldOnlyCheckValid) {
+                            break;
+                        }
+                    }
+                    !shouldOnlyCheckValid &&
+                        (get(fieldError, _f.name)
+                            ? isFieldArrayRoot
+                                ? updateFieldArrayRootError(_formState.errors, fieldError, _f.name)
+                                : set(_formState.errors, _f.name, fieldError[_f.name])
+                            : unset(_formState.errors, _f.name));
+                }
+                fieldValue &&
+                    (await executeBuiltInValidation(fieldValue, shouldOnlyCheckValid, context));
+            }
+        }
+        return context.valid;
+    };
+    const _removeUnmounted = () => {
+        for (const name of _names.unMount) {
+            const field = get(_fields, name);
+            field &&
+                (field._f.refs
+                    ? field._f.refs.every((ref) => !live(ref))
+                    : !live(field._f.ref)) &&
+                unregister(name);
+        }
+        _names.unMount = new Set();
+    };
+    const _getDirty = (name, data) => (name && data && set(_formValues, name, data),
+        !deepEqual(getValues(), _defaultValues));
+    const _getWatch = (names, defaultValue, isGlobal) => generateWatchOutput(names, _names, {
+        ...(_state.mount
+            ? _formValues
+            : isUndefined(defaultValue)
+                ? _defaultValues
+                : isString(names)
+                    ? { [names]: defaultValue }
+                    : defaultValue),
+    }, isGlobal, defaultValue);
+    const _getFieldArray = (name) => compact(get(_state.mount ? _formValues : _defaultValues, name, props.shouldUnregister ? get(_defaultValues, name, []) : []));
+    const setFieldValue = (name, value, options = {}) => {
+        const field = get(_fields, name);
+        let fieldValue = value;
+        if (field) {
+            const fieldReference = field._f;
+            if (fieldReference) {
+                !fieldReference.disabled &&
+                    set(_formValues, name, getFieldValueAs(value, fieldReference));
+                fieldValue =
+                    isHTMLElement(fieldReference.ref) && isNullOrUndefined(value)
+                        ? ''
+                        : value;
+                if (isMultipleSelect(fieldReference.ref)) {
+                    [...fieldReference.ref.options].forEach((optionRef) => (optionRef.selected = fieldValue.includes(optionRef.value)));
+                }
+                else if (fieldReference.refs) {
+                    if (isCheckBoxInput(fieldReference.ref)) {
+                        fieldReference.refs.length > 1
+                            ? fieldReference.refs.forEach((checkboxRef) => (!checkboxRef.defaultChecked || !checkboxRef.disabled) &&
+                                (checkboxRef.checked = Array.isArray(fieldValue)
+                                    ? !!fieldValue.find((data) => data === checkboxRef.value)
+                                    : fieldValue === checkboxRef.value))
+                            : fieldReference.refs[0] &&
+                                (fieldReference.refs[0].checked = !!fieldValue);
+                    }
+                    else {
+                        fieldReference.refs.forEach((radioRef) => (radioRef.checked = radioRef.value === fieldValue));
+                    }
+                }
+                else if (isFileInput(fieldReference.ref)) {
+                    fieldReference.ref.value = '';
+                }
+                else {
+                    fieldReference.ref.value = fieldValue;
+                    if (!fieldReference.ref.type) {
+                        _subjects.values.next({
+                            name,
+                            values: { ..._formValues },
+                        });
+                    }
+                }
+            }
+        }
+        (options.shouldDirty || options.shouldTouch) &&
+            updateTouchAndDirty(name, fieldValue, options.shouldTouch, options.shouldDirty, true);
+        options.shouldValidate && trigger(name);
+    };
+    const setValues = (name, value, options) => {
+        for (const fieldKey in value) {
+            const fieldValue = value[fieldKey];
+            const fieldName = `${name}.${fieldKey}`;
+            const field = get(_fields, fieldName);
+            (_names.array.has(name) ||
+                !isPrimitive(fieldValue) ||
+                (field && !field._f)) &&
+                !isDateObject(fieldValue)
+                ? setValues(fieldName, fieldValue, options)
+                : setFieldValue(fieldName, fieldValue, options);
+        }
+    };
+    const setValue = (name, value, options = {}) => {
+        const field = get(_fields, name);
+        const isFieldArray = _names.array.has(name);
+        const cloneValue = cloneObject(value);
+        set(_formValues, name, cloneValue);
+        if (isFieldArray) {
+            _subjects.array.next({
+                name,
+                values: { ..._formValues },
+            });
+            if ((_proxyFormState.isDirty || _proxyFormState.dirtyFields) &&
+                options.shouldDirty) {
+                _subjects.state.next({
+                    name,
+                    dirtyFields: getDirtyFields(_defaultValues, _formValues),
+                    isDirty: _getDirty(name, cloneValue),
+                });
+            }
+        }
+        else {
+            field && !field._f && !isNullOrUndefined(cloneValue)
+                ? setValues(name, cloneValue, options)
+                : setFieldValue(name, cloneValue, options);
+        }
+        isWatched(name, _names) && _subjects.state.next({ ..._formState });
+        _subjects.values.next({
+            name: _state.mount ? name : undefined,
+            values: { ..._formValues },
+        });
+    };
+    const onChange = async (event) => {
+        _state.mount = true;
+        const target = event.target;
+        let name = target.name;
+        let isFieldValueUpdated = true;
+        const field = get(_fields, name);
+        const getCurrentFieldValue = () => target.type ? getFieldValue(field._f) : getEventValue(event);
+        const _updateIsFieldValueUpdated = (fieldValue) => {
+            isFieldValueUpdated =
+                Number.isNaN(fieldValue) ||
+                    fieldValue === get(_formValues, name, fieldValue);
+        };
+        if (field) {
+            let error;
+            let isValid;
+            const fieldValue = getCurrentFieldValue();
+            const isBlurEvent = event.type === EVENTS.BLUR || event.type === EVENTS.FOCUS_OUT;
+            const shouldSkipValidation = (!hasValidation(field._f) &&
+                !_options.resolver &&
+                !get(_formState.errors, name) &&
+                !field._f.deps) ||
+                skipValidation(isBlurEvent, get(_formState.touchedFields, name), _formState.isSubmitted, validationModeAfterSubmit, validationModeBeforeSubmit);
+            const watched = isWatched(name, _names, isBlurEvent);
+            set(_formValues, name, fieldValue);
+            if (isBlurEvent) {
+                field._f.onBlur && field._f.onBlur(event);
+                delayErrorCallback && delayErrorCallback(0);
+            }
+            else if (field._f.onChange) {
+                field._f.onChange(event);
+            }
+            const fieldState = updateTouchAndDirty(name, fieldValue, isBlurEvent, false);
+            const shouldRender = !isEmptyObject(fieldState) || watched;
+            !isBlurEvent &&
+                _subjects.values.next({
+                    name,
+                    type: event.type,
+                    values: { ..._formValues },
+                });
+            if (shouldSkipValidation) {
+                _proxyFormState.isValid && _updateValid();
+                return (shouldRender &&
+                    _subjects.state.next({ name, ...(watched ? {} : fieldState) }));
+            }
+            !isBlurEvent && watched && _subjects.state.next({ ..._formState });
+            if (_options.resolver) {
+                const { errors } = await _executeSchema([name]);
+                _updateIsFieldValueUpdated(fieldValue);
+                if (isFieldValueUpdated) {
+                    const previousErrorLookupResult = schemaErrorLookup(_formState.errors, _fields, name);
+                    const errorLookupResult = schemaErrorLookup(errors, _fields, previousErrorLookupResult.name || name);
+                    error = errorLookupResult.error;
+                    name = errorLookupResult.name;
+                    isValid = isEmptyObject(errors);
+                }
+            }
+            else {
+                _updateIsValidating([name], true);
+                error = (await validateField(field, _formValues, shouldDisplayAllAssociatedErrors, _options.shouldUseNativeValidation))[name];
+                _updateIsValidating([name]);
+                _updateIsFieldValueUpdated(fieldValue);
+                if (isFieldValueUpdated) {
+                    if (error) {
+                        isValid = false;
+                    }
+                    else if (_proxyFormState.isValid) {
+                        isValid = await executeBuiltInValidation(_fields, true);
+                    }
+                }
+            }
+            if (isFieldValueUpdated) {
+                field._f.deps &&
+                    trigger(field._f.deps);
+                shouldRenderByError(name, isValid, error, fieldState);
+            }
+        }
+    };
+    const _focusInput = (ref, key) => {
+        if (get(_formState.errors, key) && ref.focus) {
+            ref.focus();
+            return 1;
+        }
+        return;
+    };
+    const trigger = async (name, options = {}) => {
+        let isValid;
+        let validationResult;
+        const fieldNames = convertToArrayPayload(name);
+        if (_options.resolver) {
+            const errors = await executeSchemaAndUpdateState(isUndefined(name) ? name : fieldNames);
+            isValid = isEmptyObject(errors);
+            validationResult = name
+                ? !fieldNames.some((name) => get(errors, name))
+                : isValid;
+        }
+        else if (name) {
+            validationResult = (await Promise.all(fieldNames.map(async (fieldName) => {
+                const field = get(_fields, fieldName);
+                return await executeBuiltInValidation(field && field._f ? { [fieldName]: field } : field);
+            }))).every(Boolean);
+            !(!validationResult && !_formState.isValid) && _updateValid();
+        }
+        else {
+            validationResult = isValid = await executeBuiltInValidation(_fields);
+        }
+        _subjects.state.next({
+            ...(!isString(name) ||
+                (_proxyFormState.isValid && isValid !== _formState.isValid)
+                ? {}
+                : { name }),
+            ...(_options.resolver || !name ? { isValid } : {}),
+            errors: _formState.errors,
+        });
+        options.shouldFocus &&
+            !validationResult &&
+            iterateFieldsByAction(_fields, _focusInput, name ? fieldNames : _names.mount);
+        return validationResult;
+    };
+    const getValues = (fieldNames) => {
+        const values = {
+            ...(_state.mount ? _formValues : _defaultValues),
+        };
+        return isUndefined(fieldNames)
+            ? values
+            : isString(fieldNames)
+                ? get(values, fieldNames)
+                : fieldNames.map((name) => get(values, name));
+    };
+    const getFieldState = (name, formState) => ({
+        invalid: !!get((formState || _formState).errors, name),
+        isDirty: !!get((formState || _formState).dirtyFields, name),
+        isTouched: !!get((formState || _formState).touchedFields, name),
+        isValidating: !!get((formState || _formState).validatingFields, name),
+        error: get((formState || _formState).errors, name),
+    });
+    const clearErrors = (name) => {
+        name &&
+            convertToArrayPayload(name).forEach((inputName) => unset(_formState.errors, inputName));
+        _subjects.state.next({
+            errors: name ? _formState.errors : {},
+        });
+    };
+    const setError = (name, error, options) => {
+        const ref = (get(_fields, name, { _f: {} })._f || {}).ref;
+        set(_formState.errors, name, {
+            ...error,
+            ref,
+        });
+        _subjects.state.next({
+            name,
+            errors: _formState.errors,
+            isValid: false,
+        });
+        options && options.shouldFocus && ref && ref.focus && ref.focus();
+    };
+    const watch = (name, defaultValue) => isFunction(name)
+        ? _subjects.values.subscribe({
+            next: (payload) => name(_getWatch(undefined, defaultValue), payload),
+        })
+        : _getWatch(name, defaultValue, true);
+    const unregister = (name, options = {}) => {
+        for (const fieldName of name ? convertToArrayPayload(name) : _names.mount) {
+            _names.mount.delete(fieldName);
+            _names.array.delete(fieldName);
+            if (!options.keepValue) {
+                unset(_fields, fieldName);
+                unset(_formValues, fieldName);
+            }
+            !options.keepError && unset(_formState.errors, fieldName);
+            !options.keepDirty && unset(_formState.dirtyFields, fieldName);
+            !options.keepTouched && unset(_formState.touchedFields, fieldName);
+            !options.keepIsValidating &&
+                unset(_formState.validatingFields, fieldName);
+            !_options.shouldUnregister &&
+                !options.keepDefaultValue &&
+                unset(_defaultValues, fieldName);
+        }
+        _subjects.values.next({
+            values: { ..._formValues },
+        });
+        _subjects.state.next({
+            ..._formState,
+            ...(!options.keepDirty ? {} : { isDirty: _getDirty() }),
+        });
+        !options.keepIsValid && _updateValid();
+    };
+    const _updateDisabledField = ({ disabled, name, field, fields, value, }) => {
+        if (isBoolean(disabled)) {
+            const inputValue = disabled
+                ? undefined
+                : isUndefined(value)
+                    ? getFieldValue(field ? field._f : get(fields, name)._f)
+                    : value;
+            set(_formValues, name, inputValue);
+            updateTouchAndDirty(name, inputValue, false, false, true);
+        }
+    };
+    const register = (name, options = {}) => {
+        let field = get(_fields, name);
+        const disabledIsDefined = isBoolean(options.disabled);
+        set(_fields, name, {
+            ...(field || {}),
+            _f: {
+                ...(field && field._f ? field._f : { ref: { name } }),
+                name,
+                mount: true,
+                ...options,
+            },
+        });
+        _names.mount.add(name);
+        if (field) {
+            _updateDisabledField({
+                field,
+                disabled: options.disabled,
+                name,
+                value: options.value,
+            });
+        }
+        else {
+            updateValidAndValue(name, true, options.value);
+        }
+        return {
+            ...(disabledIsDefined ? { disabled: options.disabled } : {}),
+            ...(_options.progressive
+                ? {
+                    required: !!options.required,
+                    min: getRuleValue(options.min),
+                    max: getRuleValue(options.max),
+                    minLength: getRuleValue(options.minLength),
+                    maxLength: getRuleValue(options.maxLength),
+                    pattern: getRuleValue(options.pattern),
+                }
+                : {}),
+            name,
+            onChange,
+            onBlur: onChange,
+            ref: (ref) => {
+                if (ref) {
+                    register(name, options);
+                    field = get(_fields, name);
+                    const fieldRef = isUndefined(ref.value)
+                        ? ref.querySelectorAll
+                            ? ref.querySelectorAll('input,select,textarea')[0] || ref
+                            : ref
+                        : ref;
+                    const radioOrCheckbox = isRadioOrCheckbox(fieldRef);
+                    const refs = field._f.refs || [];
+                    if (radioOrCheckbox
+                        ? refs.find((option) => option === fieldRef)
+                        : fieldRef === field._f.ref) {
+                        return;
+                    }
+                    set(_fields, name, {
+                        _f: {
+                            ...field._f,
+                            ...(radioOrCheckbox
+                                ? {
+                                    refs: [
+                                        ...refs.filter(live),
+                                        fieldRef,
+                                        ...(Array.isArray(get(_defaultValues, name)) ? [{}] : []),
+                                    ],
+                                    ref: { type: fieldRef.type, name },
+                                }
+                                : { ref: fieldRef }),
+                        },
+                    });
+                    updateValidAndValue(name, false, undefined, fieldRef);
+                }
+                else {
+                    field = get(_fields, name, {});
+                    if (field._f) {
+                        field._f.mount = false;
+                    }
+                    (_options.shouldUnregister || options.shouldUnregister) &&
+                        !(isNameInFieldArray(_names.array, name) && _state.action) &&
+                        _names.unMount.add(name);
+                }
+            },
+        };
+    };
+    const _focusError = () => _options.shouldFocusError &&
+        iterateFieldsByAction(_fields, _focusInput, _names.mount);
+    const _disableForm = (disabled) => {
+        if (isBoolean(disabled)) {
+            _subjects.state.next({ disabled });
+            iterateFieldsByAction(_fields, (ref, name) => {
+                let requiredDisabledState = disabled;
+                const currentField = get(_fields, name);
+                if (currentField && isBoolean(currentField._f.disabled)) {
+                    requiredDisabledState || (requiredDisabledState = currentField._f.disabled);
+                }
+                ref.disabled = requiredDisabledState;
+            }, 0, false);
+        }
+    };
+    const handleSubmit = (onValid, onInvalid) => async (e) => {
+        let onValidError = undefined;
+        if (e) {
+            e.preventDefault && e.preventDefault();
+            e.persist && e.persist();
+        }
+        let fieldValues = cloneObject(_formValues);
+        _subjects.state.next({
+            isSubmitting: true,
+        });
+        if (_options.resolver) {
+            const { errors, values } = await _executeSchema();
+            _formState.errors = errors;
+            fieldValues = values;
+        }
+        else {
+            await executeBuiltInValidation(_fields);
+        }
+        unset(_formState.errors, 'root');
+        if (isEmptyObject(_formState.errors)) {
+            _subjects.state.next({
+                errors: {},
+            });
+            try {
+                await onValid(fieldValues, e);
+            }
+            catch (error) {
+                onValidError = error;
+            }
+        }
+        else {
+            if (onInvalid) {
+                await onInvalid({ ..._formState.errors }, e);
+            }
+            _focusError();
+            setTimeout(_focusError);
+        }
+        _subjects.state.next({
+            isSubmitted: true,
+            isSubmitting: false,
+            isSubmitSuccessful: isEmptyObject(_formState.errors) && !onValidError,
+            submitCount: _formState.submitCount + 1,
+            errors: _formState.errors,
+        });
+        if (onValidError) {
+            throw onValidError;
+        }
+    };
+    const resetField = (name, options = {}) => {
+        if (get(_fields, name)) {
+            if (isUndefined(options.defaultValue)) {
+                setValue(name, cloneObject(get(_defaultValues, name)));
+            }
+            else {
+                setValue(name, options.defaultValue);
+                set(_defaultValues, name, cloneObject(options.defaultValue));
+            }
+            if (!options.keepTouched) {
+                unset(_formState.touchedFields, name);
+            }
+            if (!options.keepDirty) {
+                unset(_formState.dirtyFields, name);
+                _formState.isDirty = options.defaultValue
+                    ? _getDirty(name, cloneObject(get(_defaultValues, name)))
+                    : _getDirty();
+            }
+            if (!options.keepError) {
+                unset(_formState.errors, name);
+                _proxyFormState.isValid && _updateValid();
+            }
+            _subjects.state.next({ ..._formState });
+        }
+    };
+    const _reset = (formValues, keepStateOptions = {}) => {
+        const updatedValues = formValues ? cloneObject(formValues) : _defaultValues;
+        const cloneUpdatedValues = cloneObject(updatedValues);
+        const isEmptyResetValues = isEmptyObject(formValues);
+        const values = isEmptyResetValues ? _defaultValues : cloneUpdatedValues;
+        if (!keepStateOptions.keepDefaultValues) {
+            _defaultValues = updatedValues;
+        }
+        if (!keepStateOptions.keepValues) {
+            if (keepStateOptions.keepDirtyValues) {
+                for (const fieldName of _names.mount) {
+                    get(_formState.dirtyFields, fieldName)
+                        ? set(values, fieldName, get(_formValues, fieldName))
+                        : setValue(fieldName, get(values, fieldName));
+                }
+            }
+            else {
+                if (isWeb && isUndefined(formValues)) {
+                    for (const name of _names.mount) {
+                        const field = get(_fields, name);
+                        if (field && field._f) {
+                            const fieldReference = Array.isArray(field._f.refs)
+                                ? field._f.refs[0]
+                                : field._f.ref;
+                            if (isHTMLElement(fieldReference)) {
+                                const form = fieldReference.closest('form');
+                                if (form) {
+                                    form.reset();
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+                _fields = {};
+            }
+            _formValues = props.shouldUnregister
+                ? keepStateOptions.keepDefaultValues
+                    ? cloneObject(_defaultValues)
+                    : {}
+                : cloneObject(values);
+            _subjects.array.next({
+                values: { ...values },
+            });
+            _subjects.values.next({
+                values: { ...values },
+            });
+        }
+        _names = {
+            mount: keepStateOptions.keepDirtyValues ? _names.mount : new Set(),
+            unMount: new Set(),
+            array: new Set(),
+            watch: new Set(),
+            watchAll: false,
+            focus: '',
+        };
+        _state.mount =
+            !_proxyFormState.isValid ||
+                !!keepStateOptions.keepIsValid ||
+                !!keepStateOptions.keepDirtyValues;
+        _state.watch = !!props.shouldUnregister;
+        _subjects.state.next({
+            submitCount: keepStateOptions.keepSubmitCount
+                ? _formState.submitCount
+                : 0,
+            isDirty: isEmptyResetValues
+                ? false
+                : keepStateOptions.keepDirty
+                    ? _formState.isDirty
+                    : !!(keepStateOptions.keepDefaultValues &&
+                        !deepEqual(formValues, _defaultValues)),
+            isSubmitted: keepStateOptions.keepIsSubmitted
+                ? _formState.isSubmitted
+                : false,
+            dirtyFields: isEmptyResetValues
+                ? []
+                : keepStateOptions.keepDirtyValues
+                    ? keepStateOptions.keepDefaultValues && _formValues
+                        ? getDirtyFields(_defaultValues, _formValues)
+                        : _formState.dirtyFields
+                    : keepStateOptions.keepDefaultValues && formValues
+                        ? getDirtyFields(_defaultValues, formValues)
+                        : {},
+            touchedFields: keepStateOptions.keepTouched
+                ? _formState.touchedFields
+                : {},
+            errors: keepStateOptions.keepErrors ? _formState.errors : {},
+            isSubmitSuccessful: keepStateOptions.keepIsSubmitSuccessful
+                ? _formState.isSubmitSuccessful
+                : false,
+            isSubmitting: false,
+        });
+    };
+    const reset = (formValues, keepStateOptions) => _reset(isFunction(formValues)
+        ? formValues(_formValues)
+        : formValues, keepStateOptions);
+    const setFocus = (name, options = {}) => {
+        const field = get(_fields, name);
+        const fieldReference = field && field._f;
+        if (fieldReference) {
+            const fieldRef = fieldReference.refs
+                ? fieldReference.refs[0]
+                : fieldReference.ref;
+            if (fieldRef.focus) {
+                fieldRef.focus();
+                options.shouldSelect && fieldRef.select();
+            }
+        }
+    };
+    const _updateFormState = (updatedFormState) => {
+        _formState = {
+            ..._formState,
+            ...updatedFormState,
+        };
+    };
+    const _resetDefaultValues = () => isFunction(_options.defaultValues) &&
+        _options.defaultValues().then((values) => {
+            reset(values, _options.resetOptions);
+            _subjects.state.next({
+                isLoading: false,
+            });
+        });
+    return {
+        control: {
+            register,
+            unregister,
+            getFieldState,
+            handleSubmit,
+            setError,
+            _executeSchema,
+            _getWatch,
+            _getDirty,
+            _updateValid,
+            _removeUnmounted,
+            _updateFieldArray,
+            _updateDisabledField,
+            _getFieldArray,
+            _reset,
+            _resetDefaultValues,
+            _updateFormState,
+            _disableForm,
+            _subjects,
+            _proxyFormState,
+            _setErrors,
+            get _fields() {
+                return _fields;
+            },
+            get _formValues() {
+                return _formValues;
+            },
+            get _state() {
+                return _state;
+            },
+            set _state(value) {
+                _state = value;
+            },
+            get _defaultValues() {
+                return _defaultValues;
+            },
+            get _names() {
+                return _names;
+            },
+            set _names(value) {
+                _names = value;
+            },
+            get _formState() {
+                return _formState;
+            },
+            set _formState(value) {
+                _formState = value;
+            },
+            get _options() {
+                return _options;
+            },
+            set _options(value) {
+                _options = {
+                    ..._options,
+                    ...value,
+                };
+            },
+        },
+        trigger,
+        register,
+        handleSubmit,
+        watch,
+        setValue,
+        getValues,
+        reset,
+        resetField,
+        clearErrors,
+        unregister,
+        setError,
+        setFocus,
+        getFieldState,
+    };
+}
+
+/**
+ * Custom hook to manage the entire form.
+ *
+ * @remarks
+ * [API](https://react-hook-form.com/docs/useform) • [Demo](https://codesandbox.io/s/react-hook-form-get-started-ts-5ksmm) • [Video](https://www.youtube.com/watch?v=RkXv4AXXC_4)
+ *
+ * @param props - form configuration and validation parameters.
+ *
+ * @returns methods - individual functions to manage the form state. {@link UseFormReturn}
+ *
+ * @example
+ * ```tsx
+ * function App() {
+ *   const { register, handleSubmit, watch, formState: { errors } } = useForm();
+ *   const onSubmit = data => console.log(data);
+ *
+ *   console.log(watch("example"));
+ *
+ *   return (
+ *     <form onSubmit={handleSubmit(onSubmit)}>
+ *       <input defaultValue="test" {...register("example")} />
+ *       <input {...register("exampleRequired", { required: true })} />
+ *       {errors.exampleRequired && <span>This field is required</span>}
+ *       <button>Submit</button>
+ *     </form>
+ *   );
+ * }
+ * ```
+ */
+function useForm(props = {}) {
+    const _formControl = React.useRef();
+    const _values = React.useRef();
+    const [formState, updateFormState] = React.useState({
+        isDirty: false,
+        isValidating: false,
+        isLoading: isFunction(props.defaultValues),
+        isSubmitted: false,
+        isSubmitting: false,
+        isSubmitSuccessful: false,
+        isValid: false,
+        submitCount: 0,
+        dirtyFields: {},
+        touchedFields: {},
+        validatingFields: {},
+        errors: props.errors || {},
+        disabled: props.disabled || false,
+        defaultValues: isFunction(props.defaultValues)
+            ? undefined
+            : props.defaultValues,
+    });
+    if (!_formControl.current) {
+        _formControl.current = {
+            ...createFormControl(props),
+            formState,
+        };
+    }
+    const control = _formControl.current.control;
+    control._options = props;
+    useSubscribe({
+        subject: control._subjects.state,
+        next: (value) => {
+            if (shouldRenderFormState(value, control._proxyFormState, control._updateFormState, true)) {
+                updateFormState({ ...control._formState });
+            }
+        },
+    });
+    React.useEffect(() => control._disableForm(props.disabled), [control, props.disabled]);
+    React.useEffect(() => {
+        if (control._proxyFormState.isDirty) {
+            const isDirty = control._getDirty();
+            if (isDirty !== formState.isDirty) {
+                control._subjects.state.next({
+                    isDirty,
+                });
+            }
+        }
+    }, [control, formState.isDirty]);
+    React.useEffect(() => {
+        if (props.values && !deepEqual(props.values, _values.current)) {
+            control._reset(props.values, control._options.resetOptions);
+            _values.current = props.values;
+            updateFormState((state) => ({ ...state }));
+        }
+        else {
+            control._resetDefaultValues();
+        }
+    }, [props.values, control]);
+    React.useEffect(() => {
+        if (props.errors) {
+            control._setErrors(props.errors);
+        }
+    }, [props.errors, control]);
+    React.useEffect(() => {
+        if (!control._state.mount) {
+            control._updateValid();
+            control._state.mount = true;
+        }
+        if (control._state.watch) {
+            control._state.watch = false;
+            control._subjects.state.next({ ...control._formState });
+        }
+        control._removeUnmounted();
+    });
+    React.useEffect(() => {
+        props.shouldUnregister &&
+            control._subjects.values.next({
+                values: control._getWatch(),
+            });
+    }, [props.shouldUnregister, control]);
+    _formControl.current.formState = getProxyFormState(formState, control);
+    return _formControl.current;
+}
+
 function CheckboxStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Checkbox');
 }
-useTheme$2();
+withTheme();
 var CheckboxStyle = CheckboxStyles();
 function Checkbox(props) {
     var defaultProps = {
@@ -24340,7 +25472,7 @@ function Checkbox(props) {
     };
     return rhfControl ? (jsxRuntimeExports.jsx(Controller, { name: checkboxName, control: rhfControl, defaultValue: false, render: function (_a) {
             _a.field;
-            return jsxRuntimeExports.jsx(material.Checkbox, __assign({ sx: CheckboxStyle, name: name, onChange: handleChange, checked: checkboxValue }, rhfProps));
+            return (jsxRuntimeExports.jsx(material.Checkbox, __assign({ sx: CheckboxStyle, name: name, onChange: handleChange, checked: checkboxValue }, rhfProps)));
         } })) : (jsxRuntimeExports.jsx(material.Checkbox, __assign({ sx: CheckboxStyle }, muiProps)));
 }
 
@@ -24349,7 +25481,7 @@ function ChipStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Chip');
 }
-useTheme$2();
+withTheme();
 var ChipStyle = ChipStyles();
 function Chip(props) {
     var defaultProps = {
@@ -24364,7 +25496,7 @@ function CircularProgressStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'CircularProgress');
 }
-useTheme$2();
+withTheme();
 var CircularProgressStyle = CircularProgressStyles();
 function CircularProgress(props) {
     var defaultProps = {
@@ -24379,25 +25511,10 @@ function ClickAwayListenerStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'ClickAwayListener');
 }
-useTheme$2();
+withTheme();
 var ClickAwayListenerStyle = ClickAwayListenerStyles();
 function ClickAwayListener(props) {
     return jsxRuntimeExports.jsx(material.ClickAwayListener, __assign({ sx: ClickAwayListenerStyle }, props));
-}
-
-function CollapseStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Collapse');
-}
-useTheme$2();
-var CollapseStyle = CollapseStyles();
-function Collapse(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Collapse, __assign({ sx: CollapseStyle }, composedProps));
 }
 
 function ContainerStyles(theme) {
@@ -24405,7 +25522,7 @@ function ContainerStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Container');
 }
-useTheme$2();
+withTheme();
 var ContainerStyle = ContainerStyles();
 function Container(props) {
     var defaultProps = {
@@ -24415,88 +25532,12 @@ function Container(props) {
     return jsxRuntimeExports.jsx(material.Container, __assign({ sx: ContainerStyle }, composedProps));
 }
 
-function DialogStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Dialog');
-}
-useTheme$2();
-var DialogStyle = DialogStyles();
-function Dialog(props) {
-    var defaultProps = {
-        open: false
-        /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Dialog, __assign({ sx: DialogStyle }, composedProps));
-}
-
-function DialogActionsStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'DialogActions');
-}
-useTheme$2();
-var DialogActionsStyle = DialogActionsStyles();
-function DialogActions(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.DialogActions, __assign({ sx: DialogActionsStyle }, composedProps));
-}
-
-function DialogContentStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'DialogContent');
-}
-useTheme$2();
-var DialogContentStyle = DialogContentStyles();
-function DialogContent(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.DialogContent, __assign({ sx: DialogContentStyle }, composedProps));
-}
-
-function DialogContentTextStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'DialogContentText');
-}
-useTheme$2();
-var DialogContentTextStyle = DialogContentTextStyles();
-function DialogContentText(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.DialogContentText, __assign({ sx: DialogContentTextStyle }, composedProps));
-}
-
-function DialogTitleStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'DialogTitle');
-}
-useTheme$2();
-var DialogTitleStyle = DialogTitleStyles();
-function DialogTitle(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.DialogTitle, __assign({ sx: DialogTitleStyle }, composedProps));
-}
-
 function DividerStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Divider');
 }
-useTheme$2();
+withTheme();
 var DividerStyle = DividerStyles();
 function Divider(props) {
     var defaultProps = {
@@ -24504,67 +25545,6 @@ function Divider(props) {
     };
     var composedProps = __assign(__assign({}, defaultProps), props);
     return jsxRuntimeExports.jsx(material.Divider, __assign({ sx: DividerStyle }, composedProps));
-}
-
-function DrawerStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Drawer');
-}
-useTheme$2();
-var DrawerStyle = DrawerStyles();
-function Drawer(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Drawer, __assign({ sx: DrawerStyle }, composedProps));
-}
-
-function FabStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Fab');
-}
-useTheme$2();
-var FabStyle = FabStyles();
-function Fab(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Fab, __assign({ sx: FabStyle }, composedProps));
-}
-
-function FadeStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Fade');
-}
-useTheme$2();
-var FadeStyle = FadeStyles();
-function Fade(props) {
-    var defaultProps = {
-        children: jsxRuntimeExports.jsx("span", {})
-        /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Fade, __assign({}, composedProps));
-}
-
-function FilledInputStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'FilledInput');
-}
-useTheme$2();
-var FilledInputStyle = FilledInputStyles();
-function FilledInput(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.FilledInput, __assign({ sx: FilledInputStyle }, composedProps));
 }
 
 var defaultFlexProps = {
@@ -24661,7 +25641,7 @@ var options$3 = {
     meta: FlexClassKey
 };
 var classes$1 = provideClasses(FlexStyles, options$3);
-useTheme$2();
+withTheme();
 var FlexStyle = FlexStyles();
 var composeFlexClasses = function (userProps) {
     if (userProps === void 0) { userProps = {}; }
@@ -24727,7 +25707,7 @@ var options$2 = {
     meta: FlexChildClassKey
 };
 var classes = provideClasses(FlexChildStyles, options$2);
-useTheme$2();
+withTheme();
 var FlexChildStyle = FlexChildStyles();
 var composeFlexChildClasses = function (userProps) {
     if (userProps === void 0) { userProps = {}; }
@@ -24799,7 +25779,7 @@ var options$1 = {
     meta: FormClassKey
 };
 provideClasses(FormStyles, options$1);
-useTheme$2();
+withTheme();
 var FormStyle = FormStyles();
 function Form(props) {
     var defaultProps = {
@@ -24814,27 +25794,12 @@ function Form(props) {
     return (jsxRuntimeExports.jsx("form", { action: action, method: method, name: name, children: children }));
 }
 
-function FormControlStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'FormControl');
-}
-useTheme$2();
-var FormControlStyle = FormControlStyles();
-function FormControl(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.FormControl, __assign({ sx: FormControlStyle }, composedProps));
-}
-
 function FormControlLabelStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'FormControlLabel');
 }
-useTheme$2();
+withTheme();
 var FormControlLabelStyle = FormControlLabelStyles();
 function FormControlLabel(props) {
     var defaultProps = {
@@ -24846,117 +25811,12 @@ function FormControlLabel(props) {
     return jsxRuntimeExports.jsx(material.FormControlLabel, __assign({ sx: FormControlLabelStyle }, composedProps));
 }
 
-function FormLabelStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'FormLabel');
-}
-useTheme$2();
-var FormLabelStyle = FormLabelStyles();
-function FormLabel(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.FormLabel, __assign({ sx: FormLabelStyle }, composedProps));
-}
-
-function InputLabelStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'InputLabel');
-}
-useTheme$2();
-var InputLabelStyle = InputLabelStyles();
-function InputLabel(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.InputLabel, __assign({ sx: InputLabelStyle }, composedProps));
-}
-
-function MenuItemStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'MenuItem');
-}
-useTheme$2();
-var MenuItemStyle = MenuItemStyles();
-function MenuItem(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.MenuItem, __assign({ sx: MenuItemStyle }, composedProps));
-}
-
-function RadioStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Radio');
-}
-useTheme$2();
-var RadioStyle = RadioStyles();
-function Radio(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Radio, __assign({ sx: RadioStyle }, composedProps));
-}
-
-function RadioGroupStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'RadioGroup');
-}
-useTheme$2();
-var RadioGroupStyle = RadioGroupStyles();
-function RadioGroup(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.RadioGroup, __assign({ sx: RadioGroupStyle }, composedProps));
-}
-
-function SelectStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Select');
-}
-useTheme$2();
-var SelectStyle = SelectStyles();
-function Select(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Select, __assign({ sx: SelectStyle }, composedProps));
-}
-
-function SwitchStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Switch');
-}
-useTheme$2();
-var SwitchStyle = SwitchStyles();
-function Switch(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Switch, __assign({ sx: SwitchStyle }, composedProps));
-}
-
 function TextFieldStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'TextField');
 }
-useTheme$2();
+withTheme();
 var TextFieldStyle = TextFieldStyles();
 function TextField(props) {
     var defaultProps = {
@@ -24971,22 +25831,7 @@ function TextField(props) {
         } })) : (jsxRuntimeExports.jsx(material.TextField, __assign({ sx: TextFieldStyle }, muiProps)));
 }
 
-function FormGroupStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'FormGroup');
-}
-useTheme$2();
-var FormGroupStyle = FormGroupStyles();
-function FormGroup(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.FormGroup, __assign({ sx: FormGroupStyle }, composedProps));
-}
-
-var FormContentClassKey = getClassKey('form-content');
+var FormContentClassKey = getClassKey('form');
 function FormContentStyles(theme) {
     return applyOverrides({
         root: {}
@@ -24997,56 +25842,71 @@ var options = {
     meta: FormContentClassKey
 };
 provideClasses(FormContentStyles, options);
-var theme = useTheme$2();
+withTheme();
 var FormContentStyle = FormContentStyles();
-function composeFormContentInput(formInput) {
-    var controlEl;
-    var control = formInput.control, key = formInput.key, _a = formInput.options, options = _a === void 0 ? {} : _a, rhfControl = formInput.rhfControl;
-    var composedOptions = __assign({ label: '' }, options);
-    var label = composedOptions.label, rest = __rest(composedOptions, ["label"]);
-    switch (control) {
-        case InputControls.Checkbox:
-            controlEl = jsxRuntimeExports.jsx(Checkbox, __assign({}, rest), key);
-            break;
-        case InputControls.CheckboxGroup:
-            var checkboxElements = arrayify(rest['elements']);
-            controlEl = (jsxRuntimeExports.jsxs(FormGroup, { children: [jsxRuntimeExports.jsx(FormLabel, { id: rest['labelId'], children: label }), checkboxElements.map(function (element, index) {
-                        var value = element.value ? element.value : element.label;
-                        return jsxRuntimeExports.jsx(FormControlLabel, __assign({ control: jsxRuntimeExports.jsx(Checkbox, __assign({ value: value, rhfControl: rhfControl }, element)) }, element), index);
-                    })] }));
-            return controlEl;
-        case InputControls.Radio:
-            controlEl = jsxRuntimeExports.jsx(Radio, __assign({}, rest), key);
-            break;
-        case InputControls.RadioGroup:
-            var name_1 = rest['name'] || key;
-            var radioElements = arrayify(rest['elements']);
-            controlEl = (jsxRuntimeExports.jsxs(FormControl, { children: [jsxRuntimeExports.jsx(FormLabel, { id: rest['labelId'], children: label }), jsxRuntimeExports.jsx(RadioGroup, { name: name_1, defaultValue: rest['defaultValue'], children: radioElements.map(function (element, index) { return (jsxRuntimeExports.jsx(FormControlLabel, __assign({ control: jsxRuntimeExports.jsx(Radio, {}) }, element), index)); }) }, key)] }));
-            return controlEl;
-        case InputControls.Select:
-            var options_1 = arrayify(rest['options']);
-            controlEl = (jsxRuntimeExports.jsxs(FormControl, { fullWidth: rest['fullWidth'], children: [jsxRuntimeExports.jsx(InputLabel, { id: rest['inputId'], children: label }, rest['inputId']), jsxRuntimeExports.jsx(Select, __assign({ label: label }, rest, { children: options_1.map(function (option, index) { return (jsxRuntimeExports.jsx(MenuItem, { value: option.label, children: option.label }, option.label)); }) }), key)] }));
-            return controlEl;
-        case InputControls.Switch:
-            controlEl = jsxRuntimeExports.jsx(Switch, __assign({}, rest), key);
-            break;
-        case InputControls.TextField:
-            return jsxRuntimeExports.jsx(TextField, __assign({ rhfControl: rhfControl }, composedOptions), key);
-    }
-    return label ? jsxRuntimeExports.jsx(FormControlLabel, __assign({ control: controlEl, label: label }, rest), key) : controlEl;
-}
 function FormContent(props) {
+    var buttons = props.buttons, defaultValues = props.defaultValues, form = props.form, inputs = props.inputs, onSubmit = props.onSubmit, flexProps = __rest(props, ["buttons", "defaultValues", "form", "inputs", "onSubmit"]);
+    arrayify(buttons);
+    var composedFlexProps = __assign({ alignItems: 'flex-start', flexDirection: 'column', gap: 8 }, flexProps);
+    var _a = useForm({
+        defaultValues: defaultValues
+    }), handleSubmit = _a.handleSubmit, rhfControl = _a.control, setValue = _a.setValue;
+    var createInput = {
+        checkbox: function (input) {
+            var control = input.control, options = input.options;
+            return (jsxRuntimeExports.jsx(FormControlLabel, { control: jsxRuntimeExports.jsx(Checkbox, { setValue: setValue, rhfControl: rhfControl }, control), label: options === null || options === void 0 ? void 0 : options.label }, options === null || options === void 0 ? void 0 : options.label));
+        },
+        checkboxGroup: function (input) {
+            return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: "checkboxGroup" });
+        },
+        radio: function (input) {
+            return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: "radio" });
+        },
+        radioGroup: function (input) {
+            return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: "radioGroup" });
+        },
+        switch: function (input) {
+            return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: "switch" });
+        },
+        select: function (input) {
+            return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: "select" });
+        },
+        textField: function (input) {
+            var _a;
+            return (jsxRuntimeExports.jsx(TextField, __assign({ rhfControl: rhfControl }, input.options), (_a = input.options) === null || _a === void 0 ? void 0 : _a.label));
+        }
+    };
+    return (jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: jsxRuntimeExports.jsx(Form, __assign({}, form, { children: jsxRuntimeExports.jsxs(Flex, __assign({}, composedFlexProps, { children: [inputs.map(function (input) { return createInput[input.control](input); }), jsxRuntimeExports.jsx(Button, { onClick: handleSubmit(onSubmit), variant: "contained", children: "Submit" })] })) })) }));
+}
+
+function FormControlStyles(theme) {
+    return applyOverrides({
+    /* Add custom styles here using JSS and add the class names to the Classes type */
+    }, 'FormControl');
+}
+withTheme();
+var FormControlStyle = FormControlStyles();
+function FormControl(props) {
     var defaultProps = {
-        children: jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, {}),
-        direction: 'column',
-        gap: theme.spacing.unit
+    /* Add custom prop defaults here */
     };
     var composedProps = __assign(__assign({}, defaultProps), props);
-    var children = composedProps.children, direction = composedProps.direction, gap = composedProps.gap, inputs = composedProps.inputs, rhfControl = composedProps.rhfControl;
-    var composedInputs = arrayify(inputs);
-    return (jsxRuntimeExports.jsxs(Flex, { alignContent: "flexStart", alignItems: "flexStart", flexDirection: direction, gap: gap, children: [children, composedInputs.map(function (input, index) {
-                return input ? composeFormContentInput(__assign(__assign({ key: "".concat(input.control, "-").concat(index) }, input), { rhfControl: rhfControl })) : null;
-            })] }));
+    return jsxRuntimeExports.jsx(material.FormControl, __assign({ sx: FormControlStyle }, composedProps));
+}
+
+function FormGroupStyles(theme) {
+    return applyOverrides({
+    /* Add custom styles here using JSS and add the class names to the Classes type */
+    }, 'FormGroup');
+}
+withTheme();
+var FormGroupStyle = FormGroupStyles();
+function FormGroup(props) {
+    var defaultProps = {
+    /* Add custom prop defaults here */
+    };
+    var composedProps = __assign(__assign({}, defaultProps), props);
+    return jsxRuntimeExports.jsx(material.FormGroup, __assign({ sx: FormGroupStyle }, composedProps));
 }
 
 function FormHelperTextStyles(theme) {
@@ -25054,7 +25914,7 @@ function FormHelperTextStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'FormHelperText');
 }
-useTheme$2();
+withTheme();
 var FormHelperTextStyle = FormHelperTextStyles();
 function FormHelperText(props) {
     var defaultProps = {
@@ -25064,35 +25924,19 @@ function FormHelperText(props) {
     return jsxRuntimeExports.jsx(material.FormHelperText, __assign({ sx: FormHelperTextStyle }, composedProps));
 }
 
-function GridStyles(theme) {
+function FormLabelStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Grid');
+    }, 'FormLabel');
 }
-useTheme$2();
-var GridStyle = GridStyles();
-function Grid(props) {
+withTheme();
+var FormLabelStyle = FormLabelStyles();
+function FormLabel(props) {
     var defaultProps = {
     /* Add custom prop defaults here */
     };
     var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Grid, __assign({ sx: GridStyle }, composedProps));
-}
-
-function GrowStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Grow');
-}
-useTheme$2();
-var GrowStyle = GrowStyles();
-function Grow(props) {
-    var defaultProps = {
-        children: jsxRuntimeExports.jsx("span", {})
-        /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Grow, __assign({}, composedProps));
+    return jsxRuntimeExports.jsx(material.FormLabel, __assign({ sx: FormLabelStyle }, composedProps));
 }
 
 function HiddenStyles(theme) {
@@ -25100,7 +25944,7 @@ function HiddenStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Hidden');
 }
-useTheme$2();
+withTheme();
 var HiddenStyle = HiddenStyles();
 function Hidden(props) {
     var defaultProps = {
@@ -25110,88 +25954,12 @@ function Hidden(props) {
     return jsxRuntimeExports.jsx(material.Hidden, __assign({}, composedProps));
 }
 
-function IconStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Icon');
-}
-useTheme$2();
-var IconStyle = IconStyles();
-function Icon(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Icon, __assign({ sx: IconStyle }, composedProps));
-}
-
-function IconButtonStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'IconButton');
-}
-useTheme$2();
-var IconButtonStyle = IconButtonStyles();
-function IconButton(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.IconButton, __assign({ sx: IconButtonStyle }, composedProps));
-}
-
-function ImageListStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'ImageList');
-}
-useTheme$2();
-var ImageListStyle = ImageListStyles();
-function ImageList(props) {
-    var defaultProps = {
-        children: ''
-        /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.ImageList, __assign({ sx: ImageListStyle }, composedProps));
-}
-
-function ImageListItemStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'ImageListItem');
-}
-useTheme$2();
-var ImageListItemStyle = ImageListItemStyles();
-function ImageListItem(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.ImageListItem, __assign({ sx: ImageListItemStyle }, composedProps));
-}
-
-function ImageListItemBarStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'ImageListItemBar');
-}
-useTheme$2();
-var ImageListItemBarStyle = ImageListItemBarStyles();
-function ImageListItemBar(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.ImageListItemBar, __assign({ sx: ImageListItemBarStyle }, composedProps));
-}
-
 function InputStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Input');
 }
-useTheme$2();
+withTheme();
 var InputStyle = InputStyles();
 function Input(props) {
     var defaultProps = {
@@ -25206,7 +25974,7 @@ function InputAdornmentStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'InputAdornment');
 }
-useTheme$2();
+withTheme();
 var InputAdornmentStyle = InputAdornmentStyles();
 function InputAdornment(props) {
     var defaultProps = {
@@ -25222,7 +25990,7 @@ function InputBaseStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'InputBase');
 }
-useTheme$2();
+withTheme();
 var InputBaseStyle = InputBaseStyles();
 function InputBase(props) {
     var defaultProps = {
@@ -25232,34 +26000,19 @@ function InputBase(props) {
     return jsxRuntimeExports.jsx(material.InputBase, __assign({ sx: InputBaseStyle }, composedProps));
 }
 
-function LinearProgressStyles(theme) {
+function InputLabelStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'LinearProgress');
+    }, 'InputLabel');
 }
-useTheme$2();
-var LinearProgressStyle = LinearProgressStyles();
-function LinearProgress(props) {
+withTheme();
+var InputLabelStyle = InputLabelStyles();
+function InputLabel(props) {
     var defaultProps = {
     /* Add custom prop defaults here */
     };
     var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.LinearProgress, __assign({ sx: LinearProgressStyle }, composedProps));
-}
-
-function LinkStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Link');
-}
-useTheme$2();
-var LinkStyle = LinkStyles();
-function Link(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Link, __assign({ sx: LinkStyle }, composedProps));
+    return jsxRuntimeExports.jsx(material.InputLabel, __assign({ sx: InputLabelStyle }, composedProps));
 }
 
 function ListStyles(theme) {
@@ -25267,7 +26020,7 @@ function ListStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'List');
 }
-useTheme$2();
+withTheme();
 var ListStyle = ListStyles();
 function List(props) {
     var defaultProps = {
@@ -25282,7 +26035,7 @@ function ListItemStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'ListItem');
 }
-useTheme$2();
+withTheme();
 var ListItemStyle = ListItemStyles();
 function ListItem(props) {
     var defaultProps = {
@@ -25292,27 +26045,12 @@ function ListItem(props) {
     return jsxRuntimeExports.jsx(material.ListItem, __assign({ sx: ListItemStyle }, composedProps));
 }
 
-function ListItemAvatarStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'ListItemAvatar');
-}
-useTheme$2();
-var ListItemAvatarStyle = ListItemAvatarStyles();
-function ListItemAvatar(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.ListItemAvatar, __assign({ sx: ListItemAvatarStyle }, composedProps));
-}
-
 function ListItemButtonStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'ListItemButton');
 }
-useTheme$2();
+withTheme();
 var ListItemButtonStyle = ListItemButtonStyles();
 function ListItemButton(props) {
     var defaultProps = {
@@ -25322,42 +26060,12 @@ function ListItemButton(props) {
     return jsxRuntimeExports.jsx(material.ListItemButton, __assign({ sx: ListItemButtonStyle }, composedProps));
 }
 
-function ListItemIconStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'ListItemIcon');
-}
-useTheme$2();
-var ListItemIconStyle = ListItemIconStyles();
-function ListItemIcon(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.ListItemIcon, __assign({ sx: ListItemIconStyle }, composedProps));
-}
-
-function ListItemSecondaryActionStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'ListItemSecondaryAction');
-}
-useTheme$2();
-var ListItemSecondaryActionStyle = ListItemSecondaryActionStyles();
-function ListItemSecondaryAction(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.ListItemSecondaryAction, __assign({ sx: ListItemSecondaryActionStyle }, composedProps));
-}
-
 function ListItemTextStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'ListItemText');
 }
-useTheme$2();
+withTheme();
 var ListItemTextStyle = ListItemTextStyles();
 function ListItemText(props) {
     var defaultProps = {
@@ -25372,7 +26080,7 @@ function ListSubheaderStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'ListSubheader');
 }
-useTheme$2();
+withTheme();
 var ListSubheaderStyle = ListSubheaderStyles();
 function ListSubheader(props) {
     var defaultProps = {
@@ -25387,7 +26095,7 @@ function MenuStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Menu');
 }
-useTheme$2();
+withTheme();
 var MenuStyle = MenuStyles();
 function Menu(props) {
     var defaultProps = {
@@ -25398,12 +26106,27 @@ function Menu(props) {
     return jsxRuntimeExports.jsx(material.Menu, __assign({ sx: MenuStyle }, composedProps));
 }
 
+function MenuItemStyles(theme) {
+    return applyOverrides({
+    /* Add custom styles here using JSS and add the class names to the Classes type */
+    }, 'MenuItem');
+}
+withTheme();
+var MenuItemStyle = MenuItemStyles();
+function MenuItem(props) {
+    var defaultProps = {
+    /* Add custom prop defaults here */
+    };
+    var composedProps = __assign(__assign({}, defaultProps), props);
+    return jsxRuntimeExports.jsx(material.MenuItem, __assign({ sx: MenuItemStyle }, composedProps));
+}
+
 function MenuListStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'MenuList');
 }
-useTheme$2();
+withTheme();
 var MenuListStyle = MenuListStyles();
 function MenuList(props) {
     var defaultProps = {
@@ -25413,47 +26136,12 @@ function MenuList(props) {
     return jsxRuntimeExports.jsx(material.MenuList, __assign({ sx: MenuListStyle }, composedProps));
 }
 
-function MobileStepperStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'MobileStepper');
-}
-useTheme$2();
-var MobileStepperStyle = MobileStepperStyles();
-function MobileStepper(props) {
-    var defaultProps = {
-        backButton: jsxRuntimeExports.jsx("div", {}),
-        nextButton: jsxRuntimeExports.jsx("div", {}),
-        steps: 0
-        /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.MobileStepper, __assign({ sx: MobileStepperStyle }, composedProps));
-}
-
-function ModalStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Modal');
-}
-useTheme$2();
-var ModalStyle = ModalStyles();
-function Modal(props) {
-    var defaultProps = {
-        children: jsxRuntimeExports.jsx("span", {}),
-        open: false
-        /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Modal, __assign({ sx: ModalStyle }, composedProps));
-}
-
 function NativeSelectStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'NativeSelect');
 }
-useTheme$2();
+withTheme();
 var NativeSelectStyle = NativeSelectStyles();
 function NativeSelect(props) {
     var defaultProps = {
@@ -25463,27 +26151,12 @@ function NativeSelect(props) {
     return jsxRuntimeExports.jsx(material.NativeSelect, __assign({ sx: NativeSelectStyle }, composedProps));
 }
 
-function OutlinedInputStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'OutlinedInput');
-}
-useTheme$2();
-var OutlinedInputStyle = OutlinedInputStyles();
-function OutlinedInput(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.OutlinedInput, __assign({ sx: OutlinedInputStyle }, composedProps));
-}
-
 function PaginationStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Pagination');
 }
-useTheme$2();
+withTheme();
 var PaginationStyle = PaginationStyles();
 function Pagination(props) {
     var defaultProps = {
@@ -25498,7 +26171,7 @@ function PaginationItemStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'PaginationItem');
 }
-useTheme$2();
+withTheme();
 var PaginationItemStyle = PaginationItemStyles();
 function PaginationItem(props) {
     var defaultProps = {
@@ -25513,7 +26186,7 @@ function PaperStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Paper');
 }
-useTheme$2();
+withTheme();
 var PaperStyle = PaperStyles();
 function Paper(props) {
     var defaultProps = {
@@ -25523,36 +26196,34 @@ function Paper(props) {
     return jsxRuntimeExports.jsx(material.Paper, __assign({ sx: PaperStyle }, composedProps));
 }
 
-function PopoverStyles(theme) {
+function RadioStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Popover');
+    }, 'Radio');
 }
-useTheme$2();
-var PopoverStyle = PopoverStyles();
-function Popover(props) {
+withTheme();
+var RadioStyle = RadioStyles();
+function Radio(props) {
     var defaultProps = {
-        open: false
-        /* Add custom prop defaults here */
+    /* Add custom prop defaults here */
     };
     var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Popover, __assign({ sx: PopoverStyle }, composedProps));
+    return jsxRuntimeExports.jsx(material.Radio, __assign({ sx: RadioStyle }, composedProps));
 }
 
-function PopperStyles(theme) {
+function RadioGroupStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Popper');
+    }, 'RadioGroup');
 }
-useTheme$2();
-var PopperStyle = PopperStyles();
-function Popper(props) {
+withTheme();
+var RadioGroupStyle = RadioGroupStyles();
+function RadioGroup(props) {
     var defaultProps = {
-        open: false
-        /* Add custom prop defaults here */
+    /* Add custom prop defaults here */
     };
     var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Popper, __assign({ sx: PopperStyle }, composedProps));
+    return jsxRuntimeExports.jsx(material.RadioGroup, __assign({ sx: RadioGroupStyle }, composedProps));
 }
 
 function RatingStyles(theme) {
@@ -25560,7 +26231,7 @@ function RatingStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Rating');
 }
-useTheme$2();
+withTheme();
 var RatingStyle = RatingStyles();
 function Rating(props) {
     var defaultProps = {
@@ -25570,35 +26241,19 @@ function Rating(props) {
     return jsxRuntimeExports.jsx(material.Rating, __assign({ sx: RatingStyle }, composedProps));
 }
 
-function SkeletonStyles(theme) {
+function SelectStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Skeleton');
+    }, 'Select');
 }
-useTheme$2();
-var SkeletonStyle = SkeletonStyles();
-function Skeleton(props) {
+withTheme();
+var SelectStyle = SelectStyles();
+function Select(props) {
     var defaultProps = {
     /* Add custom prop defaults here */
     };
     var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Skeleton, __assign({ sx: SkeletonStyle }, composedProps));
-}
-
-function SlideStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Slide');
-}
-useTheme$2();
-var SlideStyle = SlideStyles();
-function Slide(props) {
-    var defaultProps = {
-        children: jsxRuntimeExports.jsx("div", {})
-        /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Slide, __assign({}, composedProps));
+    return jsxRuntimeExports.jsx(material.Select, __assign({ sx: SelectStyle }, composedProps));
 }
 
 function SliderStyles(theme) {
@@ -25606,7 +26261,7 @@ function SliderStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Slider');
 }
-useTheme$2();
+withTheme();
 var SliderStyle = SliderStyles();
 function Slider(props) {
     var defaultProps = {
@@ -25616,404 +26271,19 @@ function Slider(props) {
     return jsxRuntimeExports.jsx(material.Slider, __assign({ sx: SliderStyle }, composedProps));
 }
 
-function SnackbarStyles(theme) {
+function SwitchStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Snackbar');
+    }, 'Switch');
 }
-useTheme$2();
-var SnackbarStyle = SnackbarStyles();
-function Snackbar(props) {
+withTheme();
+var SwitchStyle = SwitchStyles();
+function Switch(props) {
     var defaultProps = {
     /* Add custom prop defaults here */
     };
     var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Snackbar, __assign({ sx: SnackbarStyle }, composedProps));
-}
-
-function SnackbarContentStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'SnackbarContent');
-}
-useTheme$2();
-var SnackbarContentStyle = SnackbarContentStyles();
-function SnackbarContent(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.SnackbarContent, __assign({ sx: SnackbarContentStyle }, composedProps));
-}
-
-function StackStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Stack');
-}
-useTheme$2();
-var StackStyle = StackStyles();
-function Stack(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Stack, __assign({ sx: StackStyle }, composedProps));
-}
-
-function StepStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Step');
-}
-useTheme$2();
-var StepStyle = StepStyles();
-function Step(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Step, __assign({ sx: StepStyle }, composedProps));
-}
-
-function StepButtonStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'StepButton');
-}
-useTheme$2();
-var StepButtonStyle = StepButtonStyles();
-function StepButton(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.StepButton, __assign({ sx: StepButtonStyle }, composedProps));
-}
-
-function StepConnectorStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'StepConnector');
-}
-useTheme$2();
-var StepConnectorStyle = StepConnectorStyles();
-function StepConnector(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.StepConnector, __assign({ sx: StepConnectorStyle }, composedProps));
-}
-
-function StepContentStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'StepContent');
-}
-useTheme$2();
-var StepContentStyle = StepContentStyles();
-function StepContent(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.StepContent, __assign({ sx: StepContentStyle }, composedProps));
-}
-
-function StepIconStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'StepIcon');
-}
-useTheme$2();
-var StepIconStyle = StepIconStyles();
-function StepIcon(props) {
-    var defaultProps = {
-        icon: jsxRuntimeExports.jsx("span", { className: "material-icons MuiStepIcon-icon", children: "check" })
-        /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.StepIcon, __assign({ sx: StepIconStyle }, composedProps));
-}
-
-function StepLabelStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'StepLabel');
-}
-useTheme$2();
-var StepLabelStyle = StepLabelStyles();
-function StepLabel(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.StepLabel, __assign({ sx: StepLabelStyle }, composedProps));
-}
-
-function StepperStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Stepper');
-}
-useTheme$2();
-var StepperStyle = StepperStyles();
-function Stepper(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Stepper, __assign({ sx: StepperStyle }, composedProps));
-}
-
-function SvgIconStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'SvgIcon');
-}
-useTheme$2();
-var SvgIconStyle = SvgIconStyles();
-function SvgIcon(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.SvgIcon, __assign({ sx: SvgIconStyle }, composedProps));
-}
-
-function SwipeableDrawerStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'SwipeableDrawer');
-}
-useTheme$2();
-var SwipeableDrawerStyle = SwipeableDrawerStyles();
-function SwipeableDrawer(props) {
-    var defaultProps = {
-        onClose: function () { },
-        onOpen: function () { }
-        /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.SwipeableDrawer, __assign({ sx: SwipeableDrawerStyle }, composedProps));
-}
-
-function TabStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Tab');
-}
-useTheme$2();
-var TabStyle = TabStyles();
-function Tab(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Tab, __assign({ sx: TabStyle }, composedProps));
-}
-
-function TableStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Table');
-}
-useTheme$2();
-var TableStyle = TableStyles();
-function Table(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Table, __assign({ sx: TableStyle }, composedProps));
-}
-
-function TableBodyStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'TableBody');
-}
-useTheme$2();
-var TableBodyStyle = TableBodyStyles();
-function TableBody(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.TableBody, __assign({ sx: TableBodyStyle }, composedProps));
-}
-
-function TableCellStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'TableCell');
-}
-useTheme$2();
-var TableCellStyle = TableCellStyles();
-function TableCell(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.TableCell, __assign({ sx: TableCellStyle }, composedProps));
-}
-
-function TableContainerStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'TableContainer');
-}
-useTheme$2();
-var TableContainerStyle = TableContainerStyles();
-function TableContainer(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.TableContainer, __assign({ sx: TableContainerStyle }, composedProps));
-}
-
-function TableFooterStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'TableFooter');
-}
-useTheme$2();
-var TableFooterStyle = TableFooterStyles();
-function TableFooter(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.TableFooter, __assign({ sx: TableFooterStyle }, composedProps));
-}
-
-function TableHeadStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'TableHead');
-}
-useTheme$2();
-var TableHeadStyle = TableHeadStyles();
-function TableHead(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.TableHead, __assign({ sx: TableHeadStyle }, composedProps));
-}
-
-function TablePaginationStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'TablePagination');
-}
-useTheme$2();
-var TablePaginationStyle = TablePaginationStyles();
-function TablePagination(props) {
-    var defaultProps = {
-        count: 0,
-        onPageChange: function () { },
-        page: 0,
-        rowsPerPage: 0
-        /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.TablePagination, __assign({ sx: TablePaginationStyle }, composedProps));
-}
-
-function TableRowStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'TableRow');
-}
-useTheme$2();
-var TableRowStyle = TableRowStyles();
-function TableRow(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.TableRow, __assign({ sx: TableRowStyle }, composedProps));
-}
-
-function TableSortLabelStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'TableSortLabel');
-}
-useTheme$2();
-var TableSortLabelStyle = TableSortLabelStyles();
-function TableSortLabel(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.TableSortLabel, __assign({ sx: TableSortLabelStyle }, composedProps));
-}
-
-function TabsStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Tabs');
-}
-useTheme$2();
-var TabsStyle = TabsStyles();
-function Tabs(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Tabs, __assign({ sx: TabsStyle }, composedProps));
-}
-
-function TabScrollButtonStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'TabScrollButton');
-}
-useTheme$2();
-var TabScrollButtonStyle = TabScrollButtonStyles();
-function TabScrollButton(props) {
-    var defaultProps = {
-        direction: 'left',
-        orientation: 'horizontal'
-        /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.TabScrollButton, __assign({ sx: TabScrollButtonStyle }, composedProps));
-}
-
-function ToggleButtonStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'ToggleButton');
-}
-useTheme$2();
-var ToggleButtonStyle = ToggleButtonStyles();
-function ToggleButton(props) {
-    var defaultProps = {
-        value: 'ToggleButton'
-        /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.ToggleButton, __assign({ sx: ToggleButtonStyle }, composedProps));
-}
-
-function ToggleButtonGroupStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'ToggleButtonGroup');
-}
-useTheme$2();
-var ToggleButtonGroupStyle = ToggleButtonGroupStyles();
-function ToggleButtonGroup(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.ToggleButtonGroup, __assign({ sx: ToggleButtonGroupStyle }, composedProps));
+    return jsxRuntimeExports.jsx(material.Switch, __assign({ sx: SwitchStyle }, composedProps));
 }
 
 function ToolbarStyles(theme) {
@@ -26021,7 +26291,7 @@ function ToolbarStyles(theme) {
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Toolbar');
 }
-useTheme$2();
+withTheme();
 var ToolbarStyle = ToolbarStyles();
 function Toolbar(props) {
     var defaultProps = {
@@ -26031,29 +26301,12 @@ function Toolbar(props) {
     return jsxRuntimeExports.jsx(material.Toolbar, __assign({ sx: ToolbarStyle }, composedProps));
 }
 
-function TooltipStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Tooltip');
-}
-useTheme$2();
-var TooltipStyle = TooltipStyles();
-function Tooltip(props) {
-    var defaultProps = {
-        children: jsxRuntimeExports.jsx("div", {}),
-        title: 'Tooltip'
-        /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Tooltip, __assign({ sx: TooltipStyle }, composedProps));
-}
-
 function TypographyStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Typography');
 }
-useTheme$2();
+withTheme();
 var TypographyStyle = TypographyStyles();
 function Typography(props) {
     var defaultProps = {
@@ -26061,22 +26314,6 @@ function Typography(props) {
     };
     var composedProps = __assign(__assign({}, defaultProps), props);
     return jsxRuntimeExports.jsx(material.Typography, __assign({ sx: TypographyStyle }, composedProps));
-}
-
-function ZoomStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Zoom');
-}
-useTheme$2();
-var ZoomStyle = ZoomStyles();
-function Zoom(props) {
-    var defaultProps = {
-        children: jsxRuntimeExports.jsx("div", {})
-        /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Zoom, __assign({}, composedProps));
 }
 
 /**
@@ -26124,11 +26361,12 @@ function _extends() {
 function _objectWithoutPropertiesLoose(source, excluded) {
   if (source == null) return {};
   var target = {};
-  for (var key in source) {
-    if (Object.prototype.hasOwnProperty.call(source, key)) {
-      if (excluded.indexOf(key) >= 0) continue;
-      target[key] = source[key];
-    }
+  var sourceKeys = Object.keys(source);
+  var key, i;
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
   }
   return target;
 }
@@ -29893,7 +30131,7 @@ process.env.NODE_ENV !== "production" ? ThemeProvider$1.propTypes = {
 function ThemeProvider(_a) {
     var children = _a.children, themeOptions = _a.themeOptions;
     provideTheme(themeOptions);
-    var coreMuiTheme = useMuiTheme();
+    var coreMuiTheme = withMuiTheme();
     var theme = createTheme(coreMuiTheme);
     return jsxRuntimeExports.jsx(ThemeProvider$1, { theme: theme, children: children });
 }
@@ -29918,37 +30156,12 @@ exports.AlertStyles = AlertStyles;
 exports.AlertTitle = AlertTitle;
 exports.AlertTitleStyle = AlertTitleStyle;
 exports.AlertTitleStyles = AlertTitleStyles;
-exports.Amber = Amber;
 exports.AppBar = AppBar;
 exports.AppBarStyle = AppBarStyle;
 exports.AppBarStyles = AppBarStyles;
-exports.Avatar = Avatar;
-exports.AvatarGroup = AvatarGroup;
-exports.AvatarGroupStyle = AvatarGroupStyle;
-exports.AvatarGroupStyles = AvatarGroupStyles;
-exports.AvatarStyle = AvatarStyle;
-exports.AvatarStyles = AvatarStyles;
-exports.Backdrop = Backdrop;
-exports.BackdropStyle = BackdropStyle;
-exports.BackdropStyles = BackdropStyles;
-exports.Badge = Badge;
-exports.BadgeStyle = BadgeStyle;
-exports.BadgeStyles = BadgeStyles;
-exports.Blue = Blue;
-exports.BlueGrey = BlueGrey;
-exports.BottomNavigation = BottomNavigation;
-exports.BottomNavigationAction = BottomNavigationAction;
-exports.BottomNavigationActionStyle = BottomNavigationActionStyle;
-exports.BottomNavigationActionStyles = BottomNavigationActionStyles;
-exports.BottomNavigationStyle = BottomNavigationStyle;
-exports.BottomNavigationStyles = BottomNavigationStyles;
-exports.Box = Box;
-exports.BoxStyle = BoxStyle;
-exports.BoxStyles = BoxStyles;
 exports.Breadcrumbs = Breadcrumbs;
 exports.BreadcrumbsStyle = BreadcrumbsStyle;
 exports.BreadcrumbsStyles = BreadcrumbsStyles;
-exports.Brown = Brown;
 exports.Button = Button;
 exports.ButtonBase = ButtonBase;
 exports.ButtonBaseStyle = ButtonBaseStyle;
@@ -29988,46 +30201,12 @@ exports.CircularProgressStyles = CircularProgressStyles;
 exports.ClickAwayListener = ClickAwayListener;
 exports.ClickAwayListenerStyle = ClickAwayListenerStyle;
 exports.ClickAwayListenerStyles = ClickAwayListenerStyles;
-exports.Collapse = Collapse;
-exports.CollapseStyle = CollapseStyle;
-exports.CollapseStyles = CollapseStyles;
-exports.Common = Common;
 exports.Container = Container;
 exports.ContainerStyle = ContainerStyle;
 exports.ContainerStyles = ContainerStyles;
-exports.Cyan = Cyan;
-exports.DeepOrange = DeepOrange;
-exports.DeepPurple = DeepPurple;
-exports.Dialog = Dialog;
-exports.DialogActions = DialogActions;
-exports.DialogActionsStyle = DialogActionsStyle;
-exports.DialogActionsStyles = DialogActionsStyles;
-exports.DialogContent = DialogContent;
-exports.DialogContentStyle = DialogContentStyle;
-exports.DialogContentStyles = DialogContentStyles;
-exports.DialogContentText = DialogContentText;
-exports.DialogContentTextStyle = DialogContentTextStyle;
-exports.DialogContentTextStyles = DialogContentTextStyles;
-exports.DialogStyle = DialogStyle;
-exports.DialogStyles = DialogStyles;
-exports.DialogTitle = DialogTitle;
-exports.DialogTitleStyle = DialogTitleStyle;
-exports.DialogTitleStyles = DialogTitleStyles;
 exports.Divider = Divider;
 exports.DividerStyle = DividerStyle;
 exports.DividerStyles = DividerStyles;
-exports.Drawer = Drawer;
-exports.DrawerStyle = DrawerStyle;
-exports.DrawerStyles = DrawerStyles;
-exports.Fab = Fab;
-exports.FabStyle = FabStyle;
-exports.FabStyles = FabStyles;
-exports.Fade = Fade;
-exports.FadeStyle = FadeStyle;
-exports.FadeStyles = FadeStyles;
-exports.FilledInput = FilledInput;
-exports.FilledInputStyle = FilledInputStyle;
-exports.FilledInputStyles = FilledInputStyles;
 exports.Flex = Flex;
 exports.FlexChild = FlexChild;
 exports.FlexChildClassKey = FlexChildClassKey;
@@ -30059,33 +30238,9 @@ exports.FormLabelStyle = FormLabelStyle;
 exports.FormLabelStyles = FormLabelStyles;
 exports.FormStyle = FormStyle;
 exports.FormStyles = FormStyles;
-exports.Green = Green;
-exports.Grey = Grey;
-exports.Grid = Grid;
-exports.GridStyle = GridStyle;
-exports.GridStyles = GridStyles;
-exports.Grow = Grow;
-exports.GrowStyle = GrowStyle;
-exports.GrowStyles = GrowStyles;
 exports.Hidden = Hidden;
 exports.HiddenStyle = HiddenStyle;
 exports.HiddenStyles = HiddenStyles;
-exports.Icon = Icon;
-exports.IconButton = IconButton;
-exports.IconButtonStyle = IconButtonStyle;
-exports.IconButtonStyles = IconButtonStyles;
-exports.IconStyle = IconStyle;
-exports.IconStyles = IconStyles;
-exports.ImageList = ImageList;
-exports.ImageListItem = ImageListItem;
-exports.ImageListItemBar = ImageListItemBar;
-exports.ImageListItemBarStyle = ImageListItemBarStyle;
-exports.ImageListItemBarStyles = ImageListItemBarStyles;
-exports.ImageListItemStyle = ImageListItemStyle;
-exports.ImageListItemStyles = ImageListItemStyles;
-exports.ImageListStyle = ImageListStyle;
-exports.ImageListStyles = ImageListStyles;
-exports.Indigo = Indigo;
 exports.Input = Input;
 exports.InputAdornment = InputAdornment;
 exports.InputAdornmentStyle = InputAdornmentStyle;
@@ -30099,29 +30254,11 @@ exports.InputLabelStyle = InputLabelStyle;
 exports.InputLabelStyles = InputLabelStyles;
 exports.InputStyle = InputStyle;
 exports.InputStyles = InputStyles;
-exports.LightBlue = LightBlue;
-exports.LightGreen = LightGreen;
-exports.Lime = Lime;
-exports.LinearProgress = LinearProgress;
-exports.LinearProgressStyle = LinearProgressStyle;
-exports.LinearProgressStyles = LinearProgressStyles;
-exports.Link = Link;
-exports.LinkStyle = LinkStyle;
-exports.LinkStyles = LinkStyles;
 exports.List = List;
 exports.ListItem = ListItem;
-exports.ListItemAvatar = ListItemAvatar;
-exports.ListItemAvatarStyle = ListItemAvatarStyle;
-exports.ListItemAvatarStyles = ListItemAvatarStyles;
 exports.ListItemButton = ListItemButton;
 exports.ListItemButtonStyle = ListItemButtonStyle;
 exports.ListItemButtonStyles = ListItemButtonStyles;
-exports.ListItemIcon = ListItemIcon;
-exports.ListItemIconStyle = ListItemIconStyle;
-exports.ListItemIconStyles = ListItemIconStyles;
-exports.ListItemSecondaryAction = ListItemSecondaryAction;
-exports.ListItemSecondaryActionStyle = ListItemSecondaryActionStyle;
-exports.ListItemSecondaryActionStyles = ListItemSecondaryActionStyles;
 exports.ListItemStyle = ListItemStyle;
 exports.ListItemStyles = ListItemStyles;
 exports.ListItemText = ListItemText;
@@ -30141,19 +30278,9 @@ exports.MenuListStyle = MenuListStyle;
 exports.MenuListStyles = MenuListStyles;
 exports.MenuStyle = MenuStyle;
 exports.MenuStyles = MenuStyles;
-exports.MobileStepper = MobileStepper;
-exports.MobileStepperStyle = MobileStepperStyle;
-exports.MobileStepperStyles = MobileStepperStyles;
-exports.Modal = Modal;
-exports.ModalStyle = ModalStyle;
-exports.ModalStyles = ModalStyles;
 exports.NativeSelect = NativeSelect;
 exports.NativeSelectStyle = NativeSelectStyle;
 exports.NativeSelectStyles = NativeSelectStyles;
-exports.Orange = Orange;
-exports.OutlinedInput = OutlinedInput;
-exports.OutlinedInputStyle = OutlinedInputStyle;
-exports.OutlinedInputStyles = OutlinedInputStyles;
 exports.Pagination = Pagination;
 exports.PaginationItem = PaginationItem;
 exports.PaginationItemStyle = PaginationItemStyle;
@@ -30163,14 +30290,6 @@ exports.PaginationStyles = PaginationStyles;
 exports.Paper = Paper;
 exports.PaperStyle = PaperStyle;
 exports.PaperStyles = PaperStyles;
-exports.Pink = Pink;
-exports.Popover = Popover;
-exports.PopoverStyle = PopoverStyle;
-exports.PopoverStyles = PopoverStyles;
-exports.Popper = Popper;
-exports.PopperStyle = PopperStyle;
-exports.PopperStyles = PopperStyles;
-exports.Purple = Purple;
 exports.Radio = Radio;
 exports.RadioGroup = RadioGroup;
 exports.RadioGroupStyle = RadioGroupStyle;
@@ -30180,121 +30299,28 @@ exports.RadioStyles = RadioStyles;
 exports.Rating = Rating;
 exports.RatingStyle = RatingStyle;
 exports.RatingStyles = RatingStyles;
-exports.Red = Red;
 exports.SET_THEME = SET_THEME;
 exports.SET_TOKENS = SET_TOKENS;
 exports.Select = Select;
 exports.SelectStyle = SelectStyle;
 exports.SelectStyles = SelectStyles;
-exports.Skeleton = Skeleton;
-exports.SkeletonStyle = SkeletonStyle;
-exports.SkeletonStyles = SkeletonStyles;
-exports.Slide = Slide;
-exports.SlideStyle = SlideStyle;
-exports.SlideStyles = SlideStyles;
 exports.Slider = Slider;
 exports.SliderStyle = SliderStyle;
 exports.SliderStyles = SliderStyles;
-exports.Snackbar = Snackbar;
-exports.SnackbarContent = SnackbarContent;
-exports.SnackbarContentStyle = SnackbarContentStyle;
-exports.SnackbarContentStyles = SnackbarContentStyles;
-exports.SnackbarStyle = SnackbarStyle;
-exports.SnackbarStyles = SnackbarStyles;
-exports.Stack = Stack;
-exports.StackStyle = StackStyle;
-exports.StackStyles = StackStyles;
-exports.Step = Step;
-exports.StepButton = StepButton;
-exports.StepButtonStyle = StepButtonStyle;
-exports.StepButtonStyles = StepButtonStyles;
-exports.StepConnector = StepConnector;
-exports.StepConnectorStyle = StepConnectorStyle;
-exports.StepConnectorStyles = StepConnectorStyles;
-exports.StepContent = StepContent;
-exports.StepContentStyle = StepContentStyle;
-exports.StepContentStyles = StepContentStyles;
-exports.StepIcon = StepIcon;
-exports.StepIconStyle = StepIconStyle;
-exports.StepIconStyles = StepIconStyles;
-exports.StepLabel = StepLabel;
-exports.StepLabelStyle = StepLabelStyle;
-exports.StepLabelStyles = StepLabelStyles;
-exports.StepStyle = StepStyle;
-exports.StepStyles = StepStyles;
-exports.Stepper = Stepper;
-exports.StepperStyle = StepperStyle;
-exports.StepperStyles = StepperStyles;
-exports.SvgIcon = SvgIcon;
-exports.SvgIconStyle = SvgIconStyle;
-exports.SvgIconStyles = SvgIconStyles;
-exports.SwipeableDrawer = SwipeableDrawer;
-exports.SwipeableDrawerStyle = SwipeableDrawerStyle;
-exports.SwipeableDrawerStyles = SwipeableDrawerStyles;
 exports.Switch = Switch;
 exports.SwitchStyle = SwitchStyle;
 exports.SwitchStyles = SwitchStyles;
-exports.Tab = Tab;
-exports.TabScrollButton = TabScrollButton;
-exports.TabScrollButtonStyle = TabScrollButtonStyle;
-exports.TabScrollButtonStyles = TabScrollButtonStyles;
-exports.TabStyle = TabStyle;
-exports.TabStyles = TabStyles;
-exports.Table = Table;
-exports.TableBody = TableBody;
-exports.TableBodyStyle = TableBodyStyle;
-exports.TableBodyStyles = TableBodyStyles;
-exports.TableCell = TableCell;
-exports.TableCellStyle = TableCellStyle;
-exports.TableCellStyles = TableCellStyles;
-exports.TableContainer = TableContainer;
-exports.TableContainerStyle = TableContainerStyle;
-exports.TableContainerStyles = TableContainerStyles;
-exports.TableFooter = TableFooter;
-exports.TableFooterStyle = TableFooterStyle;
-exports.TableFooterStyles = TableFooterStyles;
-exports.TableHead = TableHead;
-exports.TableHeadStyle = TableHeadStyle;
-exports.TableHeadStyles = TableHeadStyles;
-exports.TablePagination = TablePagination;
-exports.TablePaginationStyle = TablePaginationStyle;
-exports.TablePaginationStyles = TablePaginationStyles;
-exports.TableRow = TableRow;
-exports.TableRowStyle = TableRowStyle;
-exports.TableRowStyles = TableRowStyles;
-exports.TableSortLabel = TableSortLabel;
-exports.TableSortLabelStyle = TableSortLabelStyle;
-exports.TableSortLabelStyles = TableSortLabelStyles;
-exports.TableStyle = TableStyle;
-exports.TableStyles = TableStyles;
-exports.Tabs = Tabs;
-exports.TabsStyle = TabsStyle;
-exports.TabsStyles = TabsStyles;
-exports.Teal = Teal;
 exports.TextField = TextField;
 exports.TextFieldStyle = TextFieldStyle;
 exports.TextFieldStyles = TextFieldStyles;
 exports.ThemeProvider = ThemeProvider;
-exports.ToggleButton = ToggleButton;
-exports.ToggleButtonGroup = ToggleButtonGroup;
-exports.ToggleButtonGroupStyle = ToggleButtonGroupStyle;
-exports.ToggleButtonGroupStyles = ToggleButtonGroupStyles;
-exports.ToggleButtonStyle = ToggleButtonStyle;
-exports.ToggleButtonStyles = ToggleButtonStyles;
 exports.Toolbar = Toolbar;
 exports.ToolbarStyle = ToolbarStyle;
 exports.ToolbarStyles = ToolbarStyles;
-exports.Tooltip = Tooltip;
-exports.TooltipStyle = TooltipStyle;
-exports.TooltipStyles = TooltipStyles;
 exports.Typography = Typography;
 exports.TypographyStyle = TypographyStyle;
 exports.TypographyStyles = TypographyStyles;
 exports.UPDATE_CSS = UPDATE_CSS;
-exports.Yellow = Yellow;
-exports.Zoom = Zoom;
-exports.ZoomStyle = ZoomStyle;
-exports.ZoomStyles = ZoomStyles;
 exports.addSheet = addSheet;
 exports.addSvg = addSvg;
 exports.alpha = alpha$1;
@@ -30305,7 +30331,6 @@ exports.capitalize = capitalize$1;
 exports.clamp = clamp$2;
 exports.composeFlexChildClasses = composeFlexChildClasses;
 exports.composeFlexClasses = composeFlexClasses;
-exports.composeFormContentInput = composeFormContentInput;
 exports.composedTypography = composedTypography;
 exports.core = core;
 exports.createBreakpoints = createBreakpoints$1;
@@ -30359,8 +30384,7 @@ exports.store = store;
 exports.transitions = transitions;
 exports.updateCss = updateCss;
 exports.useInt = useInt;
-exports.useMuiTheme = useMuiTheme;
-exports.useStyleOverrides = useStyleOverrides;
-exports.useTailwindTheme = useTailwindTheme;
-exports.useTheme = useTheme$2;
 exports.useTokens = useTokens;
+exports.withMuiTheme = withMuiTheme;
+exports.withStyleOverrides = withStyleOverrides;
+exports.withTheme = withTheme;

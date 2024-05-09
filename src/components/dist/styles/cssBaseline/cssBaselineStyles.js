@@ -9,8 +9,8 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-import { useTheme } from '../useTheme/index';
-var theme = useTheme();
+import { withTheme } from '../withTheme/index';
+var theme = withTheme();
 export var cssBaselineStyles = {
     '@global': {
         html: {

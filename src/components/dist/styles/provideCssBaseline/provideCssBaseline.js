@@ -1,14 +1,14 @@
 import { cssBaselineStyles } from '../cssBaseline/cssBaselineStyles';
 import { provideStylesheet } from '../provideStylesheet/index';
 import { provideTheme } from '../provideTheme/index';
-import { useTheme } from '../useTheme/index';
+import { withTheme } from '../withTheme/index';
 import { store, updateCss } from '../../store/index';
 export function provideCssBaseline() {
     var _a;
-    var theme = useTheme();
+    var theme = withTheme();
     if (theme.initial) {
         provideTheme();
-        theme = useTheme();
+        theme = withTheme();
     }
     var key = 'baseline';
     var stateCss = store.getState().css[key] || '';

@@ -294,10 +294,6 @@ export declare const LineHeights15 = 12;
 export declare const LineHeights16 = 18;
 export declare const LineHeights17 = 14;
 export declare const LineHeights18 = 48;
-export declare const LineHeights19 = 46;
-export declare const LineHeights20 = 34;
-export declare const LineHeights21 = 16;
-export declare const LineHeights22 = 13;
 export declare const FontWeightsLight = "Light";
 export declare const FontWeightsRegular = "Regular";
 export declare const FontWeightsBold = "Bold";
@@ -327,13 +323,11 @@ export declare const LetterSpacing8 = 0.4;
 export declare const LetterSpacing9 = 0.14;
 export declare const LetterSpacing10 = 0.46;
 export declare const LetterSpacing11 = 0.16;
-export declare const LetterSpacing12 = 0.3;
-export declare const ParagraphSpacing1 = 15;
 export declare const ParagraphSpacingNone = 0;
 export declare const TypographyH1: {
     fontFamily: string;
     fontWeight: string;
-    lineHeight: number;
+    lineHeight: string;
     fontSize: number;
     letterSpacing: number;
     paragraphSpacing: number;
@@ -344,7 +338,7 @@ export declare const TypographyH1: {
 export declare const TypographyH2: {
     fontFamily: string;
     fontWeight: string;
-    lineHeight: number;
+    lineHeight: string;
     fontSize: number;
     letterSpacing: number;
     paragraphSpacing: number;
@@ -355,7 +349,7 @@ export declare const TypographyH2: {
 export declare const TypographyH3: {
     fontFamily: string;
     fontWeight: string;
-    lineHeight: number;
+    lineHeight: string;
     fontSize: number;
     letterSpacing: number;
     paragraphSpacing: number;
@@ -366,7 +360,7 @@ export declare const TypographyH3: {
 export declare const TypographyH4: {
     fontFamily: string;
     fontWeight: string;
-    lineHeight: number;
+    lineHeight: string;
     fontSize: number;
     letterSpacing: number;
     paragraphSpacing: number;
@@ -377,7 +371,7 @@ export declare const TypographyH4: {
 export declare const TypographyH5: {
     fontFamily: string;
     fontWeight: string;
-    lineHeight: number;
+    lineHeight: string;
     fontSize: number;
     letterSpacing: number;
     paragraphSpacing: number;
@@ -388,7 +382,7 @@ export declare const TypographyH5: {
 export declare const TypographyH6: {
     fontFamily: string;
     fontWeight: string;
-    lineHeight: number;
+    lineHeight: string;
     fontSize: number;
     letterSpacing: number;
     paragraphSpacing: number;
@@ -399,7 +393,7 @@ export declare const TypographyH6: {
 export declare const TypographyBody1: {
     fontFamily: string;
     fontWeight: string;
-    lineHeight: number;
+    lineHeight: string;
     fontSize: number;
     letterSpacing: number;
     paragraphSpacing: number;
@@ -410,7 +404,7 @@ export declare const TypographyBody1: {
 export declare const TypographyBody2: {
     fontFamily: string;
     fontWeight: string;
-    lineHeight: number;
+    lineHeight: string;
     fontSize: number;
     letterSpacing: number;
     paragraphSpacing: number;

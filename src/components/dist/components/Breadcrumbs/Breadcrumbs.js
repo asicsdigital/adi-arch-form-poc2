@@ -13,13 +13,13 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx } from "react/jsx-runtime";
 import { Breadcrumbs as MuiBreadcrumbs } from '@mui/material';
 import { applyOverrides } from '../../helpers/index';
-import { useTheme } from '../../styles/index';
+import { withTheme } from '../../styles/index';
 export function BreadcrumbsStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Breadcrumbs');
 }
-var theme = useTheme();
+var theme = withTheme();
 export var BreadcrumbsStyle = BreadcrumbsStyles(theme);
 export function Breadcrumbs(props) {
     var defaultProps = {

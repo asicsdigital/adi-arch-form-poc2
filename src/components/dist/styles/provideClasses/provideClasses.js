@@ -9,15 +9,15 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-import { useTheme } from '../useTheme/index';
+import { withTheme } from '../withTheme/index';
 import { provideStylesheet } from '../provideStylesheet/index';
 import { provideTheme } from '../provideTheme/index';
 export function provideClasses(stylesOrCreator, options) {
     if (options === void 0) { options = {}; }
-    var theme = useTheme();
+    var theme = withTheme();
     if (theme.initial) {
         provideTheme();
-        theme = useTheme();
+        theme = withTheme();
     }
     var styles = typeof stylesOrCreator === 'function' ? stylesOrCreator(theme) : stylesOrCreator;
     var sheet = provideStylesheet(styles, options);
