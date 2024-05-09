@@ -12,17 +12,13 @@ import {
   Button,
   ButtonProps,
   Divider,
-  Drawer,
   Flex,
   FlexChild,
   GroundProps,
   Hidden,
-  Icon,
-  IconButton,
   List,
   ListItem,
   ListItemButton,
-  ListItemIcon,
   ListItemText,
   Menu,
   TextFieldProps,
@@ -116,13 +112,6 @@ export function Header(props: HeaderProps) {
         <Toolbar>
           <FlexChild flex="1">
             <Flex alignItems="center" gap={16}>
-              <Hidden mdUp>
-                {navigation?.length ? (
-                  <IconButton color="inherit" onClick={handleDrawerClick}>
-                    {drawerOpen ? menuCloseIcon : menuIcon}
-                  </IconButton>
-                ) : null}
-              </Hidden>
               <FlexChild flex="1 0">
                 <Flex alignItems="baseline" gap={16}>
                   <Typography color="inherit" variant="h3">
@@ -143,103 +132,10 @@ export function Header(props: HeaderProps) {
                   </Hidden>
                 </Flex>
               </FlexChild>
-              {showSearch ? (
-                <FlexChild>
-                  <IconButton color="inherit">{searchIcon}</IconButton>
-                </FlexChild>
-              ) : null}
-              {showUser ? (
-                <FlexChild>
-                  {userMenuNavigation ? (
-                    <>
-                      <IconButton
-                        color="inherit"
-                        onClick={handleUserMenuControlClick}
-                      >
-                        {userIcon}
-                      </IconButton>
-                      <Menu
-                        anchorEl={anchorEl}
-                        anchorOrigin={{
-                          vertical: 'bottom',
-                          horizontal: 'left'
-                        }}
-                        elevation={1}
-                        open={userMenuOpen}
-                        slotProps={{ paper: { square: true } }}
-                        sx={{
-                          mt: 1,
-                          zIndex: (theme) => theme.zIndex.drawer
-                        }}
-                        transformOrigin={{
-                          vertical: 'top',
-                          horizontal: 'center'
-                        }}
-                      >
-                        {userMenuNavigation.map((link, index) => (
-                          <span key={`user-menu-${index}`}>
-                            {link.divider ? <Divider /> : null}
-                            <ListItem disablePadding>
-                              <ListItemButton
-                                href={link.href}
-                                target={link.target}
-                              >
-                                {link.listItemIconId ? (
-                                  <ListItemIcon>
-                                    <Icon>{link.listItemIconId}</Icon>
-                                  </ListItemIcon>
-                                ) : link.listItemIcon ? (
-                                  <ListItemIcon>
-                                    {link.listItemIcon}
-                                  </ListItemIcon>
-                                ) : null}
-                                <ListItemText
-                                  primary={link.label}
-                                ></ListItemText>
-                              </ListItemButton>
-                            </ListItem>
-                          </span>
-                        ))}
-                      </Menu>
-                    </>
-                  ) : (
-                    userIcon
-                  )}
-                </FlexChild>
-              ) : null}
             </Flex>
           </FlexChild>
         </Toolbar>
       </AppBar>
-      {navigation?.length ? (
-        <Hidden mdUp>
-          <Drawer open={drawerOpen} variant="temporary">
-            <Toolbar />
-            <Toolbar>
-              <List>
-                {navigation
-                  ? navigation.map((link, index) => (
-                      <ListItem disablePadding key={`nav-drawer-${index}`}>
-                        <ListItemButton href={link.href} target={link.target}>
-                          <ListItemIcon>
-                            {link.listItemIconId ? (
-                              <Icon>{link.listItemIconId}</Icon>
-                            ) : link.listItemIcon ? (
-                              link.listItemIcon
-                            ) : (
-                              <ChevronRightIcon />
-                            )}
-                          </ListItemIcon>
-                          <ListItemText primary={link.label} />
-                        </ListItemButton>
-                      </ListItem>
-                    ))
-                  : null}
-              </List>
-            </Toolbar>
-          </Drawer>
-        </Hidden>
-      ) : null}
     </>
   );
 }

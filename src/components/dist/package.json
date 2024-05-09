@@ -13,7 +13,7 @@
   "description": "Styling engine and core system files",
   "homepage": "https://github.com/asicsdigital/adi-arch-uiproto-core#readme",
   "license": "ISC",
-  "main": "./node/core.js",
+  "main": "./index.js",
   "module": "./index.js",
   "name": "@asicsdigital/adi-blocks-core",
   "peerDependencies": {
