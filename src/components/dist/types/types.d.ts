@@ -395,7 +395,7 @@ export interface CheckboxOptions extends FormControlBaseOptions {
 }
 export interface CheckboxGroupOptions {
     defaultValue?: number | string;
-    elements: CheckboxOptions | CheckboxOptions[];
+    choices: CheckboxOptions | CheckboxOptions[];
     label?: string;
     labelId?: string;
     name?: string;

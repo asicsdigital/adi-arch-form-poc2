@@ -25957,7 +25957,9 @@ function FormContent(props) {
             return (jsxRuntimeExports.jsx(FormControlLabel, { control: jsxRuntimeExports.jsx(Checkbox, { setValue: setValue, rhfControl: rhfControl }, control), label: options === null || options === void 0 ? void 0 : options.label }, options === null || options === void 0 ? void 0 : options.label));
         },
         checkboxGroup: function (input) {
-            return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: "checkboxGroup" });
+            input.control; var options = input.options;
+            var choices = options && 'choices' in options ? arrayify(options.choices) : [];
+            return (jsxRuntimeExports.jsxs(FormControl, { children: [jsxRuntimeExports.jsx(FormLabel, { children: options === null || options === void 0 ? void 0 : options.label }), jsxRuntimeExports.jsx(Flex, { alignItems: "flex-start", flexDirection: "column", gap: 8, children: choices.map(function (choice) { return (jsxRuntimeExports.jsx(FormControlLabel, { control: jsxRuntimeExports.jsx(Checkbox, { name: choice.value, setValue: setValue, rhfControl: rhfControl }, choice.value), label: choice.label }, choice.label)); }) })] }));
         },
         radio: function (input) {
             input.control; var options = input.options;

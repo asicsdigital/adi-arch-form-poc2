@@ -32,6 +32,7 @@ export function prepareContactPage(contactForm: ContactForm): ContactPage {
     'location',
     'time',
     'subject',
+    'colors',
     'description',
     'terms',
     'signup'

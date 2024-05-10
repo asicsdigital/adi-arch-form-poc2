@@ -21,7 +21,7 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import { jsx as _jsx, Fragment as _Fragment, jsxs as _jsxs } from "react/jsx-runtime";
+import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import { useForm } from 'react-hook-form';
 import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
@@ -62,7 +62,9 @@ export function FormContent(props) {
             return (_jsx(FormControlLabel, { control: _jsx(Checkbox, { setValue: setValue, rhfControl: rhfControl }, control), label: options === null || options === void 0 ? void 0 : options.label }, options === null || options === void 0 ? void 0 : options.label));
         },
         checkboxGroup: function (input) {
-            return _jsx(_Fragment, { children: "checkboxGroup" });
+            var control = input.control, options = input.options;
+            var choices = options && 'choices' in options ? arrayify(options.choices) : [];
+            return (_jsxs(FormControl, { children: [_jsx(FormLabel, { children: options === null || options === void 0 ? void 0 : options.label }), _jsx(Flex, { alignItems: "flex-start", flexDirection: "column", gap: 8, children: choices.map(function (choice) { return (_jsx(FormControlLabel, { control: _jsx(Checkbox, { name: choice.value, setValue: setValue, rhfControl: rhfControl }, choice.value), label: choice.label }, choice.label)); }) })] }));
         },
         radio: function (input) {
             var control = input.control, options = input.options;
