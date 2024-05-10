@@ -223,7 +223,7 @@ export interface Radio {
     value?: string;
   };
   /** Control */
-  control?: InputControlKeys;
+  control: InputControlKeys;
 }
 
 export interface CheckboxOptions {

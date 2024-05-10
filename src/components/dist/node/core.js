@@ -25794,6 +25794,21 @@ function Form(props) {
     return (jsxRuntimeExports.jsx("form", { action: action, method: method, name: name, children: children }));
 }
 
+function FormControlStyles(theme) {
+    return applyOverrides({
+    /* Add custom styles here using JSS and add the class names to the Classes type */
+    }, 'FormControl');
+}
+withTheme();
+var FormControlStyle = FormControlStyles();
+function FormControl(props) {
+    var defaultProps = {
+    /* Add custom prop defaults here */
+    };
+    var composedProps = __assign(__assign({}, defaultProps), props);
+    return jsxRuntimeExports.jsx(material.FormControl, __assign({ sx: FormControlStyle }, composedProps));
+}
+
 function FormControlLabelStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
@@ -25809,6 +25824,91 @@ function FormControlLabel(props) {
     };
     var composedProps = __assign(__assign({}, defaultProps), props);
     return jsxRuntimeExports.jsx(material.FormControlLabel, __assign({ sx: FormControlLabelStyle }, composedProps));
+}
+
+function FormLabelStyles(theme) {
+    return applyOverrides({
+    /* Add custom styles here using JSS and add the class names to the Classes type */
+    }, 'FormLabel');
+}
+withTheme();
+var FormLabelStyle = FormLabelStyles();
+function FormLabel(props) {
+    var defaultProps = {
+    /* Add custom prop defaults here */
+    };
+    var composedProps = __assign(__assign({}, defaultProps), props);
+    return jsxRuntimeExports.jsx(material.FormLabel, __assign({ sx: FormLabelStyle }, composedProps));
+}
+
+function RadioStyles(theme) {
+    return applyOverrides({
+    /* Add custom styles here using JSS and add the class names to the Classes type */
+    }, 'Radio');
+}
+withTheme();
+var RadioStyle = RadioStyles();
+function Radio(props) {
+    var defaultProps = {
+    /* Add custom prop defaults here */
+    };
+    var composedProps = __assign(__assign({}, defaultProps), props);
+    return jsxRuntimeExports.jsx(material.Radio, __assign({ sx: RadioStyle }, composedProps));
+}
+
+function RadioGroupStyles(theme) {
+    return applyOverrides({
+    /* Add custom styles here using JSS and add the class names to the Classes type */
+    }, 'RadioGroup');
+}
+withTheme();
+var RadioGroupStyle = RadioGroupStyles();
+function RadioGroup(props) {
+    var defaultProps = {
+    /* Add custom prop defaults here */
+    };
+    var composedProps = __assign(__assign({}, defaultProps), props);
+    var children = composedProps.children, rhfControl = composedProps.rhfControl, muiProps = __rest(composedProps, ["children", "rhfControl"]);
+    var name = muiProps.name; muiProps.onChange; muiProps.value; var rhfProps = __rest(muiProps, ["name", "onChange", "value"]);
+    return rhfControl ? (jsxRuntimeExports.jsx(Controller, { name: name ? name : '', control: rhfControl, defaultValue: '', render: function (_a) {
+            var field = _a.field;
+            return (jsxRuntimeExports.jsx(material.RadioGroup, __assign({ sx: RadioGroupStyle, onChange: field.onChange, value: field.value }, rhfProps, { children: children })));
+        } })) : (jsxRuntimeExports.jsx(material.RadioGroup, __assign({ sx: RadioGroupStyle }, muiProps)));
+}
+
+function InputLabelStyles(theme) {
+    return applyOverrides({
+    /* Add custom styles here using JSS and add the class names to the Classes type */
+    }, 'InputLabel');
+}
+withTheme();
+var InputLabelStyle = InputLabelStyles();
+function InputLabel(props) {
+    var defaultProps = {
+    /* Add custom prop defaults here */
+    };
+    var composedProps = __assign(__assign({}, defaultProps), props);
+    return jsxRuntimeExports.jsx(material.InputLabel, __assign({ sx: InputLabelStyle }, composedProps));
+}
+
+function SelectStyles(theme) {
+    return applyOverrides({
+    /* Add custom styles here using JSS and add the class names to the Classes type */
+    }, 'Select');
+}
+withTheme();
+var SelectStyle = SelectStyles();
+function Select(props) {
+    var defaultProps = {
+    /* Add custom prop defaults here */
+    };
+    var composedProps = __assign(__assign({}, defaultProps), props);
+    var rhfControl = composedProps.rhfControl, muiProps = __rest(composedProps, ["rhfControl"]);
+    var label = muiProps.label, name = muiProps.name; muiProps.onChange; muiProps.value; var rhfProps = __rest(muiProps, ["label", "name", "onChange", "value"]);
+    return rhfControl ? (jsxRuntimeExports.jsx(Controller, { name: name ? name : '', control: rhfControl, defaultValue: '', render: function (_a) {
+            var _b = _a.field, onChange = _b.onChange, value = _b.value;
+            return (jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsx(InputLabel, { shrink: !!value, children: label }), jsxRuntimeExports.jsx(material.Select, __assign({ sx: SelectStyle, onChange: onChange, value: value }, rhfProps))] }));
+        } })) : (jsxRuntimeExports.jsx(material.Select, __assign({ sx: SelectStyle }, muiProps)));
 }
 
 function TextFieldStyles(theme) {
@@ -25860,16 +25960,22 @@ function FormContent(props) {
             return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: "checkboxGroup" });
         },
         radio: function (input) {
-            return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: "radio" });
+            input.control; var options = input.options;
+            var value = options && 'value' in options ? options.value : options === null || options === void 0 ? void 0 : options.label;
+            return (jsxRuntimeExports.jsx(FormControl, { children: jsxRuntimeExports.jsx(RadioGroup, __assign({ rhfControl: rhfControl }, options, { children: jsxRuntimeExports.jsx(FormControlLabel, { control: jsxRuntimeExports.jsx(Radio, {}, value), label: options === null || options === void 0 ? void 0 : options.label, value: value }, value) }), options === null || options === void 0 ? void 0 : options.name) }, "".concat(options === null || options === void 0 ? void 0 : options.name, "formcontrol")));
         },
         radioGroup: function (input) {
-            return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: "radioGroup" });
+            input.control; var options = input.options;
+            var choices = options && 'choices' in options ? arrayify(options.choices) : [];
+            return (jsxRuntimeExports.jsxs(FormControl, { children: [jsxRuntimeExports.jsx(FormLabel, { children: options === null || options === void 0 ? void 0 : options.label }), jsxRuntimeExports.jsx(RadioGroup, __assign({ rhfControl: rhfControl }, options, { children: choices.map(function (choice, index) { return (jsxRuntimeExports.jsx(FormControlLabel, { control: jsxRuntimeExports.jsx(Radio, {}, index), label: choice.label, value: choice.value }, choice.value)); }) }), options === null || options === void 0 ? void 0 : options.name)] }, "".concat(options === null || options === void 0 ? void 0 : options.name, "formcontrol")));
         },
         switch: function (input) {
             return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: "switch" });
         },
         select: function (input) {
-            return jsxRuntimeExports.jsx(jsxRuntimeExports.Fragment, { children: "select" });
+            input.control; var options = input.options;
+            var choices = options && 'choices' in options ? arrayify(options.choices) : [];
+            return (jsxRuntimeExports.jsx(FormControl, { children: jsxRuntimeExports.jsxs(Select, __assign({ native: true, notched: true, rhfControl: rhfControl }, options, { children: [jsxRuntimeExports.jsx("option", {}, "empty"), choices.map(function (choice, index) { return (jsxRuntimeExports.jsx("option", { value: choice.value, children: choice.label }, index)); })] }), options === null || options === void 0 ? void 0 : options.label) }, "formControl"));
         },
         textField: function (input) {
             var _a;
@@ -25877,21 +25983,6 @@ function FormContent(props) {
         }
     };
     return (jsxRuntimeExports.jsxs(Flex, __assign({}, composedFlexProps, { children: [inputs.map(function (input) { return createInput[input.control](input); }), jsxRuntimeExports.jsx(Button, { onClick: handleSubmit(onSubmit), variant: "contained", children: "Submit" })] })));
-}
-
-function FormControlStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'FormControl');
-}
-withTheme();
-var FormControlStyle = FormControlStyles();
-function FormControl(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.FormControl, __assign({ sx: FormControlStyle }, composedProps));
 }
 
 function FormGroupStyles(theme) {
@@ -25922,21 +26013,6 @@ function FormHelperText(props) {
     };
     var composedProps = __assign(__assign({}, defaultProps), props);
     return jsxRuntimeExports.jsx(material.FormHelperText, __assign({ sx: FormHelperTextStyle }, composedProps));
-}
-
-function FormLabelStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'FormLabel');
-}
-withTheme();
-var FormLabelStyle = FormLabelStyles();
-function FormLabel(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.FormLabel, __assign({ sx: FormLabelStyle }, composedProps));
 }
 
 function HiddenStyles(theme) {
@@ -25998,21 +26074,6 @@ function InputBase(props) {
     };
     var composedProps = __assign(__assign({}, defaultProps), props);
     return jsxRuntimeExports.jsx(material.InputBase, __assign({ sx: InputBaseStyle }, composedProps));
-}
-
-function InputLabelStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'InputLabel');
-}
-withTheme();
-var InputLabelStyle = InputLabelStyles();
-function InputLabel(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.InputLabel, __assign({ sx: InputLabelStyle }, composedProps));
 }
 
 function ListStyles(theme) {
@@ -26196,36 +26257,6 @@ function Paper(props) {
     return jsxRuntimeExports.jsx(material.Paper, __assign({ sx: PaperStyle }, composedProps));
 }
 
-function RadioStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Radio');
-}
-withTheme();
-var RadioStyle = RadioStyles();
-function Radio(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Radio, __assign({ sx: RadioStyle }, composedProps));
-}
-
-function RadioGroupStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'RadioGroup');
-}
-withTheme();
-var RadioGroupStyle = RadioGroupStyles();
-function RadioGroup(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.RadioGroup, __assign({ sx: RadioGroupStyle }, composedProps));
-}
-
 function RatingStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
@@ -26239,21 +26270,6 @@ function Rating(props) {
     };
     var composedProps = __assign(__assign({}, defaultProps), props);
     return jsxRuntimeExports.jsx(material.Rating, __assign({ sx: RatingStyle }, composedProps));
-}
-
-function SelectStyles(theme) {
-    return applyOverrides({
-    /* Add custom styles here using JSS and add the class names to the Classes type */
-    }, 'Select');
-}
-withTheme();
-var SelectStyle = SelectStyles();
-function Select(props) {
-    var defaultProps = {
-    /* Add custom prop defaults here */
-    };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    return jsxRuntimeExports.jsx(material.Select, __assign({ sx: SelectStyle }, composedProps));
 }
 
 function SliderStyles(theme) {

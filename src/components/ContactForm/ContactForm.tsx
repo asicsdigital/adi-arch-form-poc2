@@ -13,18 +13,22 @@ interface ContactFormProps {
 }
 
 interface ContactFormInput {
-  name: string;
-  email: string;
-  subject: string;
   description: string;
+  email: string;
+  location: string;
+  name: string;
+  signup: string;
+  subject: string;
   terms: boolean;
 }
 
 const contactFormDefaults: ContactFormInput = {
-  name: '',
-  email: '',
-  subject: '',
   description: '',
+  email: '',
+  location: '',
+  name: '',
+  signup: '',
+  subject: '',
   terms: true
 };
 

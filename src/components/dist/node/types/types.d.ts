@@ -405,12 +405,12 @@ export interface RadioOptions extends FormControlBaseOptions {
 }
 export interface RadioGroupOptions {
     defaultValue?: number | string;
-    elements: RadioOptions | RadioOptions[];
+    choices: RadioOptions | RadioOptions[];
     label?: string;
     labelId?: string;
     name?: string;
 }
-export interface OptionOptions {
+export interface ChoicesOptions {
     id?: number | string;
     label?: string;
     name?: string;
@@ -418,6 +418,7 @@ export interface OptionOptions {
 }
 export interface SelectOptions {
     autoWidth?: boolean;
+    choices: ChoicesOptions | ChoicesOptions[];
     defaultOpen?: boolean;
     displayEmpty?: boolean;
     fullWidth?: boolean;
@@ -431,7 +432,6 @@ export interface SelectOptions {
     onClose?: never;
     onOpen?: never;
     open?: boolean;
-    options?: OptionOptions | OptionOptions[];
     renderValue?: never;
     value?: number | string;
     variant?: 'filled' | 'outlined' | 'standard';

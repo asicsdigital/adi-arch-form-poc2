@@ -2,6 +2,7 @@ import {
   CheckboxBasic,
   ContactForm,
   ContactPage,
+  Radio,
   Select,
   Textfield
 } from '../../types';
@@ -29,9 +30,11 @@ export function prepareContactPage(contactForm: ContactForm): ContactPage {
     'name',
     'email',
     'location',
+    'time',
     'subject',
     'description',
-    'terms'
+    'terms',
+    'signup'
   ];
 
   inputNames.forEach((name) => {
@@ -42,7 +45,9 @@ export function prepareContactPage(contactForm: ContactForm): ContactPage {
   return { description, form: container, inputs: preparedInputs, title };
 }
 
-function prepareInput(input: CheckboxBasic | Select | Textfield): FormInput {
+function prepareInput(
+  input: CheckboxBasic | Radio | Select | Textfield
+): FormInput {
   const { control, ...options } = input;
   const preparedOptions: Record<string, unknown> = {};
   const inputKeys = Object.keys(options);

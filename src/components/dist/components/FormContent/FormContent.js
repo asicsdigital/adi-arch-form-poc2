@@ -26,7 +26,12 @@ import { useForm } from 'react-hook-form';
 import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
 import { Flex } from '../Flex';
+import { FormControl } from '../FormControl';
 import { FormControlLabel } from '../FormControlLabel';
+import { FormLabel } from '../FormLabel';
+import { Radio } from '../Radio';
+import { RadioGroup } from '../RadioGroup';
+import { Select } from '../Select';
 import { TextField } from '../TextField';
 import { applyOverrides, getClassKey } from '../../helpers/index';
 import { provideClasses, withTheme } from '../../styles/index';
@@ -60,16 +65,22 @@ export function FormContent(props) {
             return _jsx(_Fragment, { children: "checkboxGroup" });
         },
         radio: function (input) {
-            return _jsx(_Fragment, { children: "radio" });
+            var control = input.control, options = input.options;
+            var value = options && 'value' in options ? options.value : options === null || options === void 0 ? void 0 : options.label;
+            return (_jsx(FormControl, { children: _jsx(RadioGroup, __assign({ rhfControl: rhfControl }, options, { children: _jsx(FormControlLabel, { control: _jsx(Radio, {}, value), label: options === null || options === void 0 ? void 0 : options.label, value: value }, value) }), options === null || options === void 0 ? void 0 : options.name) }, "".concat(options === null || options === void 0 ? void 0 : options.name, "formcontrol")));
         },
         radioGroup: function (input) {
-            return _jsx(_Fragment, { children: "radioGroup" });
+            var control = input.control, options = input.options;
+            var choices = options && 'choices' in options ? arrayify(options.choices) : [];
+            return (_jsxs(FormControl, { children: [_jsx(FormLabel, { children: options === null || options === void 0 ? void 0 : options.label }), _jsx(RadioGroup, __assign({ rhfControl: rhfControl }, options, { children: choices.map(function (choice, index) { return (_jsx(FormControlLabel, { control: _jsx(Radio, {}, index), label: choice.label, value: choice.value }, choice.value)); }) }), options === null || options === void 0 ? void 0 : options.name)] }, "".concat(options === null || options === void 0 ? void 0 : options.name, "formcontrol")));
         },
         switch: function (input) {
             return _jsx(_Fragment, { children: "switch" });
         },
         select: function (input) {
-            return _jsx(_Fragment, { children: "select" });
+            var control = input.control, options = input.options;
+            var choices = options && 'choices' in options ? arrayify(options.choices) : [];
+            return (_jsx(FormControl, { children: _jsxs(Select, __assign({ native: true, notched: true, rhfControl: rhfControl }, options, { children: [_jsx("option", {}, "empty"), choices.map(function (choice, index) { return (_jsx("option", { value: choice.value, children: choice.label }, index)); })] }), options === null || options === void 0 ? void 0 : options.label) }, "formControl"));
         },
         textField: function (input) {
             var _a;
