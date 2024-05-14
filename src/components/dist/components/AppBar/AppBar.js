@@ -13,13 +13,13 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx } from "react/jsx-runtime";
 import { AppBar as MuiAppBar } from '@mui/material';
 import { applyOverrides } from '../../helpers/index';
-import { useTheme } from '../../styles/index';
+import { withTheme } from '../../styles/index';
 export function AppBarStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'AppBar');
 }
-var theme = useTheme();
+var theme = withTheme();
 export var AppBarStyle = AppBarStyles(theme);
 export function AppBar(props) {
     var defaultProps = {

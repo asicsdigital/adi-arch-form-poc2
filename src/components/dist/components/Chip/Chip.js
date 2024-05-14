@@ -13,13 +13,13 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx } from "react/jsx-runtime";
 import { Chip as MuiChip } from '@mui/material';
 import { applyOverrides } from '../../helpers/index';
-import { useTheme } from '../../styles/index';
+import { withTheme } from '../../styles/index';
 export function ChipStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Chip');
 }
-var theme = useTheme();
+var theme = withTheme();
 export var ChipStyle = ChipStyles(theme);
 export function Chip(props) {
     var defaultProps = {

@@ -12,7 +12,7 @@ var __assign = (this && this.__assign) || function () {
 };
 import { Fragment as _Fragment, jsx as _jsx } from "react/jsx-runtime";
 import { applyOverrides, getClassKey } from '../../helpers/index';
-import { provideClasses, useTheme } from '../../styles/index';
+import { provideClasses, withTheme } from '../../styles/index';
 import { arrayify } from '../../helpers/index';
 export var FormClassKey = getClassKey('form');
 export function FormStyles(theme) {
@@ -25,7 +25,7 @@ var options = {
     meta: FormClassKey
 };
 var classes = provideClasses(FormStyles, options);
-var theme = useTheme();
+var theme = withTheme();
 export var FormStyle = FormStyles(theme);
 export function Form(props) {
     var defaultProps = {

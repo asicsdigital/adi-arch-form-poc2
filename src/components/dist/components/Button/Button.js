@@ -13,13 +13,13 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx } from "react/jsx-runtime";
 import { Button as MuiButton } from '@mui/material';
 import { applyOverrides } from '../../helpers/index';
-import { useTheme } from '../../styles/index';
+import { withTheme } from '../../styles/index';
 export function ButtonStyles(theme) {
     return applyOverrides({
-        borderRadius: theme.shape.borderRadius * 3
+    /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Button');
 }
-var theme = useTheme();
+var theme = withTheme();
 export var ButtonStyle = ButtonStyles(theme);
 export function Button(props) {
     var defaultProps = {

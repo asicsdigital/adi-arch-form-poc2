@@ -26,13 +26,13 @@ import { useEffect, useState } from 'react';
 import { Controller } from 'react-hook-form';
 import { Checkbox as MuiCheckbox } from '@mui/material';
 import { applyOverrides } from '../../helpers/index';
-import { useTheme } from '../../styles/index';
+import { withTheme } from '../../styles/index';
 export function CheckboxStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'Checkbox');
 }
-var theme = useTheme();
+var theme = withTheme();
 export var CheckboxStyle = CheckboxStyles(theme);
 export function Checkbox(props) {
     var defaultProps = {
@@ -52,6 +52,6 @@ export function Checkbox(props) {
     };
     return rhfControl ? (_jsx(Controller, { name: checkboxName, control: rhfControl, defaultValue: false, render: function (_a) {
             var field = _a.field;
-            return _jsx(MuiCheckbox, __assign({ sx: CheckboxStyle, name: name, onChange: handleChange, checked: checkboxValue }, rhfProps));
+            return (_jsx(MuiCheckbox, __assign({ sx: CheckboxStyle, name: name, onChange: handleChange, checked: checkboxValue }, rhfProps)));
         } })) : (_jsx(MuiCheckbox, __assign({ sx: CheckboxStyle }, muiProps)));
 }

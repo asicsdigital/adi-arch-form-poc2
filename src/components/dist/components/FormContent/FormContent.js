@@ -22,24 +22,21 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
-import { InputControls } from '../../types/index';
-import { applyOverrides, getClassKey } from '../../helpers/index';
-import { provideClasses, useTheme } from '../../styles/index';
-import { arrayify } from '../../helpers/index';
-import { Checkbox } from '../Checkbox/index';
-import { Flex } from '../Flex/index';
+import { useForm } from 'react-hook-form';
+import { Button } from '../Button';
+import { Checkbox } from '../Checkbox';
+import { Flex } from '../Flex';
 import { FormControl } from '../FormControl';
-import { FormControlLabel } from '../FormControlLabel/index';
-import { FormLabel } from '../FormLabel/index';
-import { InputLabel } from '../InputLabel/index';
-import { MenuItem } from '../MenuItem/index';
-import { Radio } from '../Radio/index';
-import { RadioGroup } from '../RadioGroup/index';
-import { Select } from '../Select/index';
-import { Switch } from '../Switch/index';
-import { TextField } from '../TextField/index';
-import { FormGroup } from '../FormGroup';
-export var FormContentClassKey = getClassKey('form-content');
+import { FormControlLabel } from '../FormControlLabel';
+import { FormLabel } from '../FormLabel';
+import { Radio } from '../Radio';
+import { RadioGroup } from '../RadioGroup';
+import { Select } from '../Select';
+import { TextField } from '../TextField';
+import { applyOverrides, getClassKey } from '../../helpers/index';
+import { provideClasses, withTheme } from '../../styles/index';
+import { arrayify } from '../../helpers';
+export var FormContentClassKey = getClassKey('form');
 export function FormContentStyles(theme) {
     return applyOverrides({
         root: {}
@@ -50,54 +47,47 @@ var options = {
     meta: FormContentClassKey
 };
 var classes = provideClasses(FormContentStyles, options);
-var theme = useTheme();
+var theme = withTheme();
 export var FormContentStyle = FormContentStyles(theme);
-export function composeFormContentInput(formInput) {
-    var controlEl;
-    var control = formInput.control, key = formInput.key, _a = formInput.options, options = _a === void 0 ? {} : _a, rhfControl = formInput.rhfControl;
-    var composedOptions = __assign({ label: '' }, options);
-    var label = composedOptions.label, rest = __rest(composedOptions, ["label"]);
-    switch (control) {
-        case InputControls.Checkbox:
-            controlEl = _jsx(Checkbox, __assign({}, rest), key);
-            break;
-        case InputControls.CheckboxGroup:
-            var checkboxElements = arrayify(rest['elements']);
-            controlEl = (_jsxs(FormGroup, { children: [_jsx(FormLabel, { id: rest['labelId'], children: label }), checkboxElements.map(function (element, index) {
-                        var value = element.value ? element.value : element.label;
-                        return _jsx(FormControlLabel, __assign({ control: _jsx(Checkbox, __assign({ value: value, rhfControl: rhfControl }, element)) }, element), index);
-                    })] }));
-            return controlEl;
-        case InputControls.Radio:
-            controlEl = _jsx(Radio, __assign({}, rest), key);
-            break;
-        case InputControls.RadioGroup:
-            var name_1 = rest['name'] || key;
-            var radioElements = arrayify(rest['elements']);
-            controlEl = (_jsxs(FormControl, { children: [_jsx(FormLabel, { id: rest['labelId'], children: label }), _jsx(RadioGroup, { name: name_1, defaultValue: rest['defaultValue'], children: radioElements.map(function (element, index) { return (_jsx(FormControlLabel, __assign({ control: _jsx(Radio, {}) }, element), index)); }) }, key)] }));
-            return controlEl;
-        case InputControls.Select:
-            var options_1 = arrayify(rest['options']);
-            controlEl = (_jsxs(FormControl, { fullWidth: rest['fullWidth'], children: [_jsx(InputLabel, { id: rest['inputId'], children: label }, rest['inputId']), _jsx(Select, __assign({ label: label }, rest, { children: options_1.map(function (option, index) { return (_jsx(MenuItem, { value: option.label, children: option.label }, option.label)); }) }), key)] }));
-            return controlEl;
-        case InputControls.Switch:
-            controlEl = _jsx(Switch, __assign({}, rest), key);
-            break;
-        case InputControls.TextField:
-            return _jsx(TextField, __assign({ rhfControl: rhfControl }, composedOptions), key);
-    }
-    return label ? _jsx(FormControlLabel, __assign({ control: controlEl, label: label }, rest), key) : controlEl;
-}
 export function FormContent(props) {
-    var defaultProps = {
-        children: _jsx(_Fragment, {}),
-        direction: 'column',
-        gap: theme.spacing.unit
+    var buttons = props.buttons, defaultValues = props.defaultValues, inputs = props.inputs, onSubmit = props.onSubmit, flexProps = __rest(props, ["buttons", "defaultValues", "inputs", "onSubmit"]);
+    var composedButtons = arrayify(buttons);
+    var composedFlexProps = __assign({ alignItems: 'flex-start', flexDirection: 'column', gap: 8 }, flexProps);
+    var _a = useForm({
+        defaultValues: defaultValues
+    }), handleSubmit = _a.handleSubmit, rhfControl = _a.control, setValue = _a.setValue;
+    var createInput = {
+        checkbox: function (input) {
+            var control = input.control, options = input.options;
+            return (_jsx(FormControlLabel, { control: _jsx(Checkbox, { setValue: setValue, rhfControl: rhfControl }, control), label: options === null || options === void 0 ? void 0 : options.label }, options === null || options === void 0 ? void 0 : options.label));
+        },
+        checkboxGroup: function (input) {
+            var control = input.control, options = input.options;
+            var choices = options && 'choices' in options ? arrayify(options.choices) : [];
+            return (_jsxs(FormControl, { children: [_jsx(FormLabel, { children: options === null || options === void 0 ? void 0 : options.label }), _jsx(Flex, { alignItems: "flex-start", flexDirection: "column", gap: 8, children: choices.map(function (choice) { return (_jsx(FormControlLabel, { control: _jsx(Checkbox, { name: choice.value, setValue: setValue, rhfControl: rhfControl }, choice.value), label: choice.label }, choice.label)); }) })] }));
+        },
+        radio: function (input) {
+            var control = input.control, options = input.options;
+            var value = options && 'value' in options ? options.value : options === null || options === void 0 ? void 0 : options.label;
+            return (_jsx(FormControl, { children: _jsx(RadioGroup, __assign({ rhfControl: rhfControl }, options, { children: _jsx(FormControlLabel, { control: _jsx(Radio, {}, value), label: options === null || options === void 0 ? void 0 : options.label, value: value }, value) }), options === null || options === void 0 ? void 0 : options.name) }, "".concat(options === null || options === void 0 ? void 0 : options.name, "formcontrol")));
+        },
+        radioGroup: function (input) {
+            var control = input.control, options = input.options;
+            var choices = options && 'choices' in options ? arrayify(options.choices) : [];
+            return (_jsxs(FormControl, { children: [_jsx(FormLabel, { children: options === null || options === void 0 ? void 0 : options.label }), _jsx(RadioGroup, __assign({ rhfControl: rhfControl }, options, { children: choices.map(function (choice, index) { return (_jsx(FormControlLabel, { control: _jsx(Radio, {}, index), label: choice.label, value: choice.value }, choice.value)); }) }), options === null || options === void 0 ? void 0 : options.name)] }, "".concat(options === null || options === void 0 ? void 0 : options.name, "formcontrol")));
+        },
+        switch: function (input) {
+            return _jsx(_Fragment, { children: "switch" });
+        },
+        select: function (input) {
+            var control = input.control, options = input.options;
+            var choices = options && 'choices' in options ? arrayify(options.choices) : [];
+            return (_jsx(FormControl, { children: _jsxs(Select, __assign({ native: true, notched: true, rhfControl: rhfControl }, options, { children: [_jsx("option", {}, "empty"), choices.map(function (choice, index) { return (_jsx("option", { value: choice.value, children: choice.label }, index)); })] }), options === null || options === void 0 ? void 0 : options.label) }, "formControl"));
+        },
+        textField: function (input) {
+            var _a;
+            return (_jsx(TextField, __assign({ rhfControl: rhfControl }, input.options), (_a = input.options) === null || _a === void 0 ? void 0 : _a.label));
+        }
     };
-    var composedProps = __assign(__assign({}, defaultProps), props);
-    var children = composedProps.children, direction = composedProps.direction, gap = composedProps.gap, inputs = composedProps.inputs, rhfControl = composedProps.rhfControl;
-    var composedInputs = arrayify(inputs);
-    return (_jsxs(Flex, { alignContent: "flexStart", alignItems: "flexStart", flexDirection: direction, gap: gap, children: [children, composedInputs.map(function (input, index) {
-                return input ? composeFormContentInput(__assign(__assign({ key: "".concat(input.control, "-").concat(index) }, input), { rhfControl: rhfControl })) : null;
-            })] }));
+    return (_jsxs(Flex, __assign({}, composedFlexProps, { children: [inputs.map(function (input) { return createInput[input.control](input); }), _jsx(Button, { onClick: handleSubmit(onSubmit), variant: "contained", children: "Submit" })] })));
 }

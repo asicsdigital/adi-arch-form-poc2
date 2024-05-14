@@ -165,6 +165,13 @@ export interface Select {
   label?: string;
   /** Name */
   name?: string;
+  /** Choices */
+  choices?: {
+    /** Label */
+    label?: string;
+    /** Value */
+    value?: string;
+  }[];
   /** Options */
   element_options?: {
     /** Auto width */
@@ -183,7 +190,7 @@ export interface Select {
     variant?: 'filled' | 'outlined' | 'standard';
   };
   /** Control */
-  control?: InputControlKeys;
+  control: InputControlKeys;
 }
 
 export interface Radio {
@@ -216,7 +223,7 @@ export interface Radio {
     value?: string;
   };
   /** Control */
-  control?: InputControlKeys;
+  control: InputControlKeys;
 }
 
 export interface CheckboxOptions {
@@ -441,13 +448,15 @@ export interface ContactForm {
       name: Textfield;
       /** Email */
       email: Textfield;
+      /** Location */
+      location: Select;
       /** Subject */
       subject: Textfield;
       /** Description */
       description: Textfield;
       /** Terms */
       terms: CheckboxBasic;
-      [key: string]: CheckboxBasic | Textfield;
+      [key: string]: CheckboxBasic | Select | Textfield;
     };
   };
 }

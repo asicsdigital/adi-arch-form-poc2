@@ -1,9 +1,9 @@
 import { formatMs } from '../formatMs/index';
-import { useTheme } from '../../styles/useTheme/index';
+import { withTheme } from '../../styles/withTheme/index';
 var create = function (props, options) {
     if (props === void 0) { props = ['all']; }
     if (options === void 0) { options = {}; }
-    var theme = useTheme();
+    var theme = withTheme();
     var _a = options.duration, durationOption = _a === void 0 ? theme.transitions.duration.standard : _a, _b = options.easing, easingOption = _b === void 0 ? theme.transitions.easing.easeInOut : _b, _c = options.delay, delayOption = _c === void 0 ? 0 : _c;
     var duration = typeof durationOption === 'string' ? durationOption : formatMs(durationOption);
     var delay = typeof delayOption === 'string' ? delayOption : formatMs(delayOption);

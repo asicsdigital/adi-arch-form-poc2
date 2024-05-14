@@ -1,18 +1,20 @@
-/// <reference types="react" />
-import { Control } from 'react-hook-form';
-import { CSSProperties, FormContentOptions, FormInput, Styles, Theme } from '../../types/index';
-type DirectionProp = CSSProperties['flexDirection'];
-type GapProp = CSSProperties['gap'];
-export interface FormContentProps extends FormContentOptions {
-    children?: React.ReactNode;
-    direction?: DirectionProp;
-    gap?: GapProp;
-    rhfControl?: Control;
+import { FieldValues } from 'react-hook-form';
+import { ButtonProps } from '../Button';
+import { FlexProps } from '../Flex';
+import { FormInput, Styles, Theme } from '../../types';
+interface ButtonProp extends ButtonProps {
+    label?: string;
+    submit?: boolean;
+}
+export interface ContactFormProps extends FlexProps {
+    buttons?: ButtonProp | ButtonProp[];
+    defaultValues: Record<string, any>;
+    inputs: FormInput[];
+    onSubmit: (data: FieldValues) => any;
 }
 export declare const FormContentClassKey: string;
 export type FormContentClasses = 'root';
 export declare function FormContentStyles(theme: Theme): Styles;
 export declare const FormContentStyle: Styles;
-export declare function composeFormContentInput(formInput: FormInput): React.ReactNode;
-export declare function FormContent(props: FormContentProps): import("react/jsx-runtime").JSX.Element;
+export declare function FormContent(props: ContactFormProps): import("react/jsx-runtime").JSX.Element;
 export {};

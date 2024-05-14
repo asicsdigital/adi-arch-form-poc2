@@ -10,9 +10,9 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { merge } from 'lodash';
-import { useTheme } from '../../styles/useTheme/index';
+import { withTheme } from '../../styles/withTheme/index';
 export function applyOverrides(styles, component) {
-    var theme = useTheme();
+    var theme = withTheme();
     var overrides = __assign({}, theme.overrides);
     var override = overrides[component] || {};
     return merge(styles, override);

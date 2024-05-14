@@ -1,4 +1,3 @@
-export * from './colors/index';
 export * from './components/index';
 export * from './helpers/index';
 export * from './store/index';

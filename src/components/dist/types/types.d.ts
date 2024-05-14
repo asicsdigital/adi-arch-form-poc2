@@ -1,7 +1,7 @@
 import * as CSS from 'csstype';
 import React from 'react';
-import { Control } from 'react-hook-form';
 import { Classes as ClassesJSS, Styles as StylesJSS, StyleSheet as StyleSheetJSS, StyleSheetFactoryOptions as StyleSheetFactoryOptionsJSS } from 'jss';
+import { Control } from 'react-hook-form';
 import { Overrides } from './overrides';
 type Required<T> = {
     [P in keyof T]-?: T[P];
@@ -395,7 +395,7 @@ export interface CheckboxOptions extends FormControlBaseOptions {
 }
 export interface CheckboxGroupOptions {
     defaultValue?: number | string;
-    elements: CheckboxOptions | CheckboxOptions[];
+    choices: CheckboxOptions | CheckboxOptions[];
     label?: string;
     labelId?: string;
     name?: string;
@@ -405,12 +405,12 @@ export interface RadioOptions extends FormControlBaseOptions {
 }
 export interface RadioGroupOptions {
     defaultValue?: number | string;
-    elements: RadioOptions | RadioOptions[];
+    choices: RadioOptions | RadioOptions[];
     label?: string;
     labelId?: string;
     name?: string;
 }
-export interface OptionOptions {
+export interface ChoicesOptions {
     id?: number | string;
     label?: string;
     name?: string;
@@ -418,6 +418,7 @@ export interface OptionOptions {
 }
 export interface SelectOptions {
     autoWidth?: boolean;
+    choices: ChoicesOptions | ChoicesOptions[];
     defaultOpen?: boolean;
     displayEmpty?: boolean;
     fullWidth?: boolean;
@@ -431,7 +432,6 @@ export interface SelectOptions {
     onClose?: never;
     onOpen?: never;
     open?: boolean;
-    options?: OptionOptions | OptionOptions[];
     renderValue?: never;
     value?: number | string;
     variant?: 'filled' | 'outlined' | 'standard';

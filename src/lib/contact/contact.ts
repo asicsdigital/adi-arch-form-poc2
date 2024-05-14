@@ -2,6 +2,8 @@ import {
   CheckboxBasic,
   ContactForm,
   ContactPage,
+  Radio,
+  Select,
   Textfield
 } from '../../types';
 import { FormInput, fromSnakeToCamel } from '../../components/dist';
@@ -24,7 +26,17 @@ export function prepareContactPage(contactForm: ContactForm): ContactPage {
   const { description, form, title } = contactForm;
   const { container, inputs } = form;
   const preparedInputs: FormInput[] = [];
-  const inputNames = ['name', 'email', 'subject', 'description', 'terms'];
+  const inputNames = [
+    'name',
+    'email',
+    'location',
+    'time',
+    'subject',
+    'colors',
+    'description',
+    'terms',
+    'signup'
+  ];
 
   inputNames.forEach((name) => {
     const preparedInput = prepareInput(inputs[name]);
@@ -34,7 +46,9 @@ export function prepareContactPage(contactForm: ContactForm): ContactPage {
   return { description, form: container, inputs: preparedInputs, title };
 }
 
-function prepareInput(input: CheckboxBasic | Textfield): FormInput {
+function prepareInput(
+  input: CheckboxBasic | Radio | Select | Textfield
+): FormInput {
   const { control, ...options } = input;
   const preparedOptions: Record<string, unknown> = {};
   const inputKeys = Object.keys(options);

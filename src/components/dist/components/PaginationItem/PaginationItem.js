@@ -13,13 +13,13 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx } from "react/jsx-runtime";
 import { PaginationItem as MuiPaginationItem } from '@mui/material';
 import { applyOverrides } from '../../helpers/index';
-import { useTheme } from '../../styles/index';
+import { withTheme } from '../../styles/index';
 export function PaginationItemStyles(theme) {
     return applyOverrides({
     /* Add custom styles here using JSS and add the class names to the Classes type */
     }, 'PaginationItem');
 }
-var theme = useTheme();
+var theme = withTheme();
 export var PaginationItemStyle = PaginationItemStyles(theme);
 export function PaginationItem(props) {
     var defaultProps = {
