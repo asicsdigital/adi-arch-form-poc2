@@ -18,6 +18,7 @@
     "@mui/icons-material": "^5.15.15",
     "@mui/material": "^5.15.15",
     "@types/jest": "^29.5.12",
+    "@types/react-google-recaptcha": "^2.1.9",
     "deepmerge": "^4.3.1",
     "jest": "^29.7.0",
     "jss": "^10.10.0",
@@ -25,6 +26,7 @@
     "next": "13.5.6",
     "react": "^18",
     "react-dom": "^18",
+    "react-google-recaptcha": "^3.1.0",
     "react-hook-form": "^7.51.3",
     "redux": "^5.0.1",
     "ts-jest": "^29.1.2"
