@@ -1,11 +1,15 @@
-import React from 'react';
-import { FieldValues } from 'react-hook-form';
+import React, { useState } from 'react';
+// import { FieldValues } from 'react-hook-form';
 import {
   Form,
   FormContent,
   FormInput,
   FormOptions
 } from '../../components/dist';
+
+import useContactForm  from './useContactForm';
+
+import RecaptchaComponent from '../Recaptcha/Recaptcha';
 
 interface ContactFormProps {
   form: Partial<FormOptions>;
@@ -34,15 +38,29 @@ const contactFormDefaults: ContactFormInput = {
 
 export function ContactForm(props: ContactFormProps) {
   const { form, inputs } = props;
-  const onSubmit = (data: FieldValues) => console.log(data);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const { isLoading, message, onSubmit } = useContactForm(captchaToken);
+
+  const handleCaptchaTokenChange = (token: string | null) => {
+    setCaptchaToken(token);
+  }
 
   return (
-    <Form {...form}>
-      <FormContent
-        defaultValues={contactFormDefaults}
-        inputs={inputs}
-        onSubmit={onSubmit}
-      />
-    </Form>
+    <>
+      <Form {...form}>
+        <FormContent
+          defaultValues={contactFormDefaults}
+          inputs={inputs}
+          onSubmit={onSubmit}
+        />
+      </Form>
+      {isLoading && <p>Loading...</p>}
+      <br />
+      {message && <p>{message}</p>}
+      <br />
+      <RecaptchaComponent onChange={handleCaptchaTokenChange} />
+      <></>
+      <br/>
+    </>
   );
 }
