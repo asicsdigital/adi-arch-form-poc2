@@ -1,20 +1,13 @@
 import { FormInput, FormOptions } from '../components/dist';
 
-export interface SubscribePageInputs {
-  textFields: FormInput[];
-  dateFields?: FormInput[];
-  topics: FormInput | FormInput[];
-  terms: FormInput | FormInput[];
-}
-
-export interface SubscribePage {
+export interface ContactPage {
   description: string;
   form: FormOptions;
-  inputs: SubscribePageInputs;
+  inputs: FormInput[];
   title: string;
 }
 
-export interface ContactPage {
+export interface WarrantyPage {
   description: string;
   form: FormOptions;
   inputs: FormInput[];
