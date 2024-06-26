@@ -61,3 +61,25 @@ function prepareInput(
   });
   return { control, options: preparedOptions };
 }
+export async function postContactData(data: FieldValues): Promise<any> {
+  const finalPayload = JSON.stringify(data);
+
+  try {
+    const response = await fetch("/api/sfcc/contactus", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: finalPayload,
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Failed to post contact data:", error);
+    throw error;
+  }
+}
