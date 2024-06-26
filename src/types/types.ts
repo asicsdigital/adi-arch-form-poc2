@@ -12,7 +12,7 @@ export interface ContactPage {
 
 export interface WarrantyPage {
   description: string;
-  form: FormOptions;
   inputs: FormInput[];
-  title: string;
+  header: string;
+  button: FormContentProps["buttons"];
 }
