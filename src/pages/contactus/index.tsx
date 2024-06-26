@@ -1,8 +1,8 @@
 import { GetStaticProps } from 'next';
-import { Container, Typography } from '../../components/dist';
 import { ContactForm } from '../../components';
 import { fetchContact } from '../../lib';
 import { ContactPage } from '../../types';
+import { Container, Typography } from "@asicsdigital/adi-blocks-core";
 
 export interface ContactProps {
   contactPage: ContactPage;

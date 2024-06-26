@@ -1,13 +1,10 @@
-import { Container, Typography } from '../components/dist';
+import { Container, Typography } from "@asicsdigital/adi-blocks-core";
 
 export default function Home() {
-
   return (
     <>
       <Container sx={{ mt: 12 }}>
-        <Typography paragraph variant="h1">
-          Forms
-        </Typography>
+        <Typography variant="h1">Forms</Typography>
       </Container>
     </>
   );

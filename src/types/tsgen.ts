@@ -1,4 +1,7 @@
-import { InputControlKeys } from '../components/dist';
+import {
+  InputControlKeys,
+  FormContentProps,
+} from "@asicsdigital/adi-blocks-core";
 
 export interface File {
   uid: string;

@@ -4,9 +4,11 @@ import {
   ContactPage,
   Radio,
   Select,
-  Textfield
-} from '../../types';
-import { FormInput, fromSnakeToCamel } from '../../components/dist';
+import {
+  FormInput,
+  FormContentProps,
+  fromSnakeToCamel,
+} from "@asicsdigital/adi-blocks-core";
 
 export async function fetchContact(): Promise<ContactPage> {
   const url = `${process.env.CS_BASE_URL}/content_types/contact_form/entries?environment=development`;

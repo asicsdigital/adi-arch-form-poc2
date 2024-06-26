@@ -1,10 +1,13 @@
-import { FormInput, FormOptions } from '../components/dist';
+import {
+  FormInput,
+  FormContentProps,
+} from "@asicsdigital/adi-blocks-core";
 
 export interface ContactPage {
   description: string;
-  form: FormOptions;
   inputs: FormInput[];
-  title: string;
+  header: string;
+  button: FormContentProps["buttons"];
 }
 
 export interface WarrantyPage {

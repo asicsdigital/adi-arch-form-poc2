@@ -20,10 +20,10 @@
     "@jridgewell/gen-mapping" "^0.3.5"
     "@jridgewell/trace-mapping" "^0.3.24"
 
-"@asicsdigital/adi-blocks-core@^0.2.0":
-  version "0.2.0"
-  resolved "https://npm.pkg.github.com/download/@asicsdigital/adi-blocks-core/0.2.0/5403d14281075838b18a16f346c2e93f51903d02#5403d14281075838b18a16f346c2e93f51903d02"
-  integrity sha512-WVudwqmnPfIR/VRBCoWNFx4rK1cZSRjBZKaplRXvpY2LLbVmCQBPAyrXMjnbSIPt/V1uxSKPRe76bIZG7vNFSw==
+"@asicsdigital/adi-blocks-core@^0.2.1":
+  version "0.2.1"
+  resolved "https://npm.pkg.github.com/download/@asicsdigital/adi-blocks-core/0.2.1/53d5aeff906e75d065ec43e7097a96f2953942b1#53d5aeff906e75d065ec43e7097a96f2953942b1"
+  integrity sha512-AGuDpcVD/zG3f9afAf4RU4ptNyrrRAd+oFUxkFlQkrKiWUMPdO+mK6LSR0+DlgNAydh+iAdhe07MirsMKweY/g==
   dependencies:
     "@emotion/react" "^11.11.1"
     "@emotion/styled" "^11.11.0"

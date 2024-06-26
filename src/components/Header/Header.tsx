@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 import {
   Close as CloseIcon,
   Menu as MenuIcon,
   Person as PersonIcon,
-  Search as SearchIcon
-} from '@mui/icons-material';
+  Search as SearchIcon,
+} from "@mui/icons-material";
 import {
   AppBar,
   AppBarProps,
@@ -17,9 +17,9 @@ import {
   TextFieldProps,
   Toolbar,
   Typography,
-  TypographyProps
-} from '../dist';
-import { merge } from 'lodash';
+  TypographyProps,
+} from "@asicsdigital/adi-blocks-core";
+import { merge } from "lodash";
 
 interface NavigationProps extends ButtonProps {
   divider?: boolean;
@@ -36,7 +36,7 @@ interface OnSearchProps {
 }
 
 export interface HeaderProps extends GroundProps {
-  color?: AppBarProps['color'];
+  color?: AppBarProps["color"];
   menuCloseIcon?: React.ReactNode;
   menuIcon?: React.ReactNode;
   navigation?: NavigationProps[];
@@ -52,13 +52,13 @@ export interface HeaderProps extends GroundProps {
 }
 
 export const HeaderDefaultProps: HeaderProps = {
-  color: 'primary',
+  color: "primary",
   menuCloseIcon: <CloseIcon />,
   menuIcon: <MenuIcon />,
   searchIcon: <SearchIcon />,
   showUser: false,
   showSearch: false,
-  userIcon: <PersonIcon />
+  userIcon: <PersonIcon />,
 };
 
 export function Header(props: HeaderProps) {

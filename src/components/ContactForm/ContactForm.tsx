@@ -3,8 +3,9 @@ import {
   Form,
   FormContent,
   FormInput,
-  FormOptions
-} from '../../components/dist';
+  Typography,
+  FormContentProps,
+} from "@asicsdigital/adi-blocks-core";
 
 import useContactForm  from './useContactForm';
 
