@@ -6,7 +6,7 @@ interface Props {
 }
 
 const Recaptcha = ({
-  sitekey = process.env.RECAPTCHA_SITE_KEY || "",
+  sitekey = process.env.RECAPTCHA_SITE_KEY || "6LeQMespAAAAAGe69RKeGytZMTBV1DoFYol1I3_X",
   onChange,
 }: Props) => {
   return <ReCAPTCHA sitekey={sitekey} onChange={onChange} />;
