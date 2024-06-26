@@ -21,13 +21,9 @@ export const useContactForm = (captchaToken: string | null) => {
 
     try {
       const response = await postContactData(updatedData);
-      router.push(
-        "https://www.asics.com/us/en-us/contact-us-confirmation.html"
-      ); // Possibly remove this code by getting this value in contentstack payload
+      router.push("https://www.asics.com/us/en-us/contact-us-confirmation.html"); // Possibly remove this code by getting this value in contentstack payload
     } catch (error) {
-      setMessage(
-        "An unexpected problem occured while creating case please try again later."
-      );
+      setMessage("An unexpected problem occured while creating case please try again later.");
       console.error("An unexpected error occurred:", error);
     } finally {
       setMessage("");
