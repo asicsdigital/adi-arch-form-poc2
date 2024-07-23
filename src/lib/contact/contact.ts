@@ -43,8 +43,11 @@ export function prepareContactPage(contactForm: ContactForm): ContactPage {
   ];
 
   inputNames.forEach((name) => {
-    const preparedInput = prepareInput(contactForm[name]);
-    preparedInputs.push(preparedInput);
+    const input = contactForm[name];
+    if (input && typeof input !== 'string' && 'control' in input) {
+      const preparedInput = prepareInput(input);
+      preparedInputs.push(preparedInput);
+    }
   });
 
   return { description, inputs: preparedInputs, header, button };
