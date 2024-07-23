@@ -1,22 +1,18 @@
-import { FormInput, FormOptions } from '../components/dist';
-
-export interface SubscribePageInputs {
-  textFields: FormInput[];
-  dateFields?: FormInput[];
-  topics: FormInput | FormInput[];
-  terms: FormInput | FormInput[];
-}
-
-export interface SubscribePage {
-  description: string;
-  form: FormOptions;
-  inputs: SubscribePageInputs;
-  title: string;
-}
+import {
+  FormInput,
+  FormContentProps,
+} from "@asicsdigital/adi-blocks-core";
 
 export interface ContactPage {
   description: string;
-  form: FormOptions;
   inputs: FormInput[];
-  title: string;
+  header: string;
+  button: FormContentProps["buttons"];
+}
+
+export interface WarrantyPage {
+  description: string;
+  inputs: FormInput[];
+  header: string;
+  button: FormContentProps["buttons"];
 }

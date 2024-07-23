@@ -1,4 +1,7 @@
-import { InputControlKeys } from '../components/dist';
+import {
+  InputControlKeys,
+  FormContentProps,
+} from "@asicsdigital/adi-blocks-core";
 
 export interface File {
   uid: string;
@@ -55,21 +58,21 @@ export interface Checkbox {
     checked?: boolean;
     /** Color */
     color?:
-      | 'default'
-      | 'error'
-      | 'info'
-      | 'primary'
-      | 'secondary'
-      | 'success'
-      | 'warning';
+      | "default"
+      | "error"
+      | "info"
+      | "primary"
+      | "secondary"
+      | "success"
+      | "warning";
     /** Disabled */
     disabled?: boolean;
     /** Label placement */
-    label_placement?: 'bottom' | 'end' | 'start' | 'top';
+    label_placement?: "bottom" | "end" | "start" | "top";
     /** Required */
     required?: boolean;
     /** Size */
-    size?: 'small' | 'medium';
+    size?: "small" | "medium";
     /** Value */
     value?: string;
   };
@@ -84,14 +87,14 @@ export interface Textfield {
   name?: string;
   /** Type */
   type?:
-    | 'date'
-    | 'email'
-    | 'file'
-    | 'password'
-    | 'search'
-    | 'tel'
-    | 'text'
-    | 'url';
+    | "date"
+    | "email"
+    | "file"
+    | "password"
+    | "search"
+    | "tel"
+    | "text"
+    | "url";
   /** Required */
   required?: boolean;
   /** Helper text */
@@ -118,7 +121,7 @@ export interface TextField {
     /** Auto focus */
     auto_focus?: boolean;
     /** Color */
-    color?: 'error' | 'info' | 'primary' | 'secondary' | 'success' | 'warning';
+    color?: "error" | "info" | "primary" | "secondary" | "success" | "warning";
     /** Disabled */
     disabled?: boolean;
     /** Full width */
@@ -126,7 +129,7 @@ export interface TextField {
     /** Helper text */
     helper_text?: string;
     /** Margin */
-    margin?: 'dense' | 'none';
+    margin?: "dense" | "none";
     /** Max rows */
     max_rows?: number;
     /** Min rows */
@@ -140,21 +143,21 @@ export interface TextField {
     /** Rows */
     rows?: number;
     /** Size */
-    size?: 'medium' | 'small';
+    size?: "medium" | "small";
     /** Type */
     type?:
-      | 'date'
-      | 'email'
-      | 'file'
-      | 'password'
-      | 'search'
-      | 'tel'
-      | 'text'
-      | 'url';
+      | "date"
+      | "email"
+      | "file"
+      | "password"
+      | "search"
+      | "tel"
+      | "text"
+      | "url";
     /** Value */
     value?: string;
     /** Variant */
-    variant?: 'filled' | 'outlined' | 'standard';
+    variant?: "filled" | "outlined" | "standard";
   };
   /** Control */
   control: InputControlKeys;
@@ -187,7 +190,7 @@ export interface Select {
     /** Multiple */
     multiple?: boolean;
     /** Variant */
-    variant?: 'filled' | 'outlined' | 'standard';
+    variant?: "filled" | "outlined" | "standard";
   };
   /** Control */
   control: InputControlKeys;
@@ -204,21 +207,21 @@ export interface Radio {
     checked?: boolean;
     /** Color */
     color?:
-      | 'default'
-      | 'error'
-      | 'info'
-      | 'primary'
-      | 'secondary'
-      | 'success'
-      | 'warning';
+      | "default"
+      | "error"
+      | "info"
+      | "primary"
+      | "secondary"
+      | "success"
+      | "warning";
     /** Disabled */
     disabled?: boolean;
     /** Label placement */
-    label_placement?: 'bottom' | 'end' | 'start' | 'top';
+    label_placement?: "bottom" | "end" | "start" | "top";
     /** Required */
     required?: boolean;
     /** Size */
-    size?: 'small' | 'medium';
+    size?: "small" | "medium";
     /** Value */
     value?: string;
   };
@@ -231,21 +234,21 @@ export interface CheckboxOptions {
   checked?: boolean;
   /** Color */
   color?:
-    | 'default'
-    | 'error'
-    | 'info'
-    | 'primary'
-    | 'secondary'
-    | 'success'
-    | 'warning';
+    | "default"
+    | "error"
+    | "info"
+    | "primary"
+    | "secondary"
+    | "success"
+    | "warning";
   /** Disabled */
   disabled?: boolean;
   /** Label placement */
-  label_placement?: 'bottom' | 'end' | 'start' | 'top';
+  label_placement?: "bottom" | "end" | "start" | "top";
   /** Required */
   required?: boolean;
   /** Size */
-  size?: 'small' | 'medium';
+  size?: "small" | "medium";
   /** Value */
   value?: string;
   /** Control */
@@ -259,16 +262,16 @@ export interface Button {
   input_options?: {
     /** Color */
     color?:
-      | 'default'
-      | 'error'
-      | 'info'
-      | 'inherit'
-      | 'primary'
-      | 'secondary'
-      | 'success'
-      | 'warning';
+      | "default"
+      | "error"
+      | "info"
+      | "inherit"
+      | "primary"
+      | "secondary"
+      | "success"
+      | "warning";
     /** Variant */
-    variant?: 'contained' | 'outlined' | 'text';
+    variant?: "contained" | "outlined" | "text";
   };
   /** Control */
   control?: InputControlKeys;
@@ -280,7 +283,7 @@ export interface Form {
   /** Action */
   action?: string;
   /** Method */
-  method?: 'get' | 'post';
+  method?: "get" | "post";
   /** Name */
   name?: string;
   /** Control */
@@ -318,65 +321,26 @@ export interface FormControlOptions {
   checked?: boolean;
   /** Color */
   color?:
-    | 'default'
-    | 'error'
-    | 'info'
-    | 'primary'
-    | 'secondary'
-    | 'success'
-    | 'warning';
+    | "default"
+    | "error"
+    | "info"
+    | "primary"
+    | "secondary"
+    | "success"
+    | "warning";
   /** Disabled */
   disabled?: boolean;
   /** Label placement */
-  label_placement?: 'bottom' | 'end' | 'start' | 'top';
+  label_placement?: "bottom" | "end" | "start" | "top";
   /** Required */
   required?: boolean;
   /** Size */
-  size?: 'small' | 'medium';
+  size?: "small" | "medium";
   /** Value */
   value?: string;
 }
 
-/** Facilitates content sharing on social media platforms. */
-export interface SocialShare {
-  /** Social Media Share */
-  social_media_share?: {
-    /** Title */
-    title?: string;
-    /** Icon */
-    icon?: File;
-    /** url */
-    url?: Link;
-  }[];
-}
-
-/** Contains SEO related information such as meta title, meta description, etc. */
-export interface Seo {
-  /** Meta Title */
-  meta_title?: string;
-  /** Meta Description */
-  meta_description?: string;
-  /** Meta Keywords */
-  keywords?: string;
-  /** Enable Search Indexing */
-  enable_search_indexing?: boolean;
-}
-
 export interface TextFieldOptions {}
-
-export interface ContactUs {
-  /** Title */
-  title: string;
-  /** Form */
-  form?: {
-    /** Email */
-    email?: TextField;
-    /** Subject */
-    subject?: TextField;
-    /** Comments */
-    comments?: TextField;
-  };
-}
 
 export interface FormExampleWithRegex {
   /** Title */
@@ -402,141 +366,28 @@ export interface FormExampleWithRegex {
   };
 }
 
-export interface Subscribe {
-  /** Title */
-  title: string;
-  /** Description */
-  description?: string;
-  /** Form */
-  form?: {
-    /** Form options */
-    form_options?: Form;
-    /** Username */
-    username?: TextField;
-    /** Password */
-    password?: TextField;
-    /** Full name */
-    full_name?: TextField;
-    /** Dates */
-    dates?: TextField;
-    /** Topics */
-    topics?: {
-      /** Container */
-      container?: CheckboxGroup;
-      /** Checkboxes */
-      checkboxes?: Checkbox;
-    };
-    /** Terms */
-    terms?: Radio;
-    /** Submit button */
-    submit_button?: Button;
-  };
-}
-
 export interface ContactForm {
   /** Title */
-  title: string;
+  header: string;
   /** Description */
   description: string;
-  /** Form */
-  form: {
-    /** Container */
-    container: Form;
-    /** Inputs */
-    inputs: {
-      /** Name */
-      name: Textfield;
-      /** Email */
-      email: Textfield;
-      /** Location */
-      location: Select;
-      /** Subject */
-      subject: Textfield;
-      /** Description */
-      description: Textfield;
-      /** Terms */
-      terms: CheckboxBasic;
-      [key: string]: CheckboxBasic | Select | Textfield;
-    };
-  };
-}
-
-export interface SignupForm {
-  /** Title */
-  title: string;
-  /** Form */
-  form?: {
-    /** Text field */
-    text_field?: TextField;
-    /** Radio group */
-    radio_group?: {
-      /** Container */
-      container?: ElementGroup;
-      /** Radio */
-      radio?: Radio;
-    }[];
-    /** Checkbox group */
-    checkbox_group?: {
-      /** Container */
-      container?: ElementGroup;
-      /** Checkbox */
-      checkbox?: Checkbox;
-    };
-  };
-}
-
-export interface Author {
   /** Name */
-  title: string;
-}
-
-export interface Category {
-  /** Title */
-  title: string;
-  /** Description */
-  description?: string;
-}
-
-/** Basic blog post */
-export interface Post {
-  /** Title */
-  title: string;
-  /** Main image */
-  main_image?: File;
-  /** Categories */
-  categories?: Category[];
-  /** Published at */
-  published_at: string;
-  /** Summary */
-  summary?: string;
-  /** Body */
-  body: any;
-  /** Rendered body */
-  rendered_body?: string;
-  /** Global */
-  global_field?: FormControlOptions;
-}
-
-export interface Hero {
-  /** Heading */
-  title: string;
-  /** Image */
-  image?: File;
-  /** Layout */
-  layout:
-    | 'Top left'
-    | 'Top center'
-    | 'Top right'
-    | 'Center left'
-    | 'Center center'
-    | 'Center right'
-    | 'Bottom left'
-    | 'Bottom center'
-    | 'Bottom right';
-  /** Content */
-  content?: string;
-  /** CTA */
-  cta?: string;
-  /** CTA type */
-  cta_type?: 'Button' | 'Text';
+  name: Textfield;
+  /** Email */
+  email: Textfield;
+  /** Subject */
+  select_subject: Select;
+  /** Order Number */
+  order_number: TextField;
+  /** Phone Number */
+  phone_number: TextField;
+  /** Message */
+  message: TextField;
+  submit: FormContentProps["buttons"];
+  [key: string]:
+    | CheckboxBasic
+    | Select
+    | Textfield
+    | FormContentProps["buttons"]
+    | string;
 }
