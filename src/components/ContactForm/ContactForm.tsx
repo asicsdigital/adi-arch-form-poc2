@@ -27,7 +27,7 @@ interface ContactFormInput {
 export function ContactForm(props: ContactFormProps) {
   const { inputs, button } = props;
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
-  const { message, onSubmit } = useContactForm(captchaToken);
+  const { message, onSubmit, onError } = useContactForm(captchaToken);
 
   const contactFormDefaults: ContactFormInput = {
     suppliedname: "",
@@ -51,14 +51,13 @@ export function ContactForm(props: ContactFormProps) {
     [captchaToken, button]
   );
 
-  // const onError = (errors) => console.log(errors);
   
   return (
     <Form>
       <FormContent
         defaultValues={contactFormDefaults}
         inputs={inputs}
-        // onError={onError}
+        onError={onError}
         onSubmit={onSubmit}
       />
       <Recaptcha onChange={handleCaptchaTokenChange} />
@@ -67,7 +66,7 @@ export function ContactForm(props: ContactFormProps) {
         defaultValues={contactFormDefaults}
         inputs={inputs.slice(inputs.length)}
         buttons={modifiedButtonProps}
-        // onError={onError}
+        onError={onError}
         onSubmit={onSubmit}
       />
     </Form>

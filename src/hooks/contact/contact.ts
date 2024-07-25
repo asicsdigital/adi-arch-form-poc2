@@ -3,9 +3,32 @@ import { FieldValues } from "react-hook-form";
 import { useRouter } from "next/router";
 import { postContactData } from "../../lib";
 
+
+interface ErrorDetail {
+  type: string;
+  message: string;
+  ref: {
+    name: string;
+  };
+}
+
+interface Errors<T extends ErrorDetail> {
+  [key: string]: T;
+}
+
 export const useContactForm = (captchaToken: string | null) => {
   const [message, setMessage] = useState<string>("");
   const router = useRouter();
+
+  const onError = <T extends ErrorDetail>(errors: Errors<T>): void => {
+    const errorKeys = Object.keys(errors);
+    errorKeys.forEach((key) => {
+      const error = errors[key];
+      const name = error?.ref?.name || '';
+      const message = error?.message || '';
+      console.log("Error", message, name);
+    })
+  };
 
   const onSubmit = async (data: FieldValues) => {
     if (!captchaToken) {
@@ -30,5 +53,5 @@ export const useContactForm = (captchaToken: string | null) => {
     }
   };
 
-  return { message, onSubmit };
+  return { message, onSubmit , onError };
 };
